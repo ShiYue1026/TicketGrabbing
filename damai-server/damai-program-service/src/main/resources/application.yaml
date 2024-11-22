@@ -1,0 +1,11 @@
+server:
+  port: 6086
+spring:
+  application:
+    name: damai-program-service
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:shardingsphere-program-${spring.profiles.active}.yaml
+
