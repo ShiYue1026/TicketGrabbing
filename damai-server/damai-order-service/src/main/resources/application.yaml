@@ -1,0 +1,11 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: damai-order-service
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:shardingsphere-order-${spring.profiles.active}.yaml
+
