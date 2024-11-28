@@ -16,9 +16,7 @@
 **BaseParameterFilter**
 
 - 继承`OncePerRequestFilter`，确保每次请求在任何情况下只经过过滤器一次
-
 - 用于从request请求头中获取一些公共参数，比如分布式链路traceId、用户id、平台code等，存入自定义的`BaseParameterHolder`（ThreadLocal）中
-
 - 同时将这些公共参数信息放入MDC中用于日志记录
 
 
