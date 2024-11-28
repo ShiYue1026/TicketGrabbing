@@ -1,4 +1,7 @@
 # Ticket Grabbing
+## 基因法分库分表
+...
+
 ## 自定义线程绑定工具
 
 **BaseParameterHolder**
@@ -26,6 +29,33 @@
 - 继承`OncePerRequestFilter`，确保每次请求在任何情况下只经过过滤器一次
 - 为了解决通过getInputStream和getReader获取request请求体输入流只能读取一次的问题
 - 借助自定义的`CustomizeRequstWrapper`使用装饰者模式对request进行包装，重写getInputStream()，getReader()方法缓存request请求体输入流的内容
+
+## 自定义分页工具
+
+- MybatisPlus不是已经提供了分页工具了吗，为什么还要个工具？
+  - 一个是因为MybatisPlus的分页实体就在它自己的包中，如果以后不使用MybatisPlus了，那岂不分页功能也没了？已经开发好的功能也不能再次修改，所以要减少对MybatisPlus的强依赖。
+  - 另一个是封装的elasticsearch工具类也有分页功能，使用的包是pagehelper，为了将这两者的分页统一。 所以基于以上两个原因，设计出分页的工具
+
+**PageUtil**
+
+- **组装分页参数**在查看节目列表业务中使用，因为在MybatisPlus中如果要自定义sql查询，并且使用分页功能的话，需要将分页参数传入
+
+  ```java
+  IPage<ProgramV2> iPage = programMapper.selectPage(PageUtil.getPageParams(programPageListDto), programPageListDto);
+  ```
+
+- **转换分页对象**在数据库分页查询和elasticsearch分页查询中使用，为了将两者分页进行整合
+
+  ```java
+  PageInfo<ProgramListVo> programListVoPageInfo = businessEsHandle.queryPage(
+                      SpringUtil.getPrefixDistinctionName() + "-" + ProgramDocumentParamName.INDEX_NAME,
+                      ProgramDocumentParamName.INDEX_TYPE, 
+      				esDataQueryDtoList, 
+      				programPageListDto.getPageNumber(),
+                      programPageListDto.getPageSize(), ProgramListVo.class);
+  pageVo = PageUtil.convertPage(programListVoPageInfo, programListVo -> programListVo);
+  ```
+
 
 
 
