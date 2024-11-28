@@ -7,7 +7,7 @@
 
 但由于request的范围是`ThreadLocal`，是和线程绑定的，在使用线程池的情况下，request会丢失，所以有了线程池组件、Hystrix组件。
 
-在线程池组件和Hystrix组件中，对公共配置中的线程绑定工具`BaseParameterHolder`做了适配，这个工具其实是`ThreadLocal`，但线程池的组件和Hystrix的组件对此工具做了增强，<u>只要将数据放到``BaseParameterHolder`里，就会正常的拿到</u>。
+在线程池组件和Hystrix组件中，对公共配置中的线程绑定工具`BaseParameterHolder`做了适配，这个工具其实是`ThreadLocal`，但线程池的组件和Hystrix的组件对此工具做了增强，<u>只要将数据放到`BaseParameterHolder`里，就会正常的拿到</u>。
 
 
 
