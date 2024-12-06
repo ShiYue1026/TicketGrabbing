@@ -5,7 +5,7 @@ import org.springframework.core.annotation.Order;
 
 public class FilterAutoConfiguration {
     @Bean
-    @Order(-10)
+    @Order(-10)  // 数字越小, 优先级越高
     public RequestWrapperFilter requestWrapperFilter() {
         return new RequestWrapperFilter();
     }
