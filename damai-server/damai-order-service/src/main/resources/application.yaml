@@ -8,6 +8,11 @@ spring:
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
     url: jdbc:shardingsphere:classpath:shardingsphere-order-${spring.profiles.active}.yaml
+  jackson:
+    generator:
+      write-numbers-as-strings: true
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
 
 springdoc:
   swagger-ui:
