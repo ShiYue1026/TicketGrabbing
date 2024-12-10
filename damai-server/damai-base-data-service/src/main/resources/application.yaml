@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: base-data-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.88.130:8848
+        username: nacos
+        password: nacos
+
+server:
+  port: 6083

@@ -16,6 +16,10 @@ public class StringUtil {
                 && !"undefined".equalsIgnoreCase(str.trim()) && !"NULL".equalsIgnoreCase(str.trim()));
     }
 
+    public static boolean isEmpty(String str) {
+        return !StringUtil.isNotEmpty(str);
+    }
+
     public static String inputStreamConvertString(InputStream is) {
         ByteArrayOutputStream baos = null;
         String result = null;
