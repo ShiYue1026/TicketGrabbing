@@ -51,18 +51,18 @@ public class TokenUtil {
                    .getSubject();
     }
 
-//    public static void main(String[] args) {
-//        String tokenSecret = "AFDBHDV";
-//
-//        JSONObject jsonObject = new JSONObject();
-//        jsonObject.put("key1", "value1");
-//        jsonObject.put("key2", "value2");
-//
-//        String token1 = TokenUtil.createToken("1", jsonObject.toJSONString(), 3600 * 1000, tokenSecret);
-//        System.out.println("token:" + token1);
-//
-//        String token2 = "eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxIiwiaWF0IjoxNzMzNTg1OTAzLCJzdWIiOiJ7XCJrZXkxXCI6XCJ2YWx1ZTFcIixcImtleTJcIjpcInZhbHVlMlwifSIsImV4cCI6MTczMzU4OTUwM30.mFDozpuf-3y1vO91gIP8f7xmfdBXb30FYrmYbIOO4eY";
-//        String subject = TokenUtil.parseToken(token2, tokenSecret);
-//        System.out.println("解析token后的值:" + subject);
-//    }
+    public static void main(String[] args) {
+        String tokenSecret = "AFDBHDV";
+
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("key1", "value1");
+        jsonObject.put("key2", "value2");
+
+        String token1 = TokenUtil.createToken("1", jsonObject.toJSONString(), 3600 * 1000, tokenSecret);
+        System.out.println("token:" + token1);
+
+        String token2 = token1;
+        String subject = TokenUtil.parseToken(token2, tokenSecret);
+        System.out.println("解析token后的值:" + subject);
+    }
 }

@@ -1,5 +1,6 @@
 package com.damai.service;
 
+import com.baidu.fsg.uid.UidGenerator;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.damai.core.RedisKeyManage;
 import com.damai.dto.ChannelDataAddDto;
