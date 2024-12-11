@@ -91,5 +91,6 @@ public class ChannelDataService {
             log.error("baseDataClient getByCode timeout exception",e);
             throw new DaMaiFrameException(BaseCode.EXECUTE_TIME_OUT);
         }
+        throw new DaMaiFrameException(BaseCode.CHANNEL_DATA_NOT_EXIST);
     }
 }
