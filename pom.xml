@@ -17,6 +17,7 @@
 		<module>damai-server-client</module>
 		<module>damai-redis-tool-framework</module>
 		<module>damai-id-generator-framework</module>
+		<module>damai-elasticsearch-framework</module>
 	</modules>
 
 	<properties>
