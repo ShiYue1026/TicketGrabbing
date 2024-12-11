@@ -21,7 +21,7 @@ public class BusinessEsProperties {
 
     private Integer connectTimeOut = 40000;
 
-    private Integer sockerTimeOut = 40000;
+    private Integer socketTimeOut = 40000;
 
     private Integer connectionRequestTimeOut = 40000;
 
