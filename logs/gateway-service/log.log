@@ -1,0 +1,124 @@
+[gateway-service] [] 2024-12-10 19:44:04  INFO Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+[gateway-service] [] 2024-12-10 19:44:04  INFO GatewayApplication:50 - Starting GatewayApplication using Java 20 with PID 21816 (E:\damai\damai-server\damai-gateway-service\target\classes started by shiyu in E:\damai)
+[gateway-service] [] 2024-12-10 19:44:04  INFO GatewayApplication:660 - The following 1 profile is active: "pro"
+[gateway-service] [] 2024-12-10 19:44:05  INFO RepositoryConfigurationDelegate:295 - Multiple Spring Data modules found, entering strict repository configuration mode
+[gateway-service] [] 2024-12-10 19:44:05  INFO RepositoryConfigurationDelegate:143 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[gateway-service] [] 2024-12-10 19:44:05  INFO RepositoryConfigurationDelegate:211 - Finished Spring Data repository scanning in 13 ms. Found 0 Redis repository interfaces.
+[gateway-service] [] 2024-12-10 19:44:05  INFO GenericScope:282 - BeanFactory id=8bfafda5-a803-39ac-83b6-081a19cb2ad1
+[gateway-service] [] 2024-12-10 19:44:05  INFO EnableEncryptablePropertiesBeanFactoryPostProcessor:44 - Post-processing PropertySource instances
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:105 - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource gateway-properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource cachedrandom [org.springframework.cloud.util.random.CachedRandomPropertySource] to EncryptablePropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource Config resource 'class path resource [application-pro.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource Config resource 'class path resource [application.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:05  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2024-12-10 19:44:06  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:429 - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[gateway-service] [] 2024-12-10 19:44:06  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:437 - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+[gateway-service] [] 2024-12-10 19:44:06  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:429 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[gateway-service] [] 2024-12-10 19:44:06  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:437 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+[gateway-service] [] 2024-12-10 19:44:06  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:437 - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+[gateway-service] [] 2024-12-10 19:44:06  INFO DefaultLazyPropertyFilter:45 - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+[gateway-service] [] 2024-12-10 19:44:06  INFO DefaultLazyPropertyResolver:46 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+[gateway-service] [] 2024-12-10 19:44:06  INFO DefaultLazyPropertyDetector:44 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+[gateway-service] [] 2024-12-10 19:44:07  INFO DefaultUidGenerator:100 - Initialized bits(1, 28, 22, 13) for workerID:1
+[gateway-service] [] 2024-12-10 19:44:07  INFO CachedUidGenerator:133 - Initialized ring buffer size:65536, paddingFactor:50
+[gateway-service] [] 2024-12-10 19:44:07  INFO CachedUidGenerator:142 - Initialized BufferPaddingExecutor. Using schdule:false, interval:null
+[gateway-service] [] 2024-12-10 19:44:07  INFO RingBuffer:148 - Ready to padding buffer lastSecond:1733831047. RingBuffer [bufferSize=65536, tail=-1, cursor=-1, paddingThreshold=32768]
+[gateway-service] [] 2024-12-10 19:44:07  WARN RingBuffer:197 - Rejected putting buffer for uid:608052470148505600. RingBuffer [bufferSize=65536, tail=65535, cursor=-1, paddingThreshold=32768]
+[gateway-service] [] 2024-12-10 19:44:07  INFO RingBuffer:170 - End to padding buffer lastSecond:1733831056. RingBuffer [bufferSize=65536, tail=65535, cursor=-1, paddingThreshold=32768]
+[gateway-service] [] 2024-12-10 19:44:07  INFO CachedUidGenerator:73 - Initialized RingBuffer successfully.
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [After]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Before]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Between]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Cookie]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Header]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Host]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Method]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Path]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Query]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [ReadBody]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [RemoteAddr]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Weight]
+[gateway-service] [] 2024-12-10 19:44:08  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[gateway-service] [] 2024-12-10 19:44:08  INFO EndpointLinksResolver:60 - Exposing 19 endpoints beneath base path '/actuator'
+[gateway-service] [] 2024-12-10 19:44:08  INFO SentinelWebFluxAutoConfiguration:90 - [Sentinel Starter] register Sentinel SentinelWebFluxFilter
+[gateway-service] [] 2024-12-10 19:44:09  WARN LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:94 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[gateway-service] [] 2024-12-10 19:44:09  INFO NettyWebServer:141 - Netty started on port 6085 (http)
+[gateway-service] [] 2024-12-10 19:44:10  INFO naming:62 - initializer namespace from ans.namespace attribute : null
+[gateway-service] [] 2024-12-10 19:44:10  INFO naming:66 - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+[gateway-service] [] 2024-12-10 19:44:10  INFO naming:73 - initializer namespace from namespace attribute :null
+[gateway-service] [] 2024-12-10 19:44:10  INFO CredentialWatcher:189 - null No credential found
+[gateway-service] [] 2024-12-10 19:44:10  INFO naming:74 - FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+[gateway-service] [] 2024-12-10 19:44:10  INFO ParamUtil:89 - [settings] [req-serv] nacos-server port:8848
+[gateway-service] [] 2024-12-10 19:44:10  INFO ParamUtil:92 - [settings] [http-client] connect timeout:1000
+[gateway-service] [] 2024-12-10 19:44:10  INFO ParamUtil:97 - PER_TASK_CONFIG_SIZE: 3000.0
+[gateway-service] [] 2024-12-10 19:44:10  INFO ClientAuthPluginManager:56 - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[gateway-service] [] 2024-12-10 19:44:10  INFO ClientAuthPluginManager:56 - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[gateway-service] [] 2024-12-10 19:44:11  INFO client:118 - [RpcClientFactory] create a new rpc client of 3e98af1a-22f0-4593-b1f3-706c0a9c8638
+[gateway-service] [] 2024-12-10 19:44:11  INFO naming:109 - Create naming rpc client for uuid->3e98af1a-22f0-4593-b1f3-706c0a9c8638
+[gateway-service] [] 2024-12-10 19:44:11  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+[gateway-service] [] 2024-12-10 19:44:11  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+[gateway-service] [] 2024-12-10 19:44:11  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+[gateway-service] [] 2024-12-10 19:44:11  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Try to connect to server on start up, server: {serverIp = '192.168.88.130', server main port = 8848}
+[gateway-service] [] 2024-12-10 19:44:11  INFO GrpcClient:210 - grpc client connection server:192.168.88.130 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+[gateway-service] [] 2024-12-10 19:44:12  INFO AbstractAbilityControlManager:61 - Ready to get current node abilities...
+[gateway-service] [] 2024-12-10 19:44:12  INFO AbstractAbilityControlManager:89 - Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+[gateway-service] [] 2024-12-10 19:44:12  INFO AbstractAbilityControlManager:94 - Initialize current abilities finish...
+[gateway-service] [] 2024-12-10 19:44:12  INFO NacosAbilityManagerHolder:85 - [AbilityControlManager] Successfully initialize AbilityControlManager
+[gateway-service] [] 2024-12-10 19:44:12  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Success to connect to server [192.168.88.130:8848] on start up, connectionId = 1733728007746_192.168.88.1_34449
+[gateway-service] [] 2024-12-10 19:44:12  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Notify connected event to listeners.
+[gateway-service] [] 2024-12-10 19:44:12  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+[gateway-service] [] 2024-12-10 19:44:12  INFO naming:90 - Grpc connection connect
+[gateway-service] [] 2024-12-10 19:44:12  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1708/0x0000000801aaa310
+[gateway-service] [] 2024-12-10 19:44:12  INFO naming:133 - [REGISTER-SERVICE] public registering service my-gateway-service with instance Instance{instanceId='null', ip='192.168.1.64', port=6085, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={preserved.register.source=SPRING_CLOUD, IPv6=[2409:8a00:4810:9b00:bbe6:133a:dba6:ef9c], gray=false}}
+[gateway-service] [] 2024-12-10 19:44:13  INFO NacosServiceRegistry:76 - nacos registry, DEFAULT_GROUP my-gateway-service 192.168.1.64:6085 register finished
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:164 - [SUBSCRIBE-SERVICE] service:my-gateway-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:164 - [SUBSCRIBE-SERVICE] service:my-gateway-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:377 - [GRPC-SUBSCRIBE] service:my-gateway-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:377 - [GRPC-SUBSCRIBE] service:my-gateway-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:169 - init new ips(1) service: DEFAULT_GROUP@@my-gateway-service -> [{"ip":"192.168.1.64","port":6085,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@my-gateway-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:9b00:bbe6:133a:dba6:ef9c]","gray":"false"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:169 - init new ips(1) service: DEFAULT_GROUP@@my-gateway-service -> [{"ip":"192.168.1.64","port":6085,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@my-gateway-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:9b00:bbe6:133a:dba6:ef9c]","gray":"false"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@my-gateway-service -> [{"ip":"192.168.1.64","port":6085,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@my-gateway-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:9b00:bbe6:133a:dba6:ef9c]","gray":"false"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+[gateway-service] [] 2024-12-10 19:44:13  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@my-gateway-service -> [{"ip":"192.168.1.64","port":6085,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@my-gateway-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:9b00:bbe6:133a:dba6:ef9c]","gray":"false"},"ipDeleteTimeout":30000,"instanceHeartBeatInterval":5000,"instanceHeartBeatTimeOut":15000}]
+[gateway-service] [] 2024-12-10 19:44:13  WARN ConcurrentDiskUtil:164 - lock DEFAULT_GROUP%40%40my-gateway-service conflict;retry time: 1
+[gateway-service] [] 2024-12-10 19:44:13  INFO NacosDiscoveryHeartBeatPublisher:66 - Start nacos heartBeat task scheduler.
+[gateway-service] [] 2024-12-10 19:44:13  INFO GatewayApplication:56 - Started GatewayApplication in 9.298 seconds (process running for 10.084)
+[gateway-service] [] 2024-12-10 19:44:13  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Receive server push request, request = NotifySubscriberRequest, requestId = 1
+[gateway-service] [] 2024-12-10 19:44:13  INFO client:63 - [3e98af1a-22f0-4593-b1f3-706c0a9c8638] Ack server push request, request = NotifySubscriberRequest, requestId = 1
+[gateway-service] [] 2024-12-10 19:44:20  WARN NotifyCenter:134 - [NotifyCenter] Start destroying Publisher
+[gateway-service] [] 2024-12-10 19:44:20  WARN HttpClientBeanHolder:102 - [HttpClientBeanHolder] Start destroying common HttpClient
+[gateway-service] [] 2024-12-10 19:44:20  WARN NotifyCenter:151 - [NotifyCenter] Destruction of the end
+[gateway-service] [] 2024-12-10 19:44:20  WARN HttpClientBeanHolder:111 - [HttpClientBeanHolder] Destruction of the end
+[gateway-service] [] 2024-12-10 19:44:22  INFO NacosServiceRegistry:95 - De-registering from Nacos Server now...
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:272 - [DEREGISTER-SERVICE] public deregistering service my-gateway-service with instance: Instance{instanceId='null', ip='192.168.1.64', port=6085, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+[gateway-service] [] 2024-12-10 19:44:22  INFO NacosServiceRegistry:115 - De-registration finished.
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:254 - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:180 - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:182 - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:256 - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:204 - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:147 - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:149 - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:218 - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+[gateway-service] [] 2024-12-10 19:44:22  WARN naming:71 - [NamingHttpClientManager] Start destroying NacosRestTemplate
+[gateway-service] [] 2024-12-10 19:44:22  WARN naming:78 - [NamingHttpClientManager] Destruction of the end
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:223 - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:468 - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+[gateway-service] [] 2024-12-10 19:44:22  WARN naming:71 - [NamingHttpClientManager] Start destroying NacosRestTemplate
+[gateway-service] [] 2024-12-10 19:44:22  WARN naming:78 - [NamingHttpClientManager] Destruction of the end
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:470 - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:487 - Shutdown naming grpc client proxy for  uuid->3e98af1a-22f0-4593-b1f3-706c0a9c8638
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:331 - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@3da76d3a[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 3]
+[gateway-service] [] 2024-12-10 19:44:22  INFO client:425 - Shutdown rpc client, set status to shutdown
+[gateway-service] [] 2024-12-10 19:44:22  INFO client:427 - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@64934acd[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+[gateway-service] [] 2024-12-10 19:44:22  INFO client:584 - Close current connection 1733728007746_192.168.88.1_34449
+[gateway-service] [] 2024-12-10 19:44:22  INFO GrpcClient:63 - [1733728007746_192.168.88.1_34449]Ignore complete event,isRunning:false,isAbandon=false
+[gateway-service] [] 2024-12-10 19:44:22  INFO GrpcClient:187 - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@3b6d94fc[Running, pool size = 37, active threads = 0, queued tasks = 0, completed tasks = 39]
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:497 - shutdown and remove naming rpc client  for uuid ->3e98af1a-22f0-4593-b1f3-706c0a9c8638
+[gateway-service] [] 2024-12-10 19:44:22  INFO CredentialWatcher:107 - [null] CredentialWatcher is stopped
+[gateway-service] [] 2024-12-10 19:44:22  INFO CredentialService:91 - [null] CredentialService is freed
+[gateway-service] [] 2024-12-10 19:44:22  INFO naming:211 - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop

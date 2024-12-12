@@ -1,6 +1,7 @@
 package com.damai.conf;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.codec.ServerCodecConfigurer;
 
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -21,6 +22,11 @@ public class Config {
                 r -> new Thread(
                         Thread.currentThread().getThreadGroup(), r,
                         "listen-start-thread-" + threadCount.getAndIncrement()));
+    }
+
+    @Bean
+    public ServerCodecConfigurer serverCodecConfigurer() {
+        return ServerCodecConfigurer.create();
     }
 
 }

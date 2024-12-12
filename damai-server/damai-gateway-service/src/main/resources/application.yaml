@@ -1,0 +1,40 @@
+server:
+  port: 6085
+
+spring:
+  application:
+    name: ${prefix.distinction.name:damai}-gateway-service
+  profiles:
+    # 微服务调用
+    active: pro
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+      timeout: 3000
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+    openfeign:
+      okhttp:
+        enabled: true
+
+# knife4j 网关聚合
+knife4j:
+  gateway:
+    enabled: true
+    # 指定服务发现的模式聚合微服务文档，并且是默认 default 分组
+    strategy: discover
+    discover:
+      # OpenAPI 3.0 规范
+      version: openapi3
+      enabled: true

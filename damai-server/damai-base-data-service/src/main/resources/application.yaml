@@ -1,3 +1,5 @@
+server:
+  port: 6083
 spring:
   application:
     name: ${prefix.distinction.name:damai}-base-data-service
@@ -28,8 +30,8 @@ spring:
       host: 192.168.88.130
       port: 6379
       timeout: 3000
-server:
-  port: 6083
+  profiles:
+    active: local
 
 springdoc:
   swagger-ui:

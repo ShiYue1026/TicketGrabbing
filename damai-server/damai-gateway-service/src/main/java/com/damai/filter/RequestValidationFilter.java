@@ -96,6 +96,8 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
 
     public Mono<Void> doFilter(final ServerWebExchange exchange, final GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
+        System.out.println("doFilter");
+        System.out.println(request);
         String traceId = request.getHeaders().getFirst(TRACE_ID);
         String gray = request.getHeaders().getFirst(GRAY_PARAMETER);
         String noVerify = request.getHeaders().getFirst(NO_VERIFY);
