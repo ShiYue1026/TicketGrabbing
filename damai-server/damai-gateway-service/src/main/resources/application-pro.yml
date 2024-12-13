@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: ${prefix.distinction.name:damai}-gateway-service
   cloud:
     gateway:
       enabled: true
@@ -76,4 +78,4 @@ spring:
           filters:
             - StripPrefix=2
           metadata:
-            title: 监听服务    
+            title: 监听服务
