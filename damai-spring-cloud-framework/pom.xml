@@ -15,8 +15,9 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>damai-service-common</module>
+        <module>damai-service-initialize</module>
         <module>damai-service-component</module>
+        <module>damai-service-common</module>
     </modules>
 
 </project>

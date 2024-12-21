@@ -40,7 +40,7 @@ public class BaseParameterHolder {
         return map;
     }
 
-    public static void serParameterMap(Map<String, String> map) {
+    public static void setParameterMap(Map<String, String> map) {
         THREAD_LOCAL_MAP.set(map);
     }
 

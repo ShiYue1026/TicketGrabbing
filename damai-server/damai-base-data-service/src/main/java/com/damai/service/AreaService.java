@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.damai.core.RedisKeyManage;
 import com.damai.dto.AreaGetDto;
+import com.damai.dto.AreaSelectDto;
 import com.damai.entity.Area;
 import com.damai.enums.AreaType;
 import com.damai.enums.BusinessStatus;
@@ -77,6 +78,13 @@ public class AreaService extends ServiceImpl<AreaMapper, Area> {
     public List<AreaVo> hot() {
         final LambdaQueryWrapper<Area> lambdaQueryWrapper = Wrappers.lambdaQuery(Area.class)
                 .in(Area::getName, "全国","北京","上海","深圳","广州","杭州","天津","重庆","成都","中国香港");
+        List<Area> areas = areaMapper.selectList(lambdaQueryWrapper);
+        return BeanUtil.copyToList(areas,AreaVo.class);
+    }
+
+    public List<AreaVo> selectByIdList(AreaSelectDto areaSelectDto) {
+        final LambdaQueryWrapper<Area> lambdaQueryWrapper = Wrappers.lambdaQuery(Area.class)
+                .in(Area::getId, areaSelectDto.getIdList());
         List<Area> areas = areaMapper.selectList(lambdaQueryWrapper);
         return BeanUtil.copyToList(areas,AreaVo.class);
     }

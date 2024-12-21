@@ -13,6 +13,28 @@ spring:
       write-numbers-as-strings: true
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
+  data:
+    redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+      timeout: 3000
+      jedis:
+        pool:
+          max-active: 300
+  cloud:
+    nacos:
+      server-addr: 192.168.88.130:8848
+      username: nacos
+      password: nacos
+    openfeign:
+      okhttp:
+        enabled: true
+
+management:
+  health:
+    elasticsearch:
+      enabled: false
 
 springdoc:
   swagger-ui:

@@ -1,28 +1,43 @@
 package com.damai.service;
 
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
+import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.damai.dto.ProgramListDto;
-import com.damai.entity.Program;
-import com.damai.entity.ProgramCategory;
-import com.damai.entity.ProgramShowTime;
-import com.damai.entity.TicketCategoryAggregate;
+import com.damai.client.BaseDataClient;
+import com.damai.common.ApiResponse;
+import com.damai.dto.*;
+import com.damai.entity.*;
+import com.damai.enums.BaseCode;
+import com.damai.exception.DaMaiFrameException;
 import com.damai.mapper.ProgramCategoryMapper;
 import com.damai.mapper.ProgramMapper;
 import com.damai.mapper.ProgramShowTimeMapper;
 import com.damai.mapper.TicketCategoryMapper;
+import com.damai.page.PageUtil;
+import com.damai.page.PageVo;
+import com.damai.service.es.ProgramEs;
+import com.damai.util.DateUtils;
+import com.damai.vo.AreaVo;
 import com.damai.vo.ProgramHomeVo;
 import com.damai.vo.ProgramListVo;
+import com.damai.vo.ProgramVo;
+import com.damai.service.constant.ProgramTimeType;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.calcite.rel.core.Collect;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
+import static com.damai.util.DateUtils.FORMAT_DATE;
 
 @Slf4j
 @Service
@@ -40,12 +55,27 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
     @Autowired
     private TicketCategoryMapper ticketCategoryMapper;
 
+    @Autowired
+    private BaseDataClient baseDataClient;
+
+    @Autowired
+    private ProgramCategoryService programCategoryService;
+
+    @Autowired
+    ProgramEs programEs;
+
     /**
      * 查询主页信息
      * @param programListDto 查询节目数据的入参
      * @return 执行后的结果
      * */
     public List<ProgramHomeVo> selectHomeList(ProgramListDto programListDto) {
+        List<ProgramHomeVo> programHomeVoList = programEs.selectHomeList(programListDto);
+        if(CollectionUtil.isNotEmpty(programHomeVoList)){
+            log.info("从Es中查到了主页列表的节目数据，无需查询数据库");
+            return programHomeVoList;
+        }
+        log.info("需要查询数据库获取主页节目列表");
         return dbSelectHomeList(programListDto);
     }
 
@@ -147,4 +177,182 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
          // 返回结果
          return programCategoryList.stream().collect(Collectors.toMap(ProgramCategory::getId, ProgramCategory::getName, (v1, v2) -> v2));
      }
+
+
+    /**
+     * 获取所有当前有效的节目id
+     * */
+    public List<Long> getAllProgramIdList() {
+        LambdaQueryWrapper<Program> programLambdaQueryWrapper = Wrappers.lambdaQuery(Program.class)
+                .select(Program::getId);
+
+        List<Program> programList = programMapper.selectList(programLambdaQueryWrapper);
+
+        return programList.stream().map(Program::getId).collect(Collectors.toList());
+    }
+
+    /**
+     * 从不同的表中查询节目的详细信息，填充ProgramVo的各个属性
+     * */
+    public ProgramVo getDetailFromDb(Long programId) {
+        ProgramVo programVo = createProgramVo(programId);
+
+        ProgramCategory programCategory = getProgramCategory(programVo.getProgramCategoryId());
+        if(Objects.nonNull(programCategory)) {
+            programVo.setProgramCategoryName(programCategory.getName());
+        }
+        ProgramCategory parentProgramCategory = getProgramCategory(programVo.getParentProgramCategoryId());
+        if(Objects.nonNull(parentProgramCategory)) {
+            programVo.setParentProgramCategoryName(parentProgramCategory.getName());
+        }
+
+        LambdaQueryWrapper<ProgramShowTime> programShowTimeLambdaQueryWrapper =
+                Wrappers.lambdaQuery(ProgramShowTime.class).eq(ProgramShowTime::getProgramId, programId);
+        ProgramShowTime programShowTime = Optional.ofNullable(programShowTimeMapper.selectOne(programShowTimeLambdaQueryWrapper))
+                .orElseThrow(() -> new DaMaiFrameException(BaseCode.PROGRAM_SHOW_TIME_NOT_EXIST));
+
+        programVo.setShowTime(programShowTime.getShowTime());
+        programVo.setShowDayTime(programShowTime.getShowDayTime());
+        programVo.setShowWeekTime(programShowTime.getShowWeekTime());
+
+        return programVo;
+    }
+
+    /**
+     * 用program表中的属性，填充ProgramVo的部分属性
+     * */
+    private ProgramVo createProgramVo(Long programId){
+        ProgramVo programVo = new ProgramVo();
+        Program program = Optional.ofNullable(programMapper.selectById(programId))
+                .orElseThrow(() -> new DaMaiFrameException(BaseCode.PROGRAM_NOT_EXIST));
+
+        BeanUtils.copyProperties(program, programVo);
+        AreaGetDto areaGetDto = new AreaGetDto();
+        areaGetDto.setId(program.getAreaId());
+        ApiResponse<AreaVo> areaResponse = baseDataClient.getById(areaGetDto);
+        if(Objects.equals(areaResponse.getCode(), ApiResponse.ok().getCode())){
+            if(Objects.nonNull(areaResponse.getData())){
+                programVo.setAreaName(areaResponse.getData().getName());
+            }
+        }else{
+            log.error("base-data rpc getById error areaResponse:{}", JSON.toJSONString(areaResponse));
+        }
+        return programVo;
+    }
+
+    /**
+     * 根据类型id查询节目类型表
+     * */
+    public ProgramCategory getProgramCategory(Long programCategoryId){
+        return programCategoryService.getProgramCategory(programCategoryId);
+    }
+
+    /**
+     * 查询分类列表
+     * @param programPageListDto 查询节目数据的入参
+     * @return 执行后的结果
+     * */
+    public PageVo<ProgramListVo> selectPage(ProgramPageListDto programPageListDto) {
+        setQueryTime(programPageListDto);
+        PageVo<ProgramListVo> pageVo = programEs.selectPage(programPageListDto);
+        if(CollectionUtil.isNotEmpty(pageVo.getList())) {
+            log.info("从Es中查到了分类列表的节目数据，无需查询数据库");
+            return pageVo;
+        }
+        return dbSelectPage(programPageListDto);
+    }
+
+
+    /**
+     * 查询分类信息（数据库查询）
+     * @param programPageListDto 查询节目数据的入参
+     * @return 执行后的结果
+     * */
+    private PageVo<ProgramListVo> dbSelectPage(ProgramPageListDto programPageListDto) {
+        IPage<ProgramJoinShowTime> iPage = programMapper.selectPage(PageUtil.getPageParams(programPageListDto), programPageListDto);
+        if(CollectionUtil.isEmpty(iPage.getRecords())) {
+            return new PageVo<>(iPage.getCurrent(), iPage.getSize(), iPage.getTotal(), new ArrayList<>());
+        }
+
+        Set<Long> programCategoryIdSet = iPage.getRecords().stream().map(Program::getProgramCategoryId).collect(Collectors.toSet());
+        Map<Long, String> programCategoryMap = selectProgramCategoryMap(programCategoryIdSet);
+
+        List<Long> programIdList = iPage.getRecords().stream().map(Program::getId).collect(Collectors.toList());
+        Map<Long, TicketCategoryAggregate> ticketCategorieMap = selectTicketCategoryMap(programIdList);
+
+        Map<Long, String> tempAreaMap = new HashMap<>(64);
+        AreaSelectDto areaSelectDto = new AreaSelectDto();
+        areaSelectDto.setIdList(iPage.getRecords().stream().map(Program::getAreaId).distinct().collect(Collectors.toList()));
+        ApiResponse<List<AreaVo>> areaResponse = baseDataClient.selectByIdList(areaSelectDto);
+
+        if(Objects.equals(areaResponse.getCode(), ApiResponse.ok().getCode())){
+            if(CollectionUtil.isNotEmpty(areaResponse.getData())) {
+                tempAreaMap = areaResponse.getData()
+                        .stream()
+                        .collect(Collectors.toMap(AreaVo::getId, AreaVo::getName, (v1, v2) -> v2));
+            }
+        } else{
+            log.error("base-data selectByIdList rpc error areaResponse:{}", com.alibaba.fastjson.JSON.toJSONString(areaResponse));
+        }
+        Map<Long,String> areaMap = tempAreaMap;
+
+        return PageUtil.convertPage(iPage, programJoinShowTime -> {
+           ProgramListVo programListVo = new ProgramListVo();
+           BeanUtil.copyProperties(programJoinShowTime, programListVo);
+
+           programListVo.setAreaName(areaMap.get(programJoinShowTime.getAreaId()));
+           programListVo.setProgramCategoryName(programCategoryMap.get(programJoinShowTime.getProgramCategoryId()));
+            programListVo.setMinPrice(Optional.ofNullable(ticketCategorieMap.get(programJoinShowTime.getId()))
+                    .map(TicketCategoryAggregate::getMinPrice).orElse(null));
+            programListVo.setMaxPrice(Optional.ofNullable(ticketCategorieMap.get(programJoinShowTime.getId()))
+                    .map(TicketCategoryAggregate::getMaxPrice).orElse(null));
+           return programListVo;
+        });
+    }
+
+
+    /**
+     * 根据用户选中的时间类型设置查询的时间范围
+     * */
+    private void setQueryTime(ProgramPageListDto programPageListDto) {
+        switch (programPageListDto.getTimeType()) {
+            case ProgramTimeType.TODAY:
+                programPageListDto.setStartDateTime(DateUtils.now(FORMAT_DATE));
+                programPageListDto.setEndDateTime(DateUtils.now(FORMAT_DATE));
+                break;
+            case ProgramTimeType.TOMORROW:
+                programPageListDto.setStartDateTime(DateUtils.addDay(DateUtils.now(FORMAT_DATE), 1));
+                programPageListDto.setEndDateTime(DateUtils.addDay(DateUtils.now(FORMAT_DATE), 1));
+                break;
+            case ProgramTimeType.WEEK:
+                programPageListDto.setStartDateTime(DateUtils.now(FORMAT_DATE));
+                programPageListDto.setEndDateTime(DateUtils.addWeek(DateUtils.now(FORMAT_DATE),1));
+                break;
+            case ProgramTimeType.MONTH:
+                programPageListDto.setStartDateTime(DateUtils.now(FORMAT_DATE));
+                programPageListDto.setEndDateTime(DateUtils.addMonth(DateUtils.now(FORMAT_DATE),1));
+                break;
+            case ProgramTimeType.CALENDAR:
+                if (Objects.isNull(programPageListDto.getStartDateTime())) {
+                    throw new DaMaiFrameException(BaseCode.START_DATE_TIME_NOT_EXIST);
+                }
+                if (Objects.isNull(programPageListDto.getEndDateTime())) {
+                    throw new DaMaiFrameException(BaseCode.END_DATE_TIME_NOT_EXIST);
+                }
+                break;
+            default:
+                programPageListDto.setStartDateTime(null);
+                programPageListDto.setEndDateTime(null);
+        }
+    }
+
+    /**
+     * 搜索
+     * @param programSearchDto 搜索节目数据的入参
+     * @return 执行后的结果
+     * */
+    public PageVo<ProgramListVo> search(ProgramSearchDto programSearchDto) {
+        setQueryTime(programSearchDto);
+        return programEs.search(programSearchDto);
+    }
 }

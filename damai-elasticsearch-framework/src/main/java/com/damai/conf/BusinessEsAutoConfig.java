@@ -22,7 +22,7 @@ import java.util.Arrays;
 import java.util.Objects;
 
 @EnableConfigurationProperties(BusinessEsProperties.class)
-@ConditionalOnProperty(value = "elasticsearch.ip")
+//@ConditionalOnProperty(value = "elasticsearch.ip")
 public class BusinessEsAutoConfig {
     private static final int ADDRESS_LENGTH = 2;
     private static final String HTTP_SCHEME = "http";

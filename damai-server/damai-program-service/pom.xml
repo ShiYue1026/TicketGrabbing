@@ -41,11 +41,11 @@
             <artifactId>damai-common</artifactId>
             <version>${revision}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-service-initialize</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-service-initialize</artifactId>
+            <version>${revision}</version>
+        </dependency>
         <dependency>
             <groupId>com.damai</groupId>
             <artifactId>damai-redis-framework</artifactId>
@@ -137,11 +137,11 @@
             <artifactId>jasypt-spring-boot-starter</artifactId>
             <version>${jasypt.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-thread-pool-framework</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-thread-pool-framework</artifactId>
+            <version>${revision}</version>
+        </dependency>
         <dependency>
             <groupId>com.damai</groupId>
             <artifactId>damai-elasticsearch-framework</artifactId>

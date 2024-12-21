@@ -2,6 +2,7 @@ package com.damai.controller;
 
 import com.damai.common.ApiResponse;
 import com.damai.dto.AreaGetDto;
+import com.damai.dto.AreaSelectDto;
 import com.damai.service.AreaService;
 import com.damai.vo.AreaVo;
 import com.google.protobuf.Api;
@@ -45,5 +46,11 @@ public class AreaController {
     @PostMapping(value = "/hot")
     public ApiResponse<List<AreaVo>> hot(){
         return ApiResponse.ok(areaService.hot());
+    }
+
+    @Operation(summary = "根据id集合查询数据")
+    @PostMapping(value = "/selectByIdList")
+    public ApiResponse<List<AreaVo>> selectByIdList(@Valid @RequestBody AreaSelectDto areaSelectDto) {
+        return ApiResponse.ok(areaService.selectByIdList(areaSelectDto));
     }
 }

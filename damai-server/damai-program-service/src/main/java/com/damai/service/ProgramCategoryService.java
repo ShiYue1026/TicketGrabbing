@@ -6,18 +6,22 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.damai.core.RedisKeyManage;
 import com.damai.dto.ParentProgramCategoryDto;
 import com.damai.dto.ProgramCategoryAddDto;
 import com.damai.dto.ProgramCategoryDto;
 import com.damai.entity.ProgramCategory;
 import com.damai.mapper.ProgramCategoryMapper;
 import com.damai.redis.RedisCache;
+import com.damai.redis.RedisKeyBuild;
 import com.damai.vo.ProgramCategoryVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Objects;
 
 @Service
 public class ProgramCategoryService extends ServiceImpl<ProgramCategoryMapper, ProgramCategory> {
@@ -61,5 +65,19 @@ public class ProgramCategoryService extends ServiceImpl<ProgramCategoryMapper, P
 
     public void saveBatch(List<ProgramCategoryAddDto> programCategoryAddDtoList) {
         // TODO
+    }
+
+    public ProgramCategory getProgramCategory(Long programCategoryId) {
+        ProgramCategory programCategory = redisCache.getForHash(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_CATEGORY_HASH), String.valueOf(programCategoryId), ProgramCategory.class);
+        if(Objects.isNull(programCategory)){
+            // TODO
+//            Map<String, ProgramCategory> programCategoryMap = programCategoryRedisDataInit();
+//            return programCategoryMap.get(String.valueOf(programCategoryId));
+            LambdaQueryWrapper<ProgramCategory> lambdaQueryWrapper = Wrappers.lambdaQuery(ProgramCategory.class)
+                    .eq(ProgramCategory::getId, programCategoryId);
+            programCategory = programCategoryMapper.selectOne(lambdaQueryWrapper);
+            return programCategory;
+        }
+        return programCategory;
     }
 }

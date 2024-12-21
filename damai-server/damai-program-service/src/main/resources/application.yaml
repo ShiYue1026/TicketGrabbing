@@ -33,6 +33,16 @@ spring:
       okhttp:
         enabled: true
 
+management:
+  health:
+    elasticsearch:
+      enabled: false
+
+elasticsearch:
+  ip: 192.168.88.130:9200
+  userName: elastic
+  passWord: elastic
+
 springdoc:
   swagger-ui:
     path: /swagger-ui.html
