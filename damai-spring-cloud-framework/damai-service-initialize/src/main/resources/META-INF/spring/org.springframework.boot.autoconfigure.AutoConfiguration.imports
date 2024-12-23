@@ -1,1 +1,2 @@
 com.damai.initialize.config.InitializeAutoConfig
+com.damai.initialize.impl.composite.CompositeAutoConfig
