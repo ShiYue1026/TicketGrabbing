@@ -20,6 +20,7 @@
 		<module>damai-elasticsearch-framework</module>
 		<module>damai-thread-pool-framework</module>
 		<module>damai-captcha-manage-framework</module>
+		<module>damai-redisson-framework</module>
 	</modules>
 
 	<properties>

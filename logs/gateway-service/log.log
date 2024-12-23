@@ -174,3 +174,209 @@
 [gateway-service] [641215630628626519] 2024-12-22 00:01:45  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-13
 [gateway-service] [641215630628626520] 2024-12-22 00:01:45  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-14
 [gateway-service] [641215630628626521] 2024-12-22 00:01:45  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-15
+[gateway-service] [641215630628626522] 2024-12-22 00:02:15  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-16
+[gateway-service] [641215630628626523] 2024-12-22 00:02:15  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-17
+[gateway-service] [641215630628626523] 2024-12-22 00:02:15  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-17
+[gateway-service] [641215630628626523] 2024-12-22 00:02:15  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [641215630628626524] 2024-12-22 00:02:20  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-18
+[gateway-service] [641215630628626524] 2024-12-22 00:02:20  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-18
+[gateway-service] [641215630628626524] 2024-12-22 00:02:20  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [641215630628626525] 2024-12-22 00:02:21  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-19
+[gateway-service] [641215630628626525] 2024-12-22 00:02:21  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-19
+[gateway-service] [641215630628626525] 2024-12-22 00:02:21  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [641215630628626526] 2024-12-22 00:02:23  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-1
+[gateway-service] [641215630628626526] 2024-12-22 00:02:23  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-1
+[gateway-service] [641215630628626526] 2024-12-22 00:02:23  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-1
+[gateway-service] [641215630628626527] 2024-12-22 00:02:24  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-2
+[gateway-service] [641215630628626527] 2024-12-22 00:02:24  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-2
+[gateway-service] [641215630628626527] 2024-12-22 00:02:24  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-2
+[gateway-service] [641215630628626528] 2024-12-22 00:02:26  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-3
+[gateway-service] [641215630628626528] 2024-12-22 00:02:26  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-3
+[gateway-service] [641215630628626528] 2024-12-22 00:02:26  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [641215630628626529] 2024-12-22 00:02:27  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-4
+[gateway-service] [641215630628626529] 2024-12-22 00:02:27  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-4
+[gateway-service] [641215630628626529] 2024-12-22 00:02:27  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [641215630628626530] 2024-12-22 00:02:30  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-5
+[gateway-service] [641215630628626530] 2024-12-22 00:02:30  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-5
+[gateway-service] [641215630628626530] 2024-12-22 00:02:30  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-5
+[gateway-service] [641215630628626531] 2024-12-22 00:02:31  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-7
+[gateway-service] [641215630628626531] 2024-12-22 00:02:31  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-7
+[gateway-service] [641215630628626531] 2024-12-22 00:02:31  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [641215630628626532] 2024-12-22 00:02:50  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-6
+[gateway-service] [641215630628626532] 2024-12-22 00:02:50  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-6
+[gateway-service] [641215630628626532] 2024-12-22 00:02:50  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [641215630628626533] 2024-12-22 00:02:51  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-8
+[gateway-service] [641215630628626533] 2024-12-22 00:02:51  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-8
+[gateway-service] [641215630628626533] 2024-12-22 00:02:51  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [641215630628626534] 2024-12-22 00:02:53  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-9
+[gateway-service] [641215630628626534] 2024-12-22 00:02:53  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-9
+[gateway-service] [641215630628626534] 2024-12-22 00:02:53  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [641215630628626535] 2024-12-22 00:02:54  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-11
+[gateway-service] [641215630628626535] 2024-12-22 00:02:54  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-11
+[gateway-service] [641215630628626535] 2024-12-22 00:02:54  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [641215630628626536] 2024-12-22 00:02:57  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-10
+[gateway-service] [641215630628626536] 2024-12-22 00:02:57  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-10
+[gateway-service] [641215630628626536] 2024-12-22 00:02:57  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [641215630628626537] 2024-12-22 00:02:58  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-12
+[gateway-service] [641215630628626537] 2024-12-22 00:02:58  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-12
+[gateway-service] [641215630628626537] 2024-12-22 00:02:58  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [641215630628626538] 2024-12-22 00:02:59  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-13
+[gateway-service] [641215630628626539] 2024-12-22 00:02:59  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-14
+[gateway-service] [641215630628626539] 2024-12-22 00:02:59  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-14
+[gateway-service] [641215630628626539] 2024-12-22 00:02:59  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-14
+[gateway-service] [] 2024-12-22 00:05:00  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 70
+[gateway-service] [] 2024-12-22 00:05:00  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-user-service -> [{"ip":"192.168.1.64","port":6082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-user-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:d550:9174:eb99:da9e:915c]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2024-12-22 00:05:00  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-user-service -> []
+[gateway-service] [] 2024-12-22 00:05:00  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 70
+[gateway-service] [] 2024-12-22 00:05:11  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 71
+[gateway-service] [] 2024-12-22 00:05:11  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-user-service -> [{"ip":"192.168.1.64","port":6082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-user-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:d550:9174:eb99:da9e:915c]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2024-12-22 00:05:11  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-user-service -> [{"ip":"192.168.1.64","port":6082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-user-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:d550:9174:eb99:da9e:915c]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2024-12-22 00:05:11  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 71
+[gateway-service] [641215630628626540] 2024-12-22 00:07:24  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-16
+[gateway-service] [641215630628626542] 2024-12-22 00:07:24  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-20
+[gateway-service] [641215630628626541] 2024-12-22 00:07:24  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-15
+[gateway-service] [641215630628626543] 2024-12-22 00:08:03  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-1
+[gateway-service] [641215630628626544] 2024-12-22 00:08:03  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-3
+[gateway-service] [641215630628626544] 2024-12-22 00:08:03  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-3
+[gateway-service] [641215630628626544] 2024-12-22 00:08:03  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [641215630628626545] 2024-12-22 00:08:05  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-4
+[gateway-service] [641215630628626545] 2024-12-22 00:08:05  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-4
+[gateway-service] [641215630628626545] 2024-12-22 00:08:05  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [641215630628626546] 2024-12-22 00:08:07  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-5
+[gateway-service] [641215630628626547] 2024-12-22 00:08:07  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-7
+[gateway-service] [641215630628626547] 2024-12-22 00:08:07  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-7
+[gateway-service] [641215630628626547] 2024-12-22 00:08:07  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [641215630628626548] 2024-12-22 00:08:07  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-6
+[gateway-service] [641215630628626548] 2024-12-22 00:08:07  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-6
+[gateway-service] [641215630628626548] 2024-12-22 00:08:07  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [641215630628626551] 2024-12-22 00:16:50  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-9
+[gateway-service] [641215630628626549] 2024-12-22 00:16:50  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-8
+[gateway-service] [641215630628626552] 2024-12-22 00:16:50  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-11
+[gateway-service] [641215630628626550] 2024-12-22 00:16:50  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-10
+[gateway-service] [641215630628626550] 2024-12-22 00:16:50  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-10
+[gateway-service] [641215630628626550] 2024-12-22 00:16:50  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [641215630628626553] 2024-12-22 00:16:51  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-16
+[gateway-service] [641215630628626553] 2024-12-22 00:16:51  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-16
+[gateway-service] [641215630628626553] 2024-12-22 00:16:51  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [] 2024-12-22 03:09:54 ERROR GrpcClient:102 - [1734579539584_192.168.88.1_16456]Request stream error, switch server,error=com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+[gateway-service] [] 2024-12-22 07:06:58  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Server healthy check fail, currentConnection = 1734579539584_192.168.88.1_16456
+[gateway-service] [] 2024-12-22 07:06:58  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+[gateway-service] [] 2024-12-22 07:06:58  INFO GrpcClient:210 - grpc client connection server:192.168.88.130 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+[gateway-service] [] 2024-12-22 07:07:01 ERROR GrpcClient:102 - Server check fail, please check server 192.168.88.130 ,port 9848 is available , error =java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 1 milliseconds, 721800 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@1985904b[status=PENDING, info=[GrpcFuture{clientCall=PendingCall{realCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@468c924b, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1494da8b, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@6c3392e5}}}}]]
+[gateway-service] [] 2024-12-22 07:07:01  INFO GrpcClient:210 - grpc client connection server:192.168.88.130 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Success to connect a server [192.168.88.130:8848], connectionId = 1734584463086_192.168.88.1_58773
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Abandon prev connection, server is 192.168.88.130:8848, connectionId is 1734579539584_192.168.88.1_16456
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:584 - Close current connection 1734579539584_192.168.88.1_16456
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+[gateway-service] [] 2024-12-22 07:07:01  INFO GrpcClient:210 - grpc client connection server:192.168.88.130 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Notify disconnected event to listeners
+[gateway-service] [] 2024-12-22 07:07:01  WARN naming:96 - Grpc connection disconnect, mark to redo
+[gateway-service] [] 2024-12-22 07:07:01  WARN naming:103 - mark to redo completed
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Notify connected event to listeners.
+[gateway-service] [] 2024-12-22 07:07:01  INFO naming:90 - Grpc connection connect
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Success to connect a server [192.168.88.130:8848], connectionId = 1734584463318_192.168.88.1_58791
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Abandon prev connection, server is 192.168.88.130:8848, connectionId is 1734584463086_192.168.88.1_58773
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:584 - Close current connection 1734584463086_192.168.88.1_58773
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Notify disconnected event to listeners
+[gateway-service] [] 2024-12-22 07:07:01  WARN naming:96 - Grpc connection disconnect, mark to redo
+[gateway-service] [] 2024-12-22 07:07:01  WARN naming:103 - mark to redo completed
+[gateway-service] [] 2024-12-22 07:07:01  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Notify connected event to listeners.
+[gateway-service] [] 2024-12-22 07:07:01  INFO naming:90 - Grpc connection connect
+[gateway-service] [] 2024-12-22 07:07:01  WARN GrpcClient:89 - [1734584463086_192.168.88.1_58773]Ignore error event,isRunning:true,isAbandon=true
+[gateway-service] [] 2024-12-22 07:07:03  INFO naming:73 - Redo instance operation REGISTER for DEFAULT_GROUP@@damai-gateway-service
+[gateway-service] [] 2024-12-22 07:07:03  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-gateway-service#
+[gateway-service] [] 2024-12-22 07:07:03  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-user-service#
+[gateway-service] [] 2024-12-22 07:07:03  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-base-data-service#
+[gateway-service] [] 2024-12-22 07:07:03  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-program-service#
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 76
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 76
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 74
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 74
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 77
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 77
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 78
+[gateway-service] [] 2024-12-22 07:07:03  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 78
+[gateway-service] [641215630628626557] 2024-12-22 07:07:07  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-18
+[gateway-service] [641215630628626556] 2024-12-22 07:07:07  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-20
+[gateway-service] [641215630628626555] 2024-12-22 07:07:07  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-19
+[gateway-service] [641215630628626554] 2024-12-22 07:07:07  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-17
+[gateway-service] [641215630628626557] 2024-12-22 07:07:07  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-18
+[gateway-service] [641215630628626557] 2024-12-22 07:07:07  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [] 2024-12-22 09:56:24 ERROR GrpcClient:102 - [1734584463318_192.168.88.1_58791]Request stream error, switch server,error=com.alibaba.nacos.shaded.io.grpc.StatusRuntimeException: UNAVAILABLE: io exception
+[gateway-service] [] 2024-12-22 09:56:24  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Try to reconnect to a new server, server is  not appointed, will choose a random server.
+[gateway-service] [] 2024-12-22 09:56:24  INFO GrpcClient:210 - grpc client connection server:192.168.88.130 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+[gateway-service] [] 2024-12-22 09:56:27 ERROR GrpcClient:102 - Server check fail, please check server 192.168.88.130 ,port 9848 is available , error =java.util.concurrent.TimeoutException: Waited 3000 milliseconds (plus 14 milliseconds, 109100 nanoseconds delay) for com.alibaba.nacos.shaded.io.grpc.stub.ClientCalls$GrpcFuture@affcc8b[status=PENDING, info=[GrpcFuture{clientCall=PendingCall{realCall=ClientCallImpl{method=MethodDescriptor{fullMethodName=Request/request, type=UNARY, idempotent=false, safe=false, sampledToLocalTracing=true, requestMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@468c924b, responseMarshaller=com.alibaba.nacos.shaded.io.grpc.protobuf.lite.ProtoLiteUtils$MessageMarshaller@1494da8b, schemaDescriptor=com.alibaba.nacos.api.grpc.auto.RequestGrpc$RequestMethodDescriptorSupplier@6c3392e5}}}}]]
+[gateway-service] [] 2024-12-22 09:56:27  INFO GrpcClient:210 - grpc client connection server:192.168.88.130 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+[gateway-service] [] 2024-12-22 09:56:28  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Success to connect a server [192.168.88.130:8848], connectionId = 1734584661338_192.168.88.1_33353
+[gateway-service] [] 2024-12-22 09:56:28  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Abandon prev connection, server is 192.168.88.130:8848, connectionId is 1734584463318_192.168.88.1_58791
+[gateway-service] [] 2024-12-22 09:56:28  INFO client:584 - Close current connection 1734584463318_192.168.88.1_58791
+[gateway-service] [] 2024-12-22 09:56:28  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Notify disconnected event to listeners
+[gateway-service] [] 2024-12-22 09:56:28  WARN naming:96 - Grpc connection disconnect, mark to redo
+[gateway-service] [] 2024-12-22 09:56:28  WARN naming:103 - mark to redo completed
+[gateway-service] [] 2024-12-22 09:56:28  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Notify connected event to listeners.
+[gateway-service] [] 2024-12-22 09:56:28  INFO naming:90 - Grpc connection connect
+[gateway-service] [] 2024-12-22 09:56:29  INFO naming:73 - Redo instance operation REGISTER for DEFAULT_GROUP@@damai-gateway-service
+[gateway-service] [] 2024-12-22 09:56:29  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-gateway-service#
+[gateway-service] [] 2024-12-22 09:56:29  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-user-service#
+[gateway-service] [] 2024-12-22 09:56:29  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-base-data-service#
+[gateway-service] [] 2024-12-22 09:56:29  INFO naming:121 - Redo subscriber operation REGISTER for DEFAULT_GROUP@@damai-program-service#
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 81
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 81
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 82
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 82
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 83
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 83
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 84
+[gateway-service] [] 2024-12-22 09:56:29  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 84
+[gateway-service] [641215630628626561] 2024-12-22 09:59:32  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-7
+[gateway-service] [641215630628626560] 2024-12-22 09:59:32  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-6
+[gateway-service] [641215630628626558] 2024-12-22 09:59:32  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-5
+[gateway-service] [641215630628626559] 2024-12-22 09:59:32  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-8
+[gateway-service] [641215630628626559] 2024-12-22 09:59:32  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-8
+[gateway-service] [641215630628626559] 2024-12-22 09:59:32  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [641215630628626562] 2024-12-22 09:59:32  INFO RequestValidationFilter:142 - current thread readBody : reactor-http-nio-13
+[gateway-service] [641215630628626562] 2024-12-22 09:59:32  INFO RequestValidationFilter:176 - current thread verify: reactor-http-nio-13
+[gateway-service] [641215630628626562] 2024-12-22 09:59:32  INFO RequestValidationFilter:259 - current thread getHeaders: reactor-http-nio-13
+[gateway-service] [] 2024-12-22 10:11:00  WARN HttpClientBeanHolder:102 - [HttpClientBeanHolder] Start destroying common HttpClient
+[gateway-service] [] 2024-12-22 10:11:00  WARN NotifyCenter:134 - [NotifyCenter] Start destroying Publisher
+[gateway-service] [] 2024-12-22 10:11:00  WARN NotifyCenter:151 - [NotifyCenter] Destruction of the end
+[gateway-service] [] 2024-12-22 10:11:00  WARN HttpClientBeanHolder:111 - [HttpClientBeanHolder] Destruction of the end
+[gateway-service] [] 2024-12-22 10:11:02  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 86
+[gateway-service] [] 2024-12-22 10:11:02  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-base-data-service -> [{"ip":"192.168.1.64","port":6083,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-base-data-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:d550:9174:eb99:da9e:915c]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2024-12-22 10:11:02  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-base-data-service -> []
+[gateway-service] [] 2024-12-22 10:11:02  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 86
+[gateway-service] [] 2024-12-22 10:11:02  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 87
+[gateway-service] [] 2024-12-22 10:11:02  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 87
+[gateway-service] [] 2024-12-22 10:11:02  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Receive server push request, request = NotifySubscriberRequest, requestId = 88
+[gateway-service] [] 2024-12-22 10:11:02  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.1.64","port":6086,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2409:8a00:4810:d550:9174:eb99:da9e:915c]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2024-12-22 10:11:02  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2024-12-22 10:11:02  INFO client:63 - [9de42a50-63ef-4c2f-9825-81d42a07bb50] Ack server push request, request = NotifySubscriberRequest, requestId = 88
+[gateway-service] [] 2024-12-22 10:11:03  INFO NacosServiceRegistry:95 - De-registering from Nacos Server now...
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:272 - [DEREGISTER-SERVICE] public deregistering service damai-gateway-service with instance: Instance{instanceId='null', ip='192.168.1.64', port=6085, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+[gateway-service] [] 2024-12-22 10:11:03  INFO NacosServiceRegistry:115 - De-registration finished.
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:254 - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:180 - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:182 - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:256 - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:204 - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:147 - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:149 - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:218 - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+[gateway-service] [] 2024-12-22 10:11:03  WARN naming:71 - [NamingHttpClientManager] Start destroying NacosRestTemplate
+[gateway-service] [] 2024-12-22 10:11:03  WARN naming:78 - [NamingHttpClientManager] Destruction of the end
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:223 - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:468 - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+[gateway-service] [] 2024-12-22 10:11:03  WARN naming:71 - [NamingHttpClientManager] Start destroying NacosRestTemplate
+[gateway-service] [] 2024-12-22 10:11:03  WARN naming:78 - [NamingHttpClientManager] Destruction of the end
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:470 - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:487 - Shutdown naming grpc client proxy for  uuid->9de42a50-63ef-4c2f-9825-81d42a07bb50
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:331 - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@68dfe59[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 1867]
+[gateway-service] [] 2024-12-22 10:11:03  INFO client:425 - Shutdown rpc client, set status to shutdown
+[gateway-service] [] 2024-12-22 10:11:03  INFO client:427 - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@78757f7[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+[gateway-service] [] 2024-12-22 10:11:03  INFO client:584 - Close current connection 1734584661338_192.168.88.1_33353
+[gateway-service] [] 2024-12-22 10:11:03  INFO GrpcClient:63 - [1734584661338_192.168.88.1_33353]Ignore complete event,isRunning:false,isAbandon=false
+[gateway-service] [] 2024-12-22 10:11:03  INFO GrpcClient:187 - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@435563cc[Running, pool size = 7, active threads = 0, queued tasks = 0, completed tasks = 2217]
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:497 - shutdown and remove naming rpc client  for uuid ->9de42a50-63ef-4c2f-9825-81d42a07bb50
+[gateway-service] [] 2024-12-22 10:11:03  INFO CredentialWatcher:107 - [null] CredentialWatcher is stopped
+[gateway-service] [] 2024-12-22 10:11:03  INFO CredentialService:91 - [null] CredentialService is freed
+[gateway-service] [] 2024-12-22 10:11:03  INFO naming:211 - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
