@@ -5,6 +5,8 @@ spring:
     name: damai-user-service
   profiles:
     active: local
+  main:
+    allow-bean-definition-overriding: true
   datasource:
     driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
     url: jdbc:shardingsphere:classpath:shardingsphere-user-${spring.profiles.active}.yaml
@@ -16,12 +18,9 @@ spring:
   data:
     redis:
       database: 0
-      host: 127.0.0.1
+      host: 192.168.88.130
       port: 6379
       timeout: 3000
-      jedis:
-        pool:
-          max-active: 300
   cloud:
     nacos:
       server-addr: 192.168.88.130:8848
@@ -30,6 +29,27 @@ spring:
     openfeign:
       okhttp:
         enabled: true
+bloom-filter:
+  name: user-register-bloom-filter
+  expectedInsertions: 1000
+  falseProbability: 0.01
+
+aj:
+  captcha:
+    cache-type: redis
+    type: default
+    water-mark: \u6211\u7684\u6C34\u5370
+    slip-offset: 5
+    aes-status: true
+    interference-options: 2
+    font-style: 1
+    font-size: 25
+    history-data-clear-enable: false
+    req-frequency-limit-enable: false
+    req-get-lock-limit: 5
+    req-get-lock-seconds: 360
+    req-get-minute-limit: 30
+    req-check-minute-limit: 30
 
 management:
   health:

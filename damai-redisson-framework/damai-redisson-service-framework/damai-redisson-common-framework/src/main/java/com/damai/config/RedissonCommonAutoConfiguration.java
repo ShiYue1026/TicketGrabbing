@@ -21,24 +21,22 @@ public class RedissonCommonAutoConfiguration {
     private final AtomicInteger executeTaskThreadCount = new AtomicInteger(1);
 
     @Bean
-    public RedissonClient redissonClient(RedisProperties redisProperties, RedissonBaseProperties redissonBaseProperties) {
+    public RedissonClient redissonClient(RedisProperties redisProperties, RedissonBaseProperties redissonBaseProperties){
         Config config = new Config();
         String prefix = "redis://";
         Method method = ReflectionUtils.findMethod(RedisProperties.class, "isSsl");
-        if(method != null && (Boolean) ReflectionUtils.invokeMethod(method, redisProperties)) {
+        if (method != null && (Boolean)ReflectionUtils.invokeMethod(method, redisProperties)) {
             prefix = "rediss://";
         }
         config.useSingleServer()
                 .setAddress(prefix + redisProperties.getHost() + ":" + redisProperties.getPort())
                 .setConnectTimeout(1000)
-                .setDatabase(redisProperties.getDatabase())
-                .setPassword(redisProperties.getPassword());
-
+                .setDatabase(redisProperties.getDatabase());
+//                .setPassword(redisProperties.getPassword());
         config.setThreads(redissonBaseProperties.getThreads());
         config.setNettyThreads(redissonBaseProperties.getNettyThreads());
-
-        if(Objects.nonNull(redissonBaseProperties.getCorePoolSize()) &&
-            Objects.nonNull(redissonBaseProperties.getMaximumPoolSize())) {
+        if (Objects.nonNull(redissonBaseProperties.getCorePoolSize()) &&
+                Objects.nonNull(redissonBaseProperties.getMaximumPoolSize())) {
             ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(
                     redissonBaseProperties.getCorePoolSize(),
                     redissonBaseProperties.getMaximumPoolSize(),

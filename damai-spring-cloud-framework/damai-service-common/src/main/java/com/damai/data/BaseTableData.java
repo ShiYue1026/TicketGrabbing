@@ -11,7 +11,7 @@ public class BaseTableData {
     /**
      * 创建时间
      * */
-    @TableField
+    @TableField(fill = FieldFill.INSERT)
     private Date createTime;
 
     /**

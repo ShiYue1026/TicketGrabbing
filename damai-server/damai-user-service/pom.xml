@@ -46,16 +46,16 @@
             <artifactId>damai-service-initialize</artifactId>
             <version>${revision}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-service-lock-framework</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-bloom-filter-framework</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-service-lock-framework</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-bloom-filter-framework</artifactId>
+            <version>${revision}</version>
+        </dependency>
         <dependency>
             <groupId>com.damai</groupId>
             <artifactId>damai-user-client</artifactId>
