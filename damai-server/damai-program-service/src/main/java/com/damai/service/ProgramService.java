@@ -8,35 +8,50 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.damai.BusinessThreadPool;
 import com.damai.client.BaseDataClient;
+import com.damai.client.UserClient;
 import com.damai.common.ApiResponse;
+import com.damai.core.RedisKeyManage;
 import com.damai.dto.*;
 import com.damai.entity.*;
 import com.damai.enums.BaseCode;
+import com.damai.enums.BusinessStatus;
+import com.damai.enums.CompositeCheckType;
 import com.damai.exception.DaMaiFrameException;
-import com.damai.mapper.ProgramCategoryMapper;
-import com.damai.mapper.ProgramMapper;
-import com.damai.mapper.ProgramShowTimeMapper;
-import com.damai.mapper.TicketCategoryMapper;
+import com.damai.initialize.impl.composite.CompositeContainer;
+import com.damai.lua.ProgramDelCacheData;
+import com.damai.mapper.*;
 import com.damai.page.PageUtil;
 import com.damai.page.PageVo;
+import com.damai.redis.RedisCache;
+import com.damai.redis.RedisKeyBuild;
+import com.damai.service.cache.local.LocalCacheProgram;
+import com.damai.service.cache.local.LocalCacheProgramCategory;
+import com.damai.service.cache.local.LocalCacheProgramGroup;
 import com.damai.service.es.ProgramEs;
+import com.damai.servicelock.LockType;
+import com.damai.servicelock.annotation.ServiceLock;
+import com.damai.threadlocal.BaseParameterHolder;
 import com.damai.util.DateUtils;
-import com.damai.vo.AreaVo;
-import com.damai.vo.ProgramHomeVo;
-import com.damai.vo.ProgramListVo;
-import com.damai.vo.ProgramVo;
+import com.damai.util.ServiceLockTool;
+import com.damai.util.StringUtil;
+import com.damai.vo.*;
 import com.damai.service.constant.ProgramTimeType;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.calcite.rel.core.Collect;
+import org.redisson.api.RLock;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
+import static com.damai.constant.Constant.CODE;
+import static com.damai.constant.Constant.USER_ID;
+import static com.damai.core.DistributedLockConstants.*;
 import static com.damai.util.DateUtils.FORMAT_DATE;
 
 @Slf4j
@@ -62,7 +77,44 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
     private ProgramCategoryService programCategoryService;
 
     @Autowired
-    ProgramEs programEs;
+    private ProgramEs programEs;
+
+    @Autowired
+    private RedisCache redisCache;
+
+    @Autowired
+    private ProgramDelCacheData programDelCacheData;
+
+    @Autowired
+    private CompositeContainer compositeContainer;
+
+    @Autowired
+    private ProgramShowTimeService programShowTimeService;
+
+    @Lazy
+    @Autowired
+    private ProgramService programService;  // Spring 的 AOP 是基于代理对象实现的。如果直接通过 this 调用类中的方法，不会经过代理对象，也就无法触发 AOP 逻辑。
+
+    @Autowired
+    private ServiceLockTool serviceLockTool;
+
+    @Autowired
+    private ProgramGroupMapper programGroupMapper;
+
+    @Autowired
+    private TicketCategoryService ticketCategoryService;
+
+    @Autowired
+    private UserClient userClient;
+
+    @Autowired
+    private LocalCacheProgram localCacheProgram;
+
+    @Autowired
+    private LocalCacheProgramGroup localCacheProgramGroup;
+
+    @Autowired
+    private LocalCacheProgramCategory localCacheProgramCategory;
 
     /**
      * 查询主页信息
@@ -354,5 +406,238 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
     public PageVo<ProgramListVo> search(ProgramSearchDto programSearchDto) {
         setQueryTime(programSearchDto);
         return programEs.search(programSearchDto);
+    }
+
+    /**
+     * 查看节目详情
+     * @param programGetDto 节目详情数据的入参
+     * @return 执行后的结果
+     * */
+    public ProgramVo detail(ProgramGetDto programGetDto) {
+        compositeContainer.execute(CompositeCheckType.PROGRAM_DETAIL_CHECK.getValue(), programGetDto);
+        return getDetail(programGetDto);
+    }
+
+    private ProgramVo getDetail(ProgramGetDto programGetDto) {
+        // 获取节目演出时间信息
+        ProgramShowTime programShowTime = programShowTimeService.selectProgramShowTimeByProgramId(programGetDto.getId());
+
+        // 查询节目部分信息和地区信息
+        ProgramVo programVo = programService.getById(programGetDto.getId(), DateUtils.countBetweenSecond(DateUtils.now(), programShowTime.getShowTime()), TimeUnit.SECONDS);
+        programVo.setShowTime(programShowTime.getShowTime());
+        programVo.setShowDayTime(programShowTime.getShowDayTime());
+        programVo.setShowWeekTime(programShowTime.getShowWeekTime());
+
+        // 查询节目分组信息
+        ProgramGroupVo programGroupVo = programService.getProgramGroup(programVo.getProgramGroupId());
+        programVo.setProgramGroupVo(programGroupVo);
+
+        // 预先加载用户购票人(用户已登录 && 当前节目是热门节目的情况下)
+        preloadTicketUserList(programVo.getHighHeat());
+
+        // 预先加载用户下的节目订单数量
+        // TODO
+
+        // 查询节目类型信息
+        ProgramCategory programCategory = getProgramCategory(programVo.getProgramCategoryId());
+        if(Objects.nonNull(programCategory)) {
+            programVo.setProgramCategoryName(programCategory.getName());
+        }
+        ProgramCategory parentProgramCategory = getProgramCategory(programVo.getParentProgramCategoryId());
+        if(Objects.nonNull(parentProgramCategory)) {
+            programVo.setParentProgramCategoryName(parentProgramCategory.getName());
+        }
+
+        // 查询节目票档信息
+        List<TicketCategoryVo> ticketCategoryVoList = ticketCategoryService.selectTicketCategoryListByProgramId(programGetDto.getId(),
+                DateUtils.countBetweenSecond(DateUtils.now(), programShowTime.getShowTime()), TimeUnit.SECONDS);
+        programVo.setTicketCategoryVoList(ticketCategoryVoList);
+
+        return programVo;
+    }
+
+    /**
+     * 查看节目详情V2(使用本地缓存)
+     * @param programGetDto 节目详情数据的入参
+     * @return 执行后的结果
+     * */
+    public ProgramVo detailV2(ProgramGetDto programGetDto) {
+        compositeContainer.execute(CompositeCheckType.PROGRAM_DETAIL_CHECK.getValue(),programGetDto);
+        return getDetailV2(programGetDto);
+    }
+
+    public ProgramVo getDetailV2(ProgramGetDto programGetDto) {
+        ProgramShowTime programShowTime =
+                programShowTimeService.selectProgramShowTimeByProgramIdMultipleCache(programGetDto.getId());
+
+        ProgramVo programVo = getByIdMultipleCache(programGetDto.getId(),programShowTime.getShowTime());
+
+        programVo.setShowTime(programShowTime.getShowTime());
+        programVo.setShowDayTime(programShowTime.getShowDayTime());
+        programVo.setShowWeekTime(programShowTime.getShowWeekTime());
+
+        ProgramGroupVo programGroupVo = getProgramGroupMultipleCache(programVo.getProgramGroupId());
+        programVo.setProgramGroupVo(programGroupVo);
+
+        preloadTicketUserList(programVo.getHighHeat());
+
+        ProgramCategory programCategory = getProgramCategoryMultipleCache(programVo.getProgramCategoryId());
+        if (Objects.nonNull(programCategory)) {
+            programVo.setProgramCategoryName(programCategory.getName());
+        }
+        ProgramCategory parentProgramCategory = getProgramCategoryMultipleCache(programVo.getParentProgramCategoryId());
+        if (Objects.nonNull(parentProgramCategory)) {
+            programVo.setParentProgramCategoryName(parentProgramCategory.getName());
+        }
+
+        List<TicketCategoryVo> ticketCategoryVoList = ticketCategoryService
+                .selectTicketCategoryListByProgramIdMultipleCache(programVo.getId(),programShowTime.getShowTime());
+        programVo.setTicketCategoryVoList(ticketCategoryVoList);
+
+        return programVo;
+    }
+
+    private ProgramCategory getProgramCategoryMultipleCache(Long programCategoryId) {
+        return localCacheProgramCategory.get(String.valueOf(programCategoryId),
+                key -> getProgramCategory(programCategoryId));
+    }
+
+    private ProgramGroupVo getProgramGroupMultipleCache(Long programGroupId) {
+        return localCacheProgramGroup.getCache(
+                RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_GROUP, programGroupId).getRelKey(),
+                key -> getProgramGroup(programGroupId));
+    }
+
+    private ProgramVo getByIdMultipleCache(Long programId, Date showTime){
+        return localCacheProgram.getCache(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM, programId).getRelKey(),
+                key -> {
+                    log.info("查询节目详情 从本地缓存没有查询到 节目id : {}",programId);
+                    ProgramVo programVo = getById(programId,DateUtils.countBetweenSecond(DateUtils.now(),showTime),
+                            TimeUnit.SECONDS);
+                    programVo.setShowTime(showTime);
+                    return programVo;
+                });
+    }
+
+
+    private void preloadTicketUserList(Integer highHeat) {
+        // 判断当前节目是否是热门节目
+        if(Objects.equals(highHeat, BusinessStatus.NO.getCode())) {
+            log.info("当前节目不是热门节目，不预先加载用户购票人信息");
+            return;
+        }
+
+        // 判断用户是否登录
+        String userId = BaseParameterHolder.getParameter(USER_ID);
+        log.info("userId: " + userId);
+        String code = BaseParameterHolder.getParameter(CODE);
+
+        if(StringUtil.isEmpty(userId) || StringUtil.isEmpty(code)){
+            log.info("当前用户未登录，不预先加载用户购票人信息");
+            return;
+        }
+
+        Boolean userLogin = redisCache.hasKey(RedisKeyBuild.createRedisKey(RedisKeyManage.USER_LOGIN, code, userId));
+        if(!userLogin) {
+            log.info("当前用户未登录，不预先加载用户购票人信息");
+            return;
+        }
+
+        // 异步加载当前用户的购票人信息到redis中
+        BusinessThreadPool.execute(() -> {
+            try{
+                log.info("预先加载用户购票人信息");
+                TicketUserListDto ticketUserListDto = new TicketUserListDto();
+                ticketUserListDto.setUserId(Long.parseLong(userId));
+                ApiResponse<List<TicketUserVo>> apiResponse = userClient.list(ticketUserListDto);
+                if(Objects.equals(apiResponse.getCode(), BaseCode.SUCCESS.getCode())) {
+                    Optional.ofNullable(apiResponse.getData()).filter(CollectionUtil::isNotEmpty)
+                            .ifPresent(ticketUserVoList -> redisCache.set(
+                                    RedisKeyBuild.createRedisKey(RedisKeyManage.TICKET_USER_LIST, userId),
+                                    ticketUserVoList
+                            ));
+                } else{
+                    log.warn("userClient.select 调用失败 apiResponse : {}", com.alibaba.fastjson.JSON.toJSONString(apiResponse));
+                }
+
+            } catch (Exception e){
+                log.error("预热加载购票人列表失败",e);
+            }
+        });
+
+    }
+
+    @ServiceLock(lockType= LockType.Read,name = PROGRAM_GROUP_LOCK,keys = {"#programGroupId"})
+    public ProgramGroupVo getProgramGroup(Long programGroupId) {
+        ProgramGroupVo programGroupVo =
+                redisCache.get(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_GROUP, programGroupId), ProgramGroupVo.class);
+        if (Objects.nonNull(programGroupVo)) {
+            return programGroupVo;
+        }
+        RLock lock = serviceLockTool.getLock(LockType.Reentrant, GET_PROGRAM_LOCK, new String[]{String.valueOf(programGroupId)});
+        lock.lock();
+        try {
+            programGroupVo = redisCache.get(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_GROUP, programGroupId),
+                    ProgramGroupVo.class);
+            if (Objects.isNull(programGroupVo)) {
+                programGroupVo = createProgramGroupVo(programGroupId);
+                redisCache.set(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_GROUP, programGroupId),programGroupVo,
+                        DateUtils.countBetweenSecond(DateUtils.now(),programGroupVo.getRecentShowTime()),TimeUnit.SECONDS);
+            }
+            return programGroupVo;
+        }finally {
+            lock.unlock();
+        }
+    }
+
+    private ProgramGroupVo createProgramGroupVo(Long programGroupId) {
+        ProgramGroupVo programGroupVo = new ProgramGroupVo();
+        ProgramGroup programGroup = Optional.ofNullable(programGroupMapper.selectById(programGroupId))
+                .orElseThrow(() -> new DaMaiFrameException(BaseCode.PROGRAM_GROUP_NOT_EXIST));
+        programGroupVo.setId(programGroup.getId());
+        programGroupVo.setProgramSimpleInfoVoList(JSON.parseArray(programGroup.getProgramJson(), ProgramSimpleInfoVo.class));
+        programGroupVo.setRecentShowTime(programGroup.getRecentShowTime());
+        return programGroupVo;
+    }
+
+    @ServiceLock(lockType= LockType.Read,name = PROGRAM_LOCK, keys = {"#programId"})
+    public ProgramVo getById(Long programId, Long expireTime, TimeUnit timeUnit) {
+        ProgramVo programVo = redisCache.get(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM, programId), ProgramVo.class);
+        if(Objects.nonNull(programVo)){
+            return programVo;
+        }
+        log.info("查询节目详情 从Redis缓存中没有查询到 节目id:{}", programId);
+        RLock lock = serviceLockTool.getLock(LockType.Reentrant, GET_PROGRAM_LOCK, new String[]{String.valueOf(programId)});
+        lock.lock();
+        try{
+            return redisCache.get(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM, programId),
+                    ProgramVo.class,
+                    () -> createProgramVo(programId),
+                    expireTime,
+                    timeUnit
+            );
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    public void delRedisData(Long programId) {
+        Program program = Optional.ofNullable(programMapper.selectById(programId))
+                .orElseThrow(() -> new DaMaiFrameException(BaseCode.PROGRAM_NOT_EXIST));
+        List<String> keys = new ArrayList<>();
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM, programId).getRelKey());
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_GROUP,program.getProgramGroupId()).getRelKey());
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SHOW_TIME,programId).getRelKey());
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SEAT_NO_SOLD_RESOLUTION_HASH, programId,"*").getRelKey());
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SEAT_LOCK_RESOLUTION_HASH, programId,"*").getRelKey());
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SEAT_SOLD_RESOLUTION_HASH, programId,"*").getRelKey());
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_TICKET_CATEGORY_LIST, programId).getRelKey());
+        keys.add(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_TICKET_REMAIN_NUMBER_HASH_RESOLUTION, programId,"*").getRelKey());
+        programDelCacheData.del(keys, new String[]{});
+    }
+
+    public List<ProgramListVo> recommendList(ProgramRecommendListDto programRecommendListDto) {
+        compositeContainer.execute(CompositeCheckType.PROGRAM_RECOMMEND_CHECK.getValue(), programRecommendListDto);
+        return programEs.recommendList(programRecommendListDto);
     }
 }

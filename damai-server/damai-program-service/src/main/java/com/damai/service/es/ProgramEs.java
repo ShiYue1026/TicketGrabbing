@@ -1,10 +1,7 @@
 package com.damai.service.es;
 
 import com.damai.core.SpringUtil;
-import com.damai.dto.EsDataQueryDto;
-import com.damai.dto.ProgramListDto;
-import com.damai.dto.ProgramPageListDto;
-import com.damai.dto.ProgramSearchDto;
+import com.damai.dto.*;
 import com.damai.enums.BusinessStatus;
 import com.damai.page.PageUtil;
 import com.damai.page.PageVo;
@@ -16,10 +13,14 @@ import com.damai.vo.ProgramListVo;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.elasticsearch.index.query.BoolQueryBuilder;
+import org.elasticsearch.index.query.MatchAllQueryBuilder;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.script.Script;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.sort.FieldSortBuilder;
+import org.elasticsearch.search.sort.ScriptSortBuilder;
 import org.elasticsearch.search.sort.SortBuilders;
 import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,7 @@ import org.springframework.boot.web.servlet.filter.OrderedFormContentFilter;
 import org.springframework.stereotype.Component;
 import com.damai.util.BusinessEsHandle;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -238,5 +240,57 @@ public class ProgramEs {
             highlightBuilder.field(highlightTitle);
         }
         return highlightBuilder;
+    }
+
+    public List<ProgramListVo> recommendList(ProgramRecommendListDto programRecommendListDto) {
+        List<ProgramListVo> programListVoList = new ArrayList<>();
+        try{
+            boolean allQueryFlag = true;
+            MatchAllQueryBuilder matchAllQueryBuilder = QueryBuilders.matchAllQuery();
+            BoolQueryBuilder boolQuery = QueryBuilders.boolQuery();
+
+            if(Objects.nonNull(programRecommendListDto.getAreaId())) {
+                allQueryFlag = false;
+                QueryBuilder builds = QueryBuilders.termQuery(ProgramDocumentParamName.AREA_ID,
+                        programRecommendListDto.getAreaId());
+                boolQuery.must(builds);
+            }
+            if(Objects.nonNull(programRecommendListDto.getParentProgramCategoryId())) {
+                allQueryFlag = false;
+                QueryBuilder builds = QueryBuilders.termQuery(ProgramDocumentParamName.PARENT_PROGRAM_CATEGORY_ID,
+                        programRecommendListDto.getParentProgramCategoryId());
+                boolQuery.must(builds);
+            }
+            if(Objects.nonNull(programRecommendListDto.getProgramId())) {
+                allQueryFlag = false;
+                QueryBuilder builds = QueryBuilders.termQuery(ProgramDocumentParamName.ID,
+                        programRecommendListDto.getProgramId());
+                boolQuery.mustNot(builds);
+            }
+            SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+            searchSourceBuilder.query(allQueryFlag ? matchAllQueryBuilder : boolQuery);
+            searchSourceBuilder.trackTotalHits(true);
+            searchSourceBuilder.from(1);
+            searchSourceBuilder.size(10);
+
+            Script script = new Script("Math.random()");
+            ScriptSortBuilder scriptSortBuilder = new ScriptSortBuilder(script,  ScriptSortBuilder.ScriptSortType.NUMBER);
+            scriptSortBuilder.order(SortOrder.ASC);
+
+            searchSourceBuilder.sort(scriptSortBuilder);
+
+            businessEsHandle.executeQuery(
+                    SpringUtil.getPrefixDistinctionName() + "-" + ProgramDocumentParamName.INDEX_NAME,
+                    ProgramDocumentParamName.INDEX_TYPE,
+                    programListVoList,
+                    null,
+                    ProgramListVo.class,
+                    searchSourceBuilder,
+                    null
+            );
+        } catch (Exception e) {
+            log.error("recommendList error",e);
+        }
+        return programListVoList;
     }
 }

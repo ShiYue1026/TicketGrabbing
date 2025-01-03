@@ -97,7 +97,6 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
     public Mono<Void> doFilter(final ServerWebExchange exchange, final GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
         System.out.println("doFilter");
-        System.out.println(request);
         String traceId = request.getHeaders().getFirst(TRACE_ID);
         String gray = request.getHeaders().getFirst(GRAY_PARAMETER);
         String noVerify = request.getHeaders().getFirst(NO_VERIFY);
@@ -199,6 +198,9 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
         }
 
         // 判断是否跳过参数验证
+        System.out.println(url);
+        System.out.println("check:" + checkParameter(originalBody, noVerify));
+        System.out.println("skip:" + !skipCheckParameter(url));
         if(checkParameter(originalBody, noVerify) && !skipCheckParameter(url)) {  // 进行参数验证
             String encrypt = request.getHeaders().getFirst(ENCRYPT);
             code = bodyContent.get(CODE);
@@ -217,6 +219,7 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
             }
 
             boolean skipCheckTokenResult = skipCheckToken(url);
+            log.info(url + "是否跳过登录验证: " + skipCheckTokenResult);
             if(!skipCheckTokenResult && StringUtil.isEmpty(token)){
                 ArgumentError argumentError = new ArgumentError();
                 argumentError.setArgumentName(token);
@@ -227,8 +230,16 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
             }
 
             if (!skipCheckTokenResult) {
-                UserVo userVo = tokenService.getUser(token,code,channelDataVo.getTokenSecret());
+                UserVo userVo = tokenService.getUser(token, code, channelDataVo.getTokenSecret());
                 userId = userVo.getId();
+            }
+
+            // 不是必须验证登录的url，但是如果携带了token也进行解析
+            if(StringUtil.isEmpty(userId) && checkNeedUserId(url) && StringUtil.isNotEmpty(token)) {
+                UserVo userVo = tokenService.getUser(token, code, channelDataVo.getTokenSecret());
+                if(Objects.nonNull(userVo)){
+                    userId = userVo.getId();
+                }
             }
 
             requestBody = bodyContent.get(BUSINESS_BODY);
@@ -241,12 +252,12 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
         if(StringUtil.isNotEmpty(code)){
             map.put(CODE, code);
         }
+        System.out.println("userId: " + userId);
         if(StringUtil.isNotEmpty(userId)){
             map.put(USER_ID, userId);
         }
         return map;
     }
-
 
     /**
      * 将网关层request请求头中的重要参数传递给后续的微服务中
@@ -275,6 +286,8 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
                 if (CollectionUtil.isNotEmpty(headMap) && StringUtil.isNotEmpty(headMap.get(TRACE_ID))) {
                     MDC.put(TRACE_ID,headMap.get(TRACE_ID));
                 }
+                System.out.println("请求头内容：");
+                newHeaders.forEach((key, value) -> System.out.println(key + ": " + value));
                 return newHeaders;
             }
 
@@ -297,7 +310,7 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
                 return false;
             }
         }
-        return false;
+        return true;
     }
 
     public boolean skipCheckParameter(String url){
@@ -313,4 +326,15 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
     public boolean checkParameter(String originalBody,String noVerify){
         return (!(VERIFY_VALUE.equals(noVerify))) && StringUtil.isNotEmpty(originalBody);
     }
+
+    private boolean checkNeedUserId(String url) {
+        for (String userIdPath : gatewayProperty.getUserIdPaths()) {
+            PathMatcher matcher = new AntPathMatcher();
+            if (matcher.match(userIdPath, url)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

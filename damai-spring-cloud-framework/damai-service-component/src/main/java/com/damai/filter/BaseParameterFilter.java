@@ -33,8 +33,11 @@ public class BaseParameterFilter extends OncePerRequestFilter {
 
         String traceId = request.getHeader(TRACE_ID);
         String gray = request.getHeader(GRAY_PARAMETER);
-        String userId = request.getHeader(USER_ID);
+        String userId = request.getHeader("user_id");
         String code = request.getHeader(CODE);
+        log.info("TRACE_ID:{}", traceId);
+        log.info("USER_ID:{}", userId);
+        log.info("CODE:{}", code);
 
         try{
             if(StringUtil.isNotEmpty(traceId)) {
@@ -47,6 +50,7 @@ public class BaseParameterFilter extends OncePerRequestFilter {
             }
             if(StringUtil.isNotEmpty(userId)) {
                 BaseParameterHolder.setParameter(USER_ID, userId);
+                System.out.println("userId存入BaseParameterHolder中");
                 MDC.put(USER_ID, userId);
             }
             if(StringUtil.isNotEmpty(code)) {

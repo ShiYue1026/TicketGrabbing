@@ -34,6 +34,7 @@ public class ChannelDataService {
     private UidGenerator uidGenerator;
 
     public GetChannelDataVo getByCode(GetChannelDataByCodeDto dto){
+        System.out.println("getByCode!");
         GetChannelDataVo getChannelDataVo = new GetChannelDataVo();
         LambdaQueryWrapper<ChannelTableData> wrapper = new LambdaQueryWrapper<>();
         wrapper.eq(ChannelTableData::getCode, dto.getCode());

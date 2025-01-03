@@ -7,6 +7,7 @@ import com.damai.lockinfo.factory.LockInfoHandleFactory;
 import com.damai.lockinfo.impl.ServiceLockInfoHandle;
 import com.damai.servicelock.aspect.ServiceLockAspect;
 import com.damai.servicelock.factory.ServiceLockFactory;
+import com.damai.util.ServiceLockTool;
 import org.redisson.api.RedissonClient;
 import org.springframework.context.annotation.Bean;
 
@@ -32,5 +33,9 @@ public class ServiceLockAutoConfiguration {
         return new ServiceLockAspect(lockInfoHandleFactory, serviceLockFactory);
     }
 
+    @Bean
+    public ServiceLockTool serviceLockTool(LockInfoHandleFactory lockInfoHandleFactory, ServiceLockFactory serviceLockFactory) {
+        return new ServiceLockTool(lockInfoHandleFactory, serviceLockFactory);
+    }
 
 }

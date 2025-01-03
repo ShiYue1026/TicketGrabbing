@@ -56,16 +56,16 @@
 <!--            <artifactId>damai-redis-stream-framework</artifactId>-->
 <!--            <version>${revision}</version>-->
 <!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-service-lock-framework</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-bloom-filter-framework</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-service-lock-framework</artifactId>
+            <version>${revision}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-bloom-filter-framework</artifactId>
+            <version>${revision}</version>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>com.damai</groupId>-->
 <!--            <artifactId>damai-repeat-execute-limit-framework</artifactId>-->
@@ -91,6 +91,11 @@
 <!--            <artifactId>damai-order-client</artifactId>-->
 <!--            <version>${revision}</version>-->
 <!--        </dependency>-->
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-user-client</artifactId>
+            <version>${revision}</version>
+        </dependency>
         <dependency>
             <groupId>com.damai</groupId>
             <artifactId>damai-service-component</artifactId>

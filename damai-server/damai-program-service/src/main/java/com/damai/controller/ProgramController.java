@@ -1,13 +1,12 @@
 package com.damai.controller;
 
 import com.damai.common.ApiResponse;
-import com.damai.dto.ProgramListDto;
-import com.damai.dto.ProgramPageListDto;
-import com.damai.dto.ProgramSearchDto;
+import com.damai.dto.*;
 import com.damai.page.PageVo;
 import com.damai.service.ProgramService;
 import com.damai.vo.ProgramHomeVo;
 import com.damai.vo.ProgramListVo;
+import com.damai.vo.ProgramVo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -43,6 +42,18 @@ public class ProgramController {
     @PostMapping(value = "/search")
     public ApiResponse<PageVo<ProgramListVo>> search(@Valid @RequestBody ProgramSearchDto programSearchDto) {
         return ApiResponse.ok(programService.search(programSearchDto));
+    }
+
+    @Operation(summary = "查询详情（根据id）")
+    @PostMapping(value = "/detail")
+    public ApiResponse<ProgramVo> getDetail(@Valid @RequestBody ProgramGetDto programGetDto){
+        return ApiResponse.ok(programService.detailV2(programGetDto));
+    }
+
+    @Operation(summary = "查询推荐列表")
+    @PostMapping(value = "/recommend/list")
+    public ApiResponse<List<ProgramListVo>> recommendList(@Valid @RequestBody ProgramRecommendListDto programRecommendListDto){
+        return ApiResponse.ok(programService.recommendList(programRecommendListDto));
     }
 
 }
