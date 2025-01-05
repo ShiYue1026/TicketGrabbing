@@ -467,20 +467,27 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
     }
 
     public ProgramVo getDetailV2(ProgramGetDto programGetDto) {
+        // 获取节目演出时间信息
         ProgramShowTime programShowTime =
                 programShowTimeService.selectProgramShowTimeByProgramIdMultipleCache(programGetDto.getId());
 
+        // 查询节目部分信息和地区信息
         ProgramVo programVo = getByIdMultipleCache(programGetDto.getId(),programShowTime.getShowTime());
-
         programVo.setShowTime(programShowTime.getShowTime());
         programVo.setShowDayTime(programShowTime.getShowDayTime());
         programVo.setShowWeekTime(programShowTime.getShowWeekTime());
 
+        // 查询节目分组信息
         ProgramGroupVo programGroupVo = getProgramGroupMultipleCache(programVo.getProgramGroupId());
         programVo.setProgramGroupVo(programGroupVo);
 
+        // 预先加载用户购票人(用户已登录 && 当前节目是热门节目的情况下)
         preloadTicketUserList(programVo.getHighHeat());
 
+        // 预先加载用户下的节目订单数量
+        // TODO
+
+        // 查询节目类型信息
         ProgramCategory programCategory = getProgramCategoryMultipleCache(programVo.getProgramCategoryId());
         if (Objects.nonNull(programCategory)) {
             programVo.setProgramCategoryName(programCategory.getName());
@@ -490,6 +497,7 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
             programVo.setParentProgramCategoryName(parentProgramCategory.getName());
         }
 
+        // 查询节目票档信息
         List<TicketCategoryVo> ticketCategoryVoList = ticketCategoryService
                 .selectTicketCategoryListByProgramIdMultipleCache(programVo.getId(),programShowTime.getShowTime());
         programVo.setTicketCategoryVoList(ticketCategoryVoList);
@@ -508,7 +516,7 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
                 key -> getProgramGroup(programGroupId));
     }
 
-    private ProgramVo getByIdMultipleCache(Long programId, Date showTime){
+    public ProgramVo getByIdMultipleCache(Long programId, Date showTime){
         return localCacheProgram.getCache(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM, programId).getRelKey(),
                 key -> {
                     log.info("查询节目详情 从本地缓存没有查询到 节目id : {}",programId);

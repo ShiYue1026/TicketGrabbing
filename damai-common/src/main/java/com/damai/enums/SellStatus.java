@@ -1,17 +1,19 @@
 package com.damai.enums;
 
-public enum BusinessStatus {
+public enum SellStatus {
     /**
-     * 通用状态枚举
+     * 售卖状态
      * */
-    YES(1,"是"),
-    NO(0,"否");
+    NO_SOLD(1,"未售卖"),
+    LOCK(2,"锁定"),
+    SOLD(3,"已售卖"),
+    ;
 
     private Integer code;
 
     private String msg;
 
-    BusinessStatus(Integer code, String msg) {
+    SellStatus(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }
@@ -20,12 +22,20 @@ public enum BusinessStatus {
         return code;
     }
 
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
     public String getMsg() {
         return this.msg == null ? "" : this.msg;
     }
 
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
     public static String getMsg(Integer code) {
-        for (BusinessStatus re : BusinessStatus.values()) {
+        for (SellStatus re : SellStatus.values()) {
             if (re.code.intValue() == code.intValue()) {
                 return re.msg;
             }
@@ -33,8 +43,8 @@ public enum BusinessStatus {
         return "";
     }
 
-    public static BusinessStatus getRc(Integer code) {
-        for (BusinessStatus re : BusinessStatus.values()) {
+    public static SellStatus getRc(Integer code) {
+        for (SellStatus re : SellStatus.values()) {
             if (re.code.intValue() == code.intValue()) {
                 return re;
             }

@@ -1,0 +1,11 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.damai.mapper.OrderMapper">
+    <select id="accountOrderCount" resultType="java.lang.Integer">
+        select
+            count(*)
+        from d_order
+        where (order_status = 1 or order_status = 3)
+        and user_id = #{userId,jdbcType=BIGINT}
+        and program_id = #{programId,jdbcType=BIGINT}
+    </select>
+</mapper>

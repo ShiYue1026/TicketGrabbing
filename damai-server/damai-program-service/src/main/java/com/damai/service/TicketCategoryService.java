@@ -84,6 +84,6 @@ public class TicketCategoryService extends ServiceImpl<TicketCategoryMapper, Tic
 
     public List<TicketCategoryVo> selectTicketCategoryListByProgramIdMultipleCache(Long programId, Date showTime) {
         return localCacheTicketCategory.getCache(programId,
-                key -> selectTicketCategoryListByProgramId(programId, DateUtils.countBetweenSecond(DateUtils.now(),showTime), TimeUnit.SECONDS));
+                key -> selectTicketCategoryListByProgramId(programId, DateUtils.countBetweenSecond(DateUtils.now(), showTime), TimeUnit.SECONDS));
     }
 }

@@ -86,11 +86,11 @@
             <artifactId>damai-base-data-client</artifactId>
             <version>${revision}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-order-client</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-order-client</artifactId>
+            <version>${revision}</version>
+        </dependency>
         <dependency>
             <groupId>com.damai</groupId>
             <artifactId>damai-user-client</artifactId>

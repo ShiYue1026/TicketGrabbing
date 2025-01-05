@@ -1,17 +1,17 @@
 package com.damai.enums;
 
-public enum BusinessStatus {
+public enum SeatType {
     /**
-     * 通用状态枚举
+     * 座位类型
      * */
-    YES(1,"是"),
-    NO(0,"否");
+    GENERAL(1,"通用座位"),
+    ;
 
     private Integer code;
 
     private String msg;
 
-    BusinessStatus(Integer code, String msg) {
+    SeatType(Integer code, String msg) {
         this.code = code;
         this.msg = msg;
     }
@@ -20,12 +20,20 @@ public enum BusinessStatus {
         return code;
     }
 
+    public void setCode(Integer code) {
+        this.code = code;
+    }
+
     public String getMsg() {
         return this.msg == null ? "" : this.msg;
     }
 
+    public void setMsg(String msg) {
+        this.msg = msg;
+    }
+
     public static String getMsg(Integer code) {
-        for (BusinessStatus re : BusinessStatus.values()) {
+        for (SeatType re : SeatType.values()) {
             if (re.code.intValue() == code.intValue()) {
                 return re.msg;
             }
@@ -33,8 +41,8 @@ public enum BusinessStatus {
         return "";
     }
 
-    public static BusinessStatus getRc(Integer code) {
-        for (BusinessStatus re : BusinessStatus.values()) {
+    public static SeatType getRc(Integer code) {
+        for (SeatType re : SeatType.values()) {
             if (re.code.intValue() == code.intValue()) {
                 return re;
             }
@@ -42,3 +50,4 @@ public enum BusinessStatus {
         return null;
     }
 }
+
