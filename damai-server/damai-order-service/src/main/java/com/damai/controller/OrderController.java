@@ -2,6 +2,7 @@ package com.damai.controller;
 
 import com.damai.common.ApiResponse;
 import com.damai.dto.AccountOrderCountDto;
+import com.damai.dto.OrderCreateDto;
 import com.damai.service.OrderService;
 import com.damai.vo.AccountOrderCountVo;
 import io.swagger.v3.oas.annotations.Operation;
@@ -26,4 +27,12 @@ public class OrderController {
     public ApiResponse<AccountOrderCountVo> accountOrderCount(@Valid @RequestBody AccountOrderCountDto accountOrderCountDto) {
         return ApiResponse.ok(orderService.accountOrderCount(accountOrderCountDto));
     }
+
+    @Operation(summary = "订单创建(不提供给前端调用，只允许内部program服务调用)")
+    @PostMapping(value = "/create")
+    public ApiResponse<String> create(@Valid @RequestBody OrderCreateDto orderCreateDto) {
+        return ApiResponse.ok(orderService.create(orderCreateDto));
+    }
+
+
 }

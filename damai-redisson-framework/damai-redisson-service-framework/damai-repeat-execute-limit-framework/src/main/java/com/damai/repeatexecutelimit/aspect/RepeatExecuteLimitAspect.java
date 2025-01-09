@@ -20,7 +20,7 @@ import org.aspectj.lang.annotation.Aspect;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
 
-import static com.damai.lockinfo.impl.RepeatExecuteLimitLockInfoHandle.PREFIX_NAME;
+import static com.damai.repeatexecutelimit.constant.RepeatExecuteLimitConstant.PREFIX_NAME;
 import static com.damai.repeatexecutelimit.constant.RepeatExecuteLimitConstant.SUCCESS_FLAG;
 
 @Slf4j
@@ -29,57 +29,61 @@ import static com.damai.repeatexecutelimit.constant.RepeatExecuteLimitConstant.S
 @AllArgsConstructor
 public class RepeatExecuteLimitAspect {
 
-    private final LockInfoHandleFactory lockInfoHandleFactory;
-
-    private final RedissonDataHandle redissonDataHandle;
-
     private final LocalLockCache localLockCache;
+
+    private final LockInfoHandleFactory lockInfoHandleFactory;
 
     private final ServiceLockFactory serviceLockFactory;
 
+    private final RedissonDataHandle redissonDataHandle;
+
     @Around("@annotation(repeatLimit)")
     public Object around(ProceedingJoinPoint joinPoint, RepeatExecuteLimit repeatLimit) throws Throwable {
+        log.info("幂等判断：{}", joinPoint.getSignature().getName());
         long durationTime = repeatLimit.durationTime();
         String message = repeatLimit.message();
         Object obj;
         LockInfoHandle lockInfoHandle = lockInfoHandleFactory.getLockInfoHandle(LockInfoType.REPEAT_EXECUTE_LIMIT);
-        String lockName = lockInfoHandle.getLockName(joinPoint, repeatLimit.name(), repeatLimit.keys());
+        String lockName = lockInfoHandle.getLockName(joinPoint,repeatLimit.name(), repeatLimit.keys());
         String repeatFlagName = PREFIX_NAME + lockName;
         String flagObject = redissonDataHandle.get(repeatFlagName);
-        if(SUCCESS_FLAG.equals(flagObject)) {
+        if (SUCCESS_FLAG.equals(flagObject)) {
             throw new DaMaiFrameException(message);
         }
-        ReentrantLock localLock = localLockCache.getLock(lockName, true);
+        ReentrantLock localLock = localLockCache.getLock(lockName,true);
         boolean localLockResult = localLock.tryLock();
-        if(!localLockResult) {
+        if (!localLockResult) {
             throw new DaMaiFrameException(message);
         }
-        try{
+        try {
             ServiceLocker lock = serviceLockFactory.getLock(LockType.Fair);
             boolean result = lock.tryLock(lockName, TimeUnit.SECONDS, 0);
-            if(result) {
+            if (result) {
+                log.info("分布式锁加锁...");
                 try{
                     flagObject = redissonDataHandle.get(repeatFlagName);
-                    if(SUCCESS_FLAG.equals(flagObject)) {
+                    if (SUCCESS_FLAG.equals(flagObject)) {
                         throw new DaMaiFrameException(message);
                     }
-                    obj = joinPoint.proceed();  // 执行逻辑
-                    if(durationTime > 0) {
-                        try{
+                    obj = joinPoint.proceed();
+                    if (durationTime > 0) {
+                        try {
                             redissonDataHandle.set(repeatFlagName, SUCCESS_FLAG, durationTime, TimeUnit.SECONDS);
-                        } catch (Exception e){
-                            log.error("getBucket error", e);
+                        }catch (Exception e) {
+                            log.error("getBucket error",e);
                         }
                     }
                     return obj;
                 } finally {
                     lock.unlock(lockName);
+                    log.info("分布式锁释放锁...");
                 }
-            } else{
+            }else{
                 throw new DaMaiFrameException(message);
             }
-        } finally {
+        }finally {
             localLock.unlock();
+            log.info("分布式锁释放锁...");
         }
     }
 }

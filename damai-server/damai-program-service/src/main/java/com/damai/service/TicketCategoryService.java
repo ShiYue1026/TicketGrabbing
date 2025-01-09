@@ -24,12 +24,12 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
-import static com.damai.core.DistributedLockConstants.GET_TICKET_CATEGORY_LOCK;
-import static com.damai.core.DistributedLockConstants.TICKET_CATEGORY_LOCK;
+import static com.damai.core.DistributedLockConstants.*;
 
 @Service
 public class TicketCategoryService extends ServiceImpl<TicketCategoryMapper, TicketCategory> {
@@ -85,5 +85,34 @@ public class TicketCategoryService extends ServiceImpl<TicketCategoryMapper, Tic
     public List<TicketCategoryVo> selectTicketCategoryListByProgramIdMultipleCache(Long programId, Date showTime) {
         return localCacheTicketCategory.getCache(programId,
                 key -> selectTicketCategoryListByProgramId(programId, DateUtils.countBetweenSecond(DateUtils.now(), showTime), TimeUnit.SECONDS));
+    }
+
+    @ServiceLock(lockType = LockType.Read, name = REMAIN_NUMBER_LOCK, keys = {"#programId", "#ticketCategoryId"})
+    public Map<String, Long> getRedisRemainNumberResolution(Long programId, Long ticketCategoryId) {
+        Map<String, Long> ticketCategoryRemainNumber =
+                redisCache.getAllMapForHash(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_TICKET_REMAIN_NUMBER_HASH_RESOLUTION, programId, ticketCategoryId), Long.class);
+
+        if(CollectionUtil.isNotEmpty(ticketCategoryRemainNumber)) {
+            return ticketCategoryRemainNumber;
+        }
+        RLock lock = serviceLockTool.getLock(LockType.Reentrant, GET_REMAIN_NUMBER_LOCK, new String[]{String.valueOf(programId), String.valueOf(ticketCategoryId)});
+        lock.lock();
+        try{
+            ticketCategoryRemainNumber = redisCache.getAllMapForHash(
+                    RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_TICKET_REMAIN_NUMBER_HASH_RESOLUTION, programId, ticketCategoryId),
+                    Long.class);
+            if(CollectionUtil.isNotEmpty(ticketCategoryRemainNumber)) {
+                return ticketCategoryRemainNumber;
+            }
+            LambdaQueryWrapper<TicketCategory> ticketCategoryLambdaQueryWrapper = Wrappers.lambdaQuery(TicketCategory.class)
+                    .eq(TicketCategory::getProgramId, programId)
+                    .eq(TicketCategory::getId, ticketCategoryId);
+            List<TicketCategory> ticketCategoryList = ticketCategoryMapper.selectList(ticketCategoryLambdaQueryWrapper);
+            Map<String, Long> map = ticketCategoryList.stream().collect(Collectors.toMap(t -> String.valueOf(t.getId()), TicketCategory::getRemainNumber));
+            redisCache.putHash(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_TICKET_REMAIN_NUMBER_HASH_RESOLUTION, programId, ticketCategoryId), map);
+            return map;
+        } finally{
+            lock.unlock();
+        }
     }
 }

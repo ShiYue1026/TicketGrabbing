@@ -32,6 +32,7 @@ public class ServiceLockAspect {
 
     @Around("@annotation(serviceLock)")
     public Object around(ProceedingJoinPoint joinPoint, ServiceLock serviceLock) throws Throwable {
+        log.info("分布式锁判断：{}", joinPoint.getSignature().getName());
         LockInfoHandle lockInfoHandle = lockInfoHandleFactory.getLockInfoHandle(LockInfoType.SERVICE_LOCK);
         String lockName = lockInfoHandle.getLockName(joinPoint, serviceLock.name(), serviceLock.keys());
         LockType lockType = serviceLock.lockType();

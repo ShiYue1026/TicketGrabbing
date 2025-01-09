@@ -13,6 +13,31 @@ spring:
       write-numbers-as-strings: true
     time-zone: GMT+8
     date-format: yyyy-MM-dd HH:mm:ss
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+    openfeign:
+      okhttp:
+        enabled: true
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  global-config:
+    db-config:
+      logic-delete-field: status
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    local-cache-scope: statement
+
+delay:
+  queue:
+    corePoolSize: 12
+    maximumPoolSize: 24
 
 springdoc:
   swagger-ui:

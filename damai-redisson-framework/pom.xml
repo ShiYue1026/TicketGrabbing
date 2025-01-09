@@ -16,6 +16,7 @@
 
     <modules>
         <module>damai-redisson-service-framework</module>
+        <module>damai-service-delay-queue-framework</module>
     </modules>
 
 </project>

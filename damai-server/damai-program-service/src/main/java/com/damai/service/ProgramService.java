@@ -29,6 +29,7 @@ import com.damai.redis.RedisKeyBuild;
 import com.damai.service.cache.local.LocalCacheProgram;
 import com.damai.service.cache.local.LocalCacheProgramCategory;
 import com.damai.service.cache.local.LocalCacheProgramGroup;
+import com.damai.service.cache.local.LocalCacheProgramShowTime;
 import com.damai.service.es.ProgramEs;
 import com.damai.servicelock.LockType;
 import com.damai.servicelock.annotation.ServiceLock;
@@ -115,6 +116,8 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
 
     @Autowired
     private LocalCacheProgramCategory localCacheProgramCategory;
+
+
 
     /**
      * 查询主页信息
@@ -418,7 +421,7 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
         return getDetail(programGetDto);
     }
 
-    private ProgramVo getDetail(ProgramGetDto programGetDto) {
+    public ProgramVo getDetail(ProgramGetDto programGetDto) {
         // 获取节目演出时间信息
         ProgramShowTime programShowTime = programShowTimeService.selectProgramShowTimeByProgramId(programGetDto.getId());
 
@@ -472,13 +475,13 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
                 programShowTimeService.selectProgramShowTimeByProgramIdMultipleCache(programGetDto.getId());
 
         // 查询节目部分信息和地区信息
-        ProgramVo programVo = getByIdMultipleCache(programGetDto.getId(),programShowTime.getShowTime());
+        ProgramVo programVo = programService.getByIdMultipleCache(programGetDto.getId(),programShowTime.getShowTime());
         programVo.setShowTime(programShowTime.getShowTime());
         programVo.setShowDayTime(programShowTime.getShowDayTime());
         programVo.setShowWeekTime(programShowTime.getShowWeekTime());
 
         // 查询节目分组信息
-        ProgramGroupVo programGroupVo = getProgramGroupMultipleCache(programVo.getProgramGroupId());
+        ProgramGroupVo programGroupVo = programService.getProgramGroupMultipleCache(programVo.getProgramGroupId());
         programVo.setProgramGroupVo(programGroupVo);
 
         // 预先加载用户购票人(用户已登录 && 当前节目是热门节目的情况下)
@@ -505,12 +508,12 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
         return programVo;
     }
 
-    private ProgramCategory getProgramCategoryMultipleCache(Long programCategoryId) {
+    public ProgramCategory getProgramCategoryMultipleCache(Long programCategoryId) {
         return localCacheProgramCategory.get(String.valueOf(programCategoryId),
                 key -> getProgramCategory(programCategoryId));
     }
 
-    private ProgramGroupVo getProgramGroupMultipleCache(Long programGroupId) {
+    public ProgramGroupVo getProgramGroupMultipleCache(Long programGroupId) {
         return localCacheProgramGroup.getCache(
                 RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_GROUP, programGroupId).getRelKey(),
                 key -> getProgramGroup(programGroupId));
@@ -627,6 +630,35 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
         } finally {
             lock.unlock();
         }
+    }
+
+    public ProgramVo simpleGetByIdMultipleCache(Long programId) {
+        ProgramVo programVo = localCacheProgram.getCache(
+          RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM, programId).getRelKey());
+        if(Objects.nonNull(programVo)){
+            return programVo;
+        }
+        return redisCache.get(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM, programId), ProgramVo.class);
+    }
+
+    public ProgramVo simpleGetProgramAndShowMultipleCache(Long programId) {
+        ProgramShowTime programShowTime =
+                programShowTimeService.simpleSelectProgramShowTimeByProgramIdMultipleCache(programId);
+
+        if(Objects.isNull(programShowTime)) {
+            throw new DaMaiFrameException(BaseCode.PROGRAM_SHOW_TIME_NOT_EXIST);
+        }
+
+        ProgramVo programVo = simpleGetByIdMultipleCache(programId);
+        if(Objects.isNull(programVo)) {
+            throw new DaMaiFrameException(BaseCode.PROGRAM_NOT_EXIST);
+        }
+
+        programVo.setShowTime(programShowTime.getShowTime());
+        programVo.setShowDayTime(programShowTime.getShowDayTime());
+        programVo.setShowWeekTime(programShowTime.getShowWeekTime());
+
+        return programVo;
     }
 
     public void delRedisData(Long programId) {

@@ -12,13 +12,12 @@ public class ServiceLockFactory {
     private final ManageLocker manageLocker;
 
     public ServiceLocker getLock(LockType lockType){
-        ServiceLocker lock = switch (lockType) {
-            case Reentrant -> manageLocker.getReentrantLocker();
+        return switch (lockType) {
             case Fair -> manageLocker.getFairLocker();
             case Read -> manageLocker.getReadLocker();
             case Write -> manageLocker.getWriteLocker();
+            default -> manageLocker.getReentrantLocker();
         };
-        return lock;
     }
 
 }

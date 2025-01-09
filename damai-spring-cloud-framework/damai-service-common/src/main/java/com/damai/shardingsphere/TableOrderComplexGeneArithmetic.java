@@ -41,6 +41,7 @@ public class TableOrderComplexGeneArithmetic implements ComplexKeysShardingAlgor
         }
         if(Objects.nonNull(value)){
             actualTableNames.add(logicTableName + "_" + ((shardingCount - 1) & value));  // value对shardingCount取模
+            return actualTableNames;
         }
 
         return allActualSplitTableNames;

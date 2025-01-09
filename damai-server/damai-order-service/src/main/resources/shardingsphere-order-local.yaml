@@ -23,7 +23,7 @@ rules:
         actualDataNodes: ds_${0..1}.d_order_${0..3}
         databaseStrategy:
           complex:
-            shardingColumns: order_number,user_id  # 复合分片键
+            shardingColumns: order_number,user_id
             shardingAlgorithmName: databaseOrderComplexGeneArithmetic
         tableStrategy:
           complex:

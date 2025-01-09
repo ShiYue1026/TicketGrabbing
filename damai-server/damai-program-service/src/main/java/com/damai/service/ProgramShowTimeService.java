@@ -81,6 +81,17 @@ public class ProgramShowTimeService extends ServiceImpl<ProgramShowTimeMapper, P
         }
     }
 
+    public ProgramShowTime simpleSelectProgramShowTimeByProgramIdMultipleCache(Long programId) {
+        ProgramShowTime programShowTime = localCacheProgramShowTime.getCache(
+                RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SHOW_TIME, programId).getRelKey()
+        );
+        if(Objects.nonNull(programShowTime)){
+            return programShowTime;
+        }
+        return redisCache.get(RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SHOW_TIME, programId), ProgramShowTime.class);
+    }
+
+
     public Set<Long> renewal() {
         Set<Long> programIdSet = new HashSet<>();
         LambdaQueryWrapper<ProgramShowTime> programShowTimeLambdaQueryWrapper =
