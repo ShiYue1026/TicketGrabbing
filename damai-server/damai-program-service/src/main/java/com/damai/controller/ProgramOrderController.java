@@ -2,9 +2,7 @@ package com.damai.controller;
 
 import com.damai.common.ApiResponse;
 import com.damai.dto.ProgramOrderCreateDto;
-import com.damai.enums.ProgramOrderVersion;
 import com.damai.service.ProgramOrderService;
-import com.damai.service.strategy.ProgramOrderContext;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
@@ -27,4 +25,18 @@ public class ProgramOrderController {
     public ApiResponse<String> createV1(@Valid @RequestBody ProgramOrderCreateDto programOrderCreateDto) {
         return ApiResponse.ok(programOrderService.createV1(programOrderCreateDto));
     }
+
+    @Operation(summary = "购票V2")
+    @PostMapping(value = "/create/v2")
+    public ApiResponse<String> createV2(@Valid @RequestBody ProgramOrderCreateDto programOrderCreateDto) {
+        return ApiResponse.ok(programOrderService.createV2(programOrderCreateDto));
+    }
+
+    @Operation(summary = "购票V3")
+    @PostMapping(value = "/create/v3")
+    public ApiResponse<String> createV3(@Valid @RequestBody ProgramOrderCreateDto programOrderCreateDto) {
+        return ApiResponse.ok(programOrderService.createV3(programOrderCreateDto));
+    }
+
+
 }

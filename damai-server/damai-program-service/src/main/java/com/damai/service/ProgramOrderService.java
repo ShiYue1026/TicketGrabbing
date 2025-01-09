@@ -1,6 +1,7 @@
 package com.damai.service;
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson2.JSON;
@@ -18,17 +19,24 @@ import com.damai.enums.OrderStatus;
 import com.damai.enums.SellStatus;
 import com.damai.exception.DaMaiFrameException;
 import com.damai.initialize.impl.composite.CompositeContainer;
+import com.damai.locallock.LocalLockCache;
+import com.damai.lua.ProgramCacheCreateOrderData;
+import com.damai.lua.ProgramCacheCreateOrderResolutionOperate;
 import com.damai.lua.ProgramCacheResolutionOperate;
 import com.damai.redis.RedisKeyBuild;
 import com.damai.repeatexecutelimit.annotation.RepeatExecuteLimit;
 import com.damai.service.delaysend.DelayOrderCancelSend;
+import com.damai.service.strategy.BaseProgramOrder;
 import com.damai.service.tool.SeatMatch;
+import com.damai.servicelock.LockType;
 import com.damai.servicelock.annotation.ServiceLock;
 import com.damai.util.DateUtils;
+import com.damai.util.ServiceLockTool;
 import com.damai.vo.ProgramVo;
 import com.damai.vo.SeatVo;
 import com.damai.vo.TicketCategoryVo;
 import lombok.extern.slf4j.Slf4j;
+import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -37,9 +45,10 @@ import java.math.BigDecimal;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.ReentrantLock;
 import java.util.stream.Collectors;
 
-import static com.damai.core.DistributedLockConstants.PROGRAM_ORDER_CREATE_V1;
+import static com.damai.core.DistributedLockConstants.*;
 import static com.damai.service.constant.ProgramOrderConstant.ORDER_TABLE_COUNT;
 
 @Slf4j
@@ -74,15 +83,176 @@ public class ProgramOrderService {
     @Autowired
     private CompositeContainer compositeContainer;
 
+    @Autowired
+    private LocalLockCache localLockCache;
+
+    @Autowired
+    private ServiceLockTool serviceLockTool;
+
+    @Autowired
+    private BaseProgramOrder baseProgramOrder;
+
+    @Autowired
+    private ProgramCacheCreateOrderResolutionOperate programCacheCreateOrderResolutionOperate;
+
     @RepeatExecuteLimit(
             name = RepeatExecuteLimitConstants.CREATE_PROGRAM_ORDER,
             keys = {"#programOrderCreateDto.userId","#programOrderCreateDto.programId"},
-            durationTime = 3)
+            durationTime = 5)
     @ServiceLock(name = PROGRAM_ORDER_CREATE_V1,keys = {"#programOrderCreateDto.programId"})
     public String createV1(ProgramOrderCreateDto programOrderCreateDto) {
-
+        log.info("生成订单版本；V1");
         compositeContainer.execute(CompositeCheckType.PROGRAM_ORDER_CREATE_CHECK.getValue(),programOrderCreateDto);
+        return create(programOrderCreateDto);
+    }
 
+    @RepeatExecuteLimit(
+            name = RepeatExecuteLimitConstants.CREATE_PROGRAM_ORDER,
+            keys = {"#programOrderCreateDto.userId","#programOrderCreateDto.programId"},
+            durationTime = 5)
+    public String createV2(ProgramOrderCreateDto programOrderCreateDto) {
+        log.info("生成订单版本：V2");
+        compositeContainer.execute(CompositeCheckType.PROGRAM_ORDER_CREATE_CHECK.getValue(), programOrderCreateDto);
+        List<SeatDto> seatDtoList = programOrderCreateDto.getSeatDtoList();
+        List<Long> ticketCategoryIdList = new ArrayList<>();
+        if(CollectionUtil.isNotEmpty(seatDtoList)){  // 手动选座
+            ticketCategoryIdList =
+                    seatDtoList.stream().map(SeatDto::getTicketCategoryId).distinct().collect(Collectors.toList());
+        } else {  // 自动选座
+            ticketCategoryIdList.add(programOrderCreateDto.getTicketCategoryId());
+        }
+        List<ReentrantLock> localLockList = new ArrayList<>(ticketCategoryIdList.size());  // 本地锁集合
+        List<RLock> serviceLockList = new ArrayList<>(ticketCategoryIdList.size());  // 分布式锁集合
+        List<ReentrantLock> localLockSuccessList = new ArrayList<>(ticketCategoryIdList.size()); // 加锁成功过的本地锁集合
+        List<RLock> serviceLockSuccessList = new ArrayList<>(ticketCategoryIdList.size());  // 加锁成功的分布式锁集合
+        for (Long ticketCategoryId : ticketCategoryIdList) {
+            String lockKey = StrUtil.join("-", PROGRAM_ORDER_CREATE_V2,
+                    programOrderCreateDto.getProgramId(), ticketCategoryId);
+            ReentrantLock localLock = localLockCache.getLock(lockKey, false);  // 非公平锁效率更高
+            RLock serviceLock = serviceLockTool.getLock(LockType.Reentrant, lockKey);
+            localLockList.add(localLock);
+            serviceLockList.add(serviceLock);
+        }
+        for (ReentrantLock reentrantLock : localLockList) {
+            try{
+                reentrantLock.lock();
+            } catch(Throwable t){
+                break;
+            }
+            localLockSuccessList.add(reentrantLock);
+        }
+        for (RLock rLock : serviceLockList) {
+            try{
+                rLock.lock();
+            } catch(Throwable t){
+                break;
+            }
+            serviceLockSuccessList.add(rLock);
+        }
+        try{
+            return create(programOrderCreateDto);
+        } finally {  // 解锁顺序与加锁顺序相反
+            for(int i=serviceLockSuccessList.size() - 1; i>=0; i--){
+                RLock rLock = serviceLockSuccessList.get(i);
+                try{
+                    rLock.unlock();
+                } catch(Throwable t){
+                    log.error("service lock unlock error",t);
+                }
+            }
+
+            for(int i=localLockSuccessList.size() - 1; i>=0; i--){
+                ReentrantLock reentrantLock = localLockSuccessList.get(i);
+                try{
+                    reentrantLock.unlock();
+                } catch(Throwable t){
+                    log.error("local lock unlock error",t);
+                }
+            }
+        }
+    }
+
+    @RepeatExecuteLimit(
+            name = RepeatExecuteLimitConstants.CREATE_PROGRAM_ORDER,
+            keys = {"#programOrderCreateDto.userId","#programOrderCreateDto.programId"},
+            durationTime = 5)
+    public String createV3(ProgramOrderCreateDto programOrderCreateDto) {
+        log.info("生成订单版本：V3");
+        compositeContainer.execute(CompositeCheckType.PROGRAM_ORDER_CREATE_CHECK.getValue(), programOrderCreateDto);
+        return baseProgramOrder.localLockCreateOrder(PROGRAM_ORDER_CREATE_V3, programOrderCreateDto, () -> createNew(programOrderCreateDto));
+    }
+
+    private String createNew(ProgramOrderCreateDto programOrderCreateDto) {
+        List<SeatVo> purchaseSeatList = createOrderOperateProgramCacheResolution(programOrderCreateDto);
+        return doCreate(programOrderCreateDto, purchaseSeatList);
+    }
+
+    private List<SeatVo> createOrderOperateProgramCacheResolution(ProgramOrderCreateDto programOrderCreateDto) {
+        // 从本地缓存中获取节目演出时间（之前已经放入本地缓存）
+        ProgramShowTime programShowTime =
+                programShowTimeService.selectProgramShowTimeByProgramIdMultipleCache(programOrderCreateDto.getProgramId());
+
+        // 从本地缓存中获取用户选择的节目票档（之前已经放入本地缓存）
+        List<TicketCategoryVo> getTicketCategoryList =
+                getTicketCategoryList(programOrderCreateDto, programShowTime.getShowTime());
+
+        for (TicketCategoryVo ticketCategory : getTicketCategoryList) {  // 将座位信息和余票信息加载到redis中
+            seatService.selectSeatResolution(programOrderCreateDto.getProgramId(), ticketCategory.getId(),
+                    DateUtils.countBetweenSecond(DateUtils.now(), programShowTime.getShowTime()), TimeUnit.SECONDS);
+            ticketCategoryService.getRedisRemainNumberResolution(
+                    programOrderCreateDto.getProgramId(), ticketCategory.getId());
+        }
+
+        Long programId = programOrderCreateDto.getProgramId();
+        List<SeatDto> seatDtoList = programOrderCreateDto.getSeatDtoList();
+        List<String> keys = new ArrayList<>();
+        String[] data = new String[2];
+        JSONArray jsonArray = new JSONArray();
+        JSONArray addSeatDataJsonArray = new JSONArray();
+        if(CollectionUtil.isNotEmpty(seatDtoList)){  // 手动选择座位
+            keys.add("1");
+            Map<Long, List<SeatDto>> seatTicketCategoryDtoCount = seatDtoList.stream()
+                    .collect(Collectors.groupingBy(SeatDto::getTicketCategoryId));
+            for (Entry<Long, List<SeatDto>> entry : seatTicketCategoryDtoCount.entrySet()) {
+                Long ticketCategoryId = entry.getKey();
+                int ticketCount = entry.getValue().size();  // 用户要购买的数量
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("programTicketRemainNumberHashKey", RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_TICKET_REMAIN_NUMBER_HASH_RESOLUTION, programId, ticketCategoryId).getRelKey());
+                jsonObject.put("ticketCategoryId", ticketCategoryId);
+                jsonObject.put("ticketCount", ticketCount);
+                jsonArray.add(jsonObject);
+
+                JSONObject seatDataJsonObject = new JSONObject();
+                seatDataJsonObject.put("seatNoSoldHashKey", RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SEAT_NO_SOLD_RESOLUTION_HASH, programId, ticketCategoryId).getRelKey());
+                seatDataJsonObject.put("seatDataList", JSON.toJSONString(seatDtoList));
+                addSeatDataJsonArray.add(seatDataJsonObject);
+            }
+        }
+        else{
+            keys.add("2");
+            Long ticketCategoryId = programOrderCreateDto.getTicketCategoryId();
+            Integer ticketCount = programOrderCreateDto.getTicketCount();
+            JSONObject jsonObject = new JSONObject();
+            jsonObject.put("programTicketRemainNumberHashKey", RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_TICKET_REMAIN_NUMBER_HASH_RESOLUTION, programId, ticketCategoryId).getRelKey());
+            jsonObject.put("ticketCategoryId", ticketCategoryId);
+            jsonObject.put("ticketCount", ticketCount);
+            jsonObject.put("seatNoSoldHashKey", RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SEAT_NO_SOLD_RESOLUTION_HASH, programId, ticketCategoryId).getRelKey());
+            jsonArray.add(jsonObject);
+        }
+        keys.add(RedisKeyBuild.getRedisKey(RedisKeyManage.PROGRAM_SEAT_NO_SOLD_RESOLUTION_HASH));
+        keys.add(RedisKeyBuild.getRedisKey(RedisKeyManage.PROGRAM_SEAT_LOCK_RESOLUTION_HASH));
+        keys.add(String.valueOf(programOrderCreateDto.getProgramId()));
+        data[0] = JSON.toJSONString(jsonArray);
+        data[1] = JSON.toJSONString(addSeatDataJsonArray);
+        ProgramCacheCreateOrderData programCacheCreateOrderData =
+                programCacheCreateOrderResolutionOperate.programCacheOperate(keys, data);
+        if(!Objects.equals(programCacheCreateOrderData.getCode(), BaseCode.SUCCESS.getCode())) {
+            throw new DaMaiFrameException(Objects.requireNonNull(BaseCode.getRc(programCacheCreateOrderData.getCode())));
+        }
+        return programCacheCreateOrderData.getPurchaseSeatList();
+    }
+
+    public String create(ProgramOrderCreateDto programOrderCreateDto) {
         // 从多级缓存中查询节目演出时间
         ProgramShowTime programShowTime = programShowTimeService.selectProgramShowTimeByProgramIdMultipleCache(programOrderCreateDto.getProgramId());
 
@@ -110,7 +280,7 @@ public class ProgramOrderService {
                     programOrderCreateDto.getTicketCategoryId(),
                     DateUtils.countBetweenSecond(DateUtils.now(), programShowTime.getShowTime()),
                     TimeUnit.SECONDS
-                    );
+            );
             // 将所有未售卖的座位放入seatVoList
             seatVoList.addAll(allSeatVoList.stream().filter(seatVo -> seatVo.getSellStatus().equals(SellStatus.NO_SOLD.getCode())).toList());
             // 将查询到的余票数量放入ticketCategoryRemainNumber (票档id, 余票数量)
@@ -323,7 +493,7 @@ public class ProgramOrderService {
         // 手动选择座位
         if(CollectionUtil.isNotEmpty(seatDtoList)) {
             for (SeatDto seatDto : seatDtoList) {
-                TicketCategoryVo ticketCategoryVo = ticketCategoryVoMap.get(seatDto.getId());
+                    TicketCategoryVo ticketCategoryVo = ticketCategoryVoMap.get(seatDto.getId());
                 if(Objects.nonNull(ticketCategoryVo)){
                     getTicketCategoryVoList.add(ticketCategoryVo);
                 } else{

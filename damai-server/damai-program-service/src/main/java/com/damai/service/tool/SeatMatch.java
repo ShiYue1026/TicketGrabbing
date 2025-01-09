@@ -43,14 +43,6 @@ public class SeatMatch {
             }
         }
 
-        allSeats.sort((s1, s2) -> {
-            if (Objects.equals(s1.getColCode(), s2.getColCode())) {
-                return s1.getRowCode() - s2.getRowCode();
-            } else {
-                return s1.getColCode() - s2.getColCode();
-            }
-        });
-
         // 2. 对座位按行号和列号进行S型排序后随机选取
         Map<Integer, List<SeatVo>> rowMap = new HashMap<>();
         for (SeatVo seat : allSeats) {
