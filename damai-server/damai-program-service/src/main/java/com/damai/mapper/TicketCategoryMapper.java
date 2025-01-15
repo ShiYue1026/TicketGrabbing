@@ -1,6 +1,7 @@
 package com.damai.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.damai.dto.TicketCategoryCountDto;
 import com.damai.entity.TicketCategory;
 import com.damai.entity.TicketCategoryAggregate;
 import org.apache.ibatis.annotations.Mapper;
@@ -17,4 +18,8 @@ public interface TicketCategoryMapper extends BaseMapper<TicketCategory> {
      * @return 结果
      * */
     List<TicketCategoryAggregate> selectAggregateList(@Param("programIdList") List<Long> programIdList);
+
+    int batchUpdateRemainNumber(
+            @Param("ticketCategoryCountDtoList") List<TicketCategoryCountDto> ticketCategoryCountDtoList,
+            @Param("programId") Long programId);;
 }

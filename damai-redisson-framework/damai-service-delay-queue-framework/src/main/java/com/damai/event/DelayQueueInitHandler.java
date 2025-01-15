@@ -14,7 +14,7 @@ import java.util.Map;
 
 @Slf4j
 @AllArgsConstructor
-public class DelayQueueInitHandler  implements ApplicationListener<ApplicationStartedEvent> {
+public class DelayQueueInitHandler implements ApplicationListener<ApplicationStartedEvent> {
 
     private final DelayQueueBasePart delayQueueBasePart;
 

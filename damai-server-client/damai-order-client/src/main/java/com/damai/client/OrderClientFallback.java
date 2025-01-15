@@ -5,7 +5,9 @@ import com.damai.dto.AccountOrderCountDto;
 import com.damai.dto.OrderCreateDto;
 import com.damai.enums.BaseCode;
 import com.damai.vo.AccountOrderCountVo;
+import org.springframework.stereotype.Component;
 
+@Component
 public class OrderClientFallback implements OrderClient {
 
     @Override

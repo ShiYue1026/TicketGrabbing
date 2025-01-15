@@ -5,6 +5,7 @@ import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollectionUtil;
 import com.alibaba.fastjson2.JSON;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -18,6 +19,7 @@ import com.damai.entity.*;
 import com.damai.enums.BaseCode;
 import com.damai.enums.BusinessStatus;
 import com.damai.enums.CompositeCheckType;
+import com.damai.enums.SellStatus;
 import com.damai.exception.DaMaiFrameException;
 import com.damai.initialize.impl.composite.CompositeContainer;
 import com.damai.lua.ProgramDelCacheData;
@@ -26,6 +28,7 @@ import com.damai.page.PageUtil;
 import com.damai.page.PageVo;
 import com.damai.redis.RedisCache;
 import com.damai.redis.RedisKeyBuild;
+import com.damai.repeatexecutelimit.annotation.RepeatExecuteLimit;
 import com.damai.service.cache.local.LocalCacheProgram;
 import com.damai.service.cache.local.LocalCacheProgramCategory;
 import com.damai.service.cache.local.LocalCacheProgramGroup;
@@ -45,6 +48,7 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -53,6 +57,7 @@ import java.util.stream.Collectors;
 import static com.damai.constant.Constant.CODE;
 import static com.damai.constant.Constant.USER_ID;
 import static com.damai.core.DistributedLockConstants.*;
+import static com.damai.core.RepeatExecuteLimitConstants.CANCEL_PROGRAM_ORDER;
 import static com.damai.util.DateUtils.FORMAT_DATE;
 
 @Slf4j
@@ -117,7 +122,8 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
     @Autowired
     private LocalCacheProgramCategory localCacheProgramCategory;
 
-
+    @Autowired
+    private SeatMapper seatMapper;
 
     /**
      * 查询主页信息
@@ -679,5 +685,43 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
     public List<ProgramListVo> recommendList(ProgramRecommendListDto programRecommendListDto) {
         compositeContainer.execute(CompositeCheckType.PROGRAM_RECOMMEND_CHECK.getValue(), programRecommendListDto);
         return programEs.recommendList(programRecommendListDto);
+    }
+
+    // 更新数据库中的座位，保持数据与缓存的一致性
+    @RepeatExecuteLimit(name = CANCEL_PROGRAM_ORDER, keys = {"#programOperateDataDto.programId","#programOperateDataDto.seatIdList"})
+    @Transactional(rollbackFor = Exception.class)
+    public void operateProgramData(ProgramOperateDataDto programOperateDataDto) {
+        List<TicketCategoryCountDto> ticketCategoryCountDtoList = programOperateDataDto.getTicketCategoryCountDtoList();
+        List<Long> seatIdList = programOperateDataDto.getSeatIdList();
+        LambdaQueryWrapper<Seat> seatLambdaQueryWrapper = Wrappers.lambdaQuery(Seat.class)
+                .eq(Seat::getProgramId, programOperateDataDto.getProgramId())  // 要带上节目id，因为节目id是分片键
+                .in(Seat::getId, seatIdList);
+        List<Seat> seatList = seatMapper.selectList(seatLambdaQueryWrapper);
+        if (CollectionUtil.isEmpty(seatList)){
+            throw new DaMaiFrameException(BaseCode.SEAT_NOT_EXIST);
+        }
+        if(seatList.size() != seatIdList.size()){
+            throw new DaMaiFrameException(BaseCode.SEAT_UPDATE_REL_COUNT_NOT_EQUAL_PRESET_COUNT);
+        }
+        for (Seat seat : seatList) {
+            if(Objects.equals(seat.getSellStatus(), SellStatus.SOLD.getCode())) {
+                throw new DaMaiFrameException(BaseCode.SEAT_SOLD);
+            }
+        }
+
+        // 更新座位状态为已售卖
+        LambdaUpdateWrapper<Seat> seatLambdaUpdateWrapper = Wrappers.lambdaUpdate(Seat.class)
+                .eq(Seat::getProgramId, programOperateDataDto.getProgramId())
+                .in(Seat::getId, seatIdList);
+        Seat updateSeat = new Seat();
+        updateSeat.setSellStatus(SellStatus.SOLD.getCode());
+        seatMapper.update(updateSeat, seatLambdaUpdateWrapper);
+
+        // 更新票档下的余票数量
+        int updateRemainNumberCount =
+                ticketCategoryMapper.batchUpdateRemainNumber(ticketCategoryCountDtoList, programOperateDataDto.getProgramId());
+        if(updateRemainNumberCount != ticketCategoryCountDtoList.size()){
+            throw new DaMaiFrameException(BaseCode.SEAT_UPDATE_REL_COUNT_NOT_EQUAL_PRESET_COUNT);
+        }
     }
 }

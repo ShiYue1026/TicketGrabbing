@@ -18,6 +18,8 @@
         <module>damai-base-data-client</module>
         <module>damai-program-client</module>
         <module>damai-user-client</module>
+        <module>damai-order-client</module>
+        <module>damai-pay-client</module>
     </modules>
 
     <dependencies>

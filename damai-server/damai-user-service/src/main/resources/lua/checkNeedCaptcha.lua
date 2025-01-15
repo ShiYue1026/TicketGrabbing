@@ -27,6 +27,7 @@ if count > verify_captcha_threshold then
     redis.call('set', counter_timestamp_key, current_time_millis)
     redis.call('set', verify_captcha_id, 'yes')
     redis.call('expire', verify_captcha_id, verify_captcha_id_expire_time)
+    return 'true'
 end
 redis.call('set', counter_count_key, count)
 redis.call('set', verify_captcha_id, 'no')

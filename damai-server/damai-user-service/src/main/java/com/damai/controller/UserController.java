@@ -1,11 +1,9 @@
 package com.damai.controller;
 
 import com.damai.common.ApiResponse;
-import com.damai.dto.UserIdDto;
-import com.damai.dto.UserLoginDto;
-import com.damai.dto.UserLogoutDto;
-import com.damai.dto.UserRegisterDto;
+import com.damai.dto.*;
 import com.damai.service.UserService;
+import com.damai.vo.UserGetAndTicketUserListVo;
 import com.damai.vo.UserLoginVo;
 import com.damai.vo.UserVo;
 import io.swagger.v3.oas.annotations.Operation;
@@ -48,4 +46,11 @@ public class UserController {
     public ApiResponse<UserVo> getById(@Valid @RequestBody UserIdDto userIdDto) {
         return ApiResponse.ok(userService.getById(userIdDto));
     }
+
+    @Operation(summary  = "查询用户和购票人集合(只提供给服务内部调用，不提供给前端)")
+    @PostMapping(value = "/get/user/ticket/list")
+    public ApiResponse<UserGetAndTicketUserListVo> getUserAndTicketUserList(@Valid @RequestBody UserGetAndTicketUserListDto userGetAndTicketUserListDto) {
+        return ApiResponse.ok(userService.getUserAndTicketUserList(userGetAndTicketUserListDto));
+    }
+
 }

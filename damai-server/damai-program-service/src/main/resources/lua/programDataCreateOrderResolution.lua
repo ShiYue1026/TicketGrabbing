@@ -34,7 +34,7 @@ local function find_adjacent_seats(all_seats, seat_count)
             local curr = all_seats[i + j]
             local next = all_seats[i + j + 1]
 
-            if not (current.rowCode == next.rowCode and next.colCode - current.colCode == 1) then
+            if not (curr.rowCode == next.rowCode and next.colCode - curr.colCode == 1) then
                 seats_found = false
                 break;
             end

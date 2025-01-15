@@ -11,6 +11,7 @@ import com.damai.client.BaseDataClient;
 import com.damai.common.ApiResponse;
 import com.damai.core.RedisKeyManage;
 import com.damai.dto.*;
+import com.damai.entity.TicketUser;
 import com.damai.entity.User;
 import com.damai.entity.UserEmail;
 import com.damai.entity.UserMobile;
@@ -20,6 +21,7 @@ import com.damai.exception.DaMaiFrameException;
 import com.damai.handler.BloomFilterHandler;
 import com.damai.initialize.impl.composite.CompositeContainer;
 import com.damai.jwt.TokenUtil;
+import com.damai.mapper.TicketUserMapper;
 import com.damai.mapper.UserEmailMapper;
 import com.damai.mapper.UserMapper;
 import com.damai.mapper.UserMobileMapper;
@@ -28,9 +30,7 @@ import com.damai.redis.RedisKeyBuild;
 import com.damai.servicelock.LockType;
 import com.damai.servicelock.annotation.ServiceLock;
 import com.damai.util.StringUtil;
-import com.damai.vo.GetChannelDataVo;
-import com.damai.vo.UserLoginVo;
-import com.damai.vo.UserVo;
+import com.damai.vo.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -39,6 +39,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.concurrent.TimeUnit;
@@ -75,6 +76,9 @@ public class UserService extends ServiceImpl<UserMapper, User> {
 
     @Autowired
     private BaseDataClient baseDataClient;
+
+    @Autowired
+    private TicketUserMapper ticketUserMapper;
 
     private static final Integer ERROR_COUNT_THRESHOLD = 5;
 
@@ -220,5 +224,21 @@ public class UserService extends ServiceImpl<UserMapper, User> {
         UserVo userVo = new UserVo();
         BeanUtil.copyProperties(user,userVo);
         return userVo;
+    }
+
+    public UserGetAndTicketUserListVo getUserAndTicketUserList(UserGetAndTicketUserListDto userGetAndTicketUserListDto) {
+        UserIdDto userIdDto = new UserIdDto();
+        userIdDto.setId(userGetAndTicketUserListDto.getUserId());
+        UserVo userVo = getById(userIdDto);
+
+        LambdaQueryWrapper<TicketUser> ticketUserLambdaQueryWrapper = Wrappers.lambdaQuery(TicketUser.class)
+                .eq(TicketUser::getUserId, userGetAndTicketUserListDto.getUserId());
+        List<TicketUser> ticketUserList = ticketUserMapper.selectList(ticketUserLambdaQueryWrapper);
+        List<TicketUserVo> ticketUserVoList = BeanUtil.copyToList(ticketUserList, TicketUserVo.class);
+
+        UserGetAndTicketUserListVo userGetAndTicketUserListVo = new UserGetAndTicketUserListVo();
+        userGetAndTicketUserListVo.setUserVo(userVo);
+        userGetAndTicketUserListVo.setTicketUserVoList(ticketUserVoList);
+        return userGetAndTicketUserListVo;
     }
 }

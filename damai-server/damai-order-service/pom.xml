@@ -45,11 +45,11 @@
             <artifactId>damai-order-client</artifactId>
             <version>${revision}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.damai</groupId>-->
-<!--            <artifactId>damai-pay-client</artifactId>-->
-<!--            <version>${revision}</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-pay-client</artifactId>
+            <version>${revision}</version>
+        </dependency>
         <dependency>
             <groupId>com.damai</groupId>
             <artifactId>damai-program-client</artifactId>
@@ -137,6 +137,11 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.damai</groupId>
+            <artifactId>damai-user-client</artifactId>
+            <version>${revision}</version>
         </dependency>
     </dependencies>
 

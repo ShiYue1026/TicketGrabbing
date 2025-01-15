@@ -33,4 +33,14 @@
         group by program_id
     </select>
 
+    <update id="batchUpdateRemainNumber">
+        <foreach collection="ticketCategoryCountDtoList" item="ticketCategoryCountDto" index="index">
+            update
+                d_ticket_category
+            set remain_number = remain_number - #{ticketCategoryCountDto.count,jdbcType=BIGINT}
+            where id = #{ticketCategoryCountDto.ticketCategoryId,jdbcType=BIGINT}
+            and program_id = #{programId,jdbcType=BIGINT}
+        </foreach>
+    </update>
+
 </mapper>
