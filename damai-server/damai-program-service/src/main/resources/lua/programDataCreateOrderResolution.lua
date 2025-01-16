@@ -76,9 +76,9 @@ local function find_adjacent_seats(all_seats, seat_count)
         end
     end
 
-    -- 如果座位数足够，返回前 seatCount 个座位
-    if #sShapeSortedSeats >= seatCount then
-        for i = 1, seatCount do
+    -- 如果座位数足够，返回前 seat_count 个座位
+    if #sShapeSortedSeats >= seat_count then
+        for i = 1, seat_count do
             table.insert(adjacent_seats, sShapeSortedSeats[i])
         end
     end

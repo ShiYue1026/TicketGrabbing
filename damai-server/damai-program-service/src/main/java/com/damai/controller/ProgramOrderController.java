@@ -38,5 +38,11 @@ public class ProgramOrderController {
         return ApiResponse.ok(programOrderService.createV3(programOrderCreateDto));
     }
 
+    @Operation(summary = "购票V4")
+    @PostMapping(value = "/create/v4")
+    public ApiResponse<String> createV4(@Valid @RequestBody ProgramOrderCreateDto programOrderCreateDto) {
+        return ApiResponse.ok(programOrderService.createV4(programOrderCreateDto));
+    }
+
 
 }

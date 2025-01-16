@@ -17,6 +17,7 @@ import com.damai.core.RedisKeyManage;
 import com.damai.dto.*;
 import com.damai.entity.Order;
 import com.damai.entity.OrderTicketUser;
+import com.damai.entity.OrderTicketUserAggregate;
 import com.damai.enums.*;
 import com.damai.exception.DaMaiFrameException;
 import com.damai.lua.OrderProgramCacheResolutionOperate;
@@ -38,18 +39,20 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.util.*;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 import static com.damai.constant.Constant.ALIPAY_NOTIFY_FAILURE_RESULT;
 import static com.damai.constant.Constant.ALIPAY_NOTIFY_SUCCESS_RESULT;
 import static com.damai.core.DistributedLockConstants.*;
-import static com.damai.core.RepeatExecuteLimitConstants.CANCEL_PROGRAM_ORDER;
+import static com.damai.core.RepeatExecuteLimitConstants.*;
 
 @Slf4j
 @Service
@@ -201,7 +204,6 @@ public class OrderService extends ServiceImpl<OrderMapper, Order> {
     }
 
     public void updateProgramRelatedDataResolution(Long programId, Map<Long, List<Long>> seatMap, OrderStatus orderStatus) {
-        log.info("updateProgramRelatedDataResolution");
         Map<Long, List<SeatVo>> seatVoMap = new HashMap<>(seatMap.size());
         seatMap.forEach((k,v) -> seatVoMap.put(k,redisCache.multiGetForHash(
                 RedisKeyBuild.createRedisKey(RedisKeyManage.PROGRAM_SEAT_LOCK_RESOLUTION_HASH, programId, k),
@@ -464,6 +466,7 @@ public class OrderService extends ServiceImpl<OrderMapper, Order> {
 
     @ServiceLock(name = ORDER_PAY_CHECK, keys = {"#orderPayCheckDto.orderNumber"})
     public OrderPayCheckVo payCheck(OrderPayCheckDto orderPayCheckDto) {
+        log.info("主动检查账单状态");
         OrderPayCheckVo orderPayCheckVo = new OrderPayCheckVo();
 
         LambdaQueryWrapper<Order> orderLambdaQueryWrapper = Wrappers.lambdaQuery(Order.class)
@@ -526,5 +529,48 @@ public class OrderService extends ServiceImpl<OrderMapper, Order> {
             throw new DaMaiFrameException(BaseCode.PAY_TRADE_CHECK_ERROR);
         }
         return orderPayCheckVo;
+    }
+
+    public List<OrderListVo> selectList(OrderListDto orderListDto) {
+        List<OrderListVo> orderListVos = new ArrayList<>();
+        LambdaQueryWrapper<Order> orderLambdaQueryWrapper = Wrappers.lambdaQuery(Order.class)
+                .eq(Order::getUserId, orderListDto.getUserId());
+        List<Order> orderList = orderMapper.selectList(orderLambdaQueryWrapper);
+        if(CollectionUtil.isEmpty(orderList)){
+            return orderListVos;
+        }
+        orderListVos = BeanUtil.copyToList(orderList, OrderListVo.class);
+
+        List<OrderTicketUserAggregate> orderTicketUserAggregateList =
+                orderTicketUserMapper.selectOrderTicketUserAggregate(orderList.stream().map(Order::getOrderNumber)
+                        .collect(Collectors.toList()));
+        Map<Long, Integer> orderTicketUserAggregateMap =
+                orderTicketUserAggregateList.stream().collect(Collectors.toMap(OrderTicketUserAggregate::getOrderNumber, OrderTicketUserAggregate::getOrderTicketUserCount, (v1, v2) -> v2));
+
+        for (OrderListVo orderListVo : orderListVos) {
+            orderListVo.setTicketCount(orderTicketUserAggregateMap.get(orderListVo.getOrderNumber()));
+        }
+        return orderListVos;
+    }
+
+    @RepeatExecuteLimit(name = PROGRAM_CACHE_REVERSE_MQ, keys = {"#orderCreateDto.orderNumber"})
+    public void updateProgramRelateDataMq(OrderCreateDto orderCreateDto, Map<Long, List<Long>> seatMap, OrderStatus orderStatus) {
+        updateProgramRelatedDataResolution(orderCreateDto.getProgramId(), seatMap, orderStatus);
+    }
+
+    @RepeatExecuteLimit(name = CREATE_PROGRAM_ORDER_MQ, keys = {"#orderCreateDto.orderNumber"})
+    @Transactional(rollbackFor = Exception.class)
+    public String createMq(OrderCreateDto orderCreateDto) {
+        String orderNumber = create(orderCreateDto);
+        redisCache.set(
+                RedisKeyBuild.createRedisKey(RedisKeyManage.ORDER_MQ, orderNumber),
+                orderNumber,
+                1,
+                TimeUnit.MINUTES);
+        return orderNumber;
+    }
+
+    public String getCache(OrderGetDto orderGetDto) {
+        return redisCache.get(RedisKeyBuild.createRedisKey(RedisKeyManage.ORDER_MQ, orderGetDto.getOrderNumber()), String.class);
     }
 }

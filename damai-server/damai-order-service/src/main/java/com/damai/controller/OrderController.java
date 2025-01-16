@@ -6,6 +6,7 @@ import com.damai.dto.*;
 import com.damai.service.OrderService;
 import com.damai.vo.AccountOrderCountVo;
 import com.damai.vo.OrderGetVo;
+import com.damai.vo.OrderListVo;
 import com.damai.vo.OrderPayCheckVo;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -16,6 +17,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/order")
@@ -59,5 +62,17 @@ public class OrderController {
     @PostMapping(value = "/pay/check")
     public ApiResponse<OrderPayCheckVo> payCheck(@Valid @RequestBody OrderPayCheckDto orderPayCheckDto) {
         return ApiResponse.ok(orderService.payCheck(orderPayCheckDto));
+    }
+
+    @Operation(summary = "查看订单列表")
+    @PostMapping("/select/list")
+    public ApiResponse<List<OrderListVo>> selectList(@Valid @RequestBody OrderListDto orderListDto) {
+        return ApiResponse.ok(orderService.selectList(orderListDto));
+    }
+
+    @Operation(summary = "检查缓存中的订单")
+    @PostMapping(value = "/get/cache")
+    public ApiResponse<String> getCache(@Valid @RequestBody OrderGetDto orderGetDto) {
+        return ApiResponse.ok(orderService.getCache(orderGetDto));
     }
 }

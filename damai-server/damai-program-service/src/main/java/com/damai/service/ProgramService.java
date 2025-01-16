@@ -11,6 +11,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.damai.BusinessThreadPool;
 import com.damai.client.BaseDataClient;
+import com.damai.client.OrderClient;
 import com.damai.client.UserClient;
 import com.damai.common.ApiResponse;
 import com.damai.core.RedisKeyManage;
@@ -34,6 +35,7 @@ import com.damai.service.cache.local.LocalCacheProgramCategory;
 import com.damai.service.cache.local.LocalCacheProgramGroup;
 import com.damai.service.cache.local.LocalCacheProgramShowTime;
 import com.damai.service.es.ProgramEs;
+import com.damai.service.tool.TokenExpireManager;
 import com.damai.servicelock.LockType;
 import com.damai.servicelock.annotation.ServiceLock;
 import com.damai.threadlocal.BaseParameterHolder;
@@ -124,6 +126,12 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
 
     @Autowired
     private SeatMapper seatMapper;
+
+    @Autowired
+    private OrderClient orderClient;
+
+    @Autowired
+    private TokenExpireManager tokenExpireManager;
 
     /**
      * 查询主页信息
@@ -445,7 +453,7 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
         preloadTicketUserList(programVo.getHighHeat());
 
         // 预先加载用户下的节目订单数量
-        // TODO
+        preloadAccountOrderCount(programVo.getId());
 
         // 查询节目类型信息
         ProgramCategory programCategory = getProgramCategory(programVo.getProgramCategoryId());
@@ -494,7 +502,7 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
         preloadTicketUserList(programVo.getHighHeat());
 
         // 预先加载用户下的节目订单数量
-        // TODO
+        preloadAccountOrderCount(programVo.getId());
 
         // 查询节目类型信息
         ProgramCategory programCategory = getProgramCategoryMultipleCache(programVo.getProgramCategoryId());
@@ -581,7 +589,44 @@ public class ProgramService extends ServiceImpl<ProgramMapper, Program> {
                 log.error("预热加载购票人列表失败",e);
             }
         });
+    }
 
+    private void preloadAccountOrderCount(Long programId) {
+        String userId = BaseParameterHolder.getParameter(USER_ID);
+        String code = BaseParameterHolder.getParameter(CODE);
+        if(StringUtil.isEmpty(userId) || StringUtil.isEmpty(code)){  // 未登录
+            return;
+        }
+
+        Boolean userLogin = redisCache.hasKey(RedisKeyBuild.createRedisKey(RedisKeyManage.USER_LOGIN, code, userId));
+        if(!userLogin) {  // 登录过期
+            return;
+        }
+
+        BusinessThreadPool.execute(() -> {
+            try{
+                if(!redisCache.hasKey(RedisKeyBuild.createRedisKey(RedisKeyManage.ACCOUNT_ORDER_COUNT, userId, programId))) {
+                    AccountOrderCountDto accountOrderCountDto = new AccountOrderCountDto();
+                    accountOrderCountDto.setUserId(Long.parseLong(userId));
+                    accountOrderCountDto.setProgramId(programId);
+                    ApiResponse<AccountOrderCountVo> apiResponse = orderClient.accountOrderCount(accountOrderCountDto);
+                    if(Objects.equals(apiResponse.getCode(), BaseCode.SUCCESS.getCode())) {
+                        Optional.ofNullable(apiResponse.getData())
+                                .ifPresent(accountOrderCountVo -> redisCache.set(
+                                        RedisKeyBuild.createRedisKey(RedisKeyManage.ACCOUNT_ORDER_COUNT, userId, programId),
+                                        accountOrderCountVo.getCount(),
+                                        tokenExpireManager.getTokenExpireTime() + 1,
+                                        TimeUnit.MINUTES
+                                ));
+                    }
+                    else {
+                        log.warn("orderClient.accountOrderCount 调用失败 apiResponse : {}", com.alibaba.fastjson.JSON.toJSONString(apiResponse));
+                    }
+                }
+            } catch (Exception e){
+                log.error("预热加载账户订单数量失败",e);
+            }
+        });
     }
 
     @ServiceLock(lockType= LockType.Read,name = PROGRAM_GROUP_LOCK,keys = {"#programGroupId"})

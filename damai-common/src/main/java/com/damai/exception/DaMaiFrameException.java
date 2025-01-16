@@ -39,4 +39,8 @@ public class DaMaiFrameException extends BaseException {
         this.msg = apiResponse.getMsg();
     }
 
+    public DaMaiFrameException(Throwable cause) {
+        super(cause);
+    }
+
 }

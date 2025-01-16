@@ -63,7 +63,7 @@ public class PayService {
         LambdaQueryWrapper<PayBill> queryWrapper = Wrappers.lambdaQuery(PayBill.class)
                 .eq(PayBill::getOutOrderNo, payDto.getOrderNumber());
         PayBill payBill = payBillMapper.selectOne(queryWrapper);
-        if(Objects.nonNull(payBill) && !Objects.equals(payBill.getPayBillStatus(), PayBillStatus.NO_PAY)){
+        if (Objects.nonNull(payBill) && !Objects.equals(payBill.getPayBillStatus(), PayBillStatus.NO_PAY.getCode())) {
             throw new DaMaiFrameException(BaseCode.PAY_BILL_IS_NOT_NO_PAY);
         }
         PayStrategyHandler payStrategyHandler = payStrategyContext.get(payDto.getChannel());
@@ -197,40 +197,38 @@ public class PayService {
     }
 
     @Transactional(rollbackFor = Exception.class)
-    @ServiceLock(name = TRADE_CHECK, keys = {"#tradeCheckDto.outTradeNo"})
     public TradeCheckVo tradeCheck(TradeCheckDto tradeCheckDto) {
         TradeCheckVo tradeCheckVo = new TradeCheckVo();
         PayStrategyHandler payStrategyHandler = payStrategyContext.get(tradeCheckDto.getChannel());
         TradeResult tradeResult = payStrategyHandler.queryTrade(tradeCheckDto.getOutTradeNo());
-        BeanUtil.copyProperties(tradeResult, tradeCheckVo);
-        if(!tradeResult.isSuccess()){
+        BeanUtil.copyProperties(tradeResult,tradeCheckVo);
+        if (!tradeResult.isSuccess()) {
             return tradeCheckVo;
         }
         BigDecimal totalAmount = tradeResult.getTotalAmount();
         String outTradeNo = tradeResult.getOutTradeNo();
         Integer payBillStatus = tradeResult.getPayBillStatus();
-        LambdaQueryWrapper<PayBill> payBillLambdaQueryWrapper = Wrappers.lambdaQuery(PayBill.class)
-                .eq(PayBill::getOutOrderNo, outTradeNo);
+        LambdaQueryWrapper<PayBill> payBillLambdaQueryWrapper =
+                Wrappers.lambdaQuery(PayBill.class).eq(PayBill::getOutOrderNo, outTradeNo);
         PayBill payBill = payBillMapper.selectOne(payBillLambdaQueryWrapper);
-        if(Objects.isNull(payBill)){
+        if (Objects.isNull(payBill)) {
             log.error("账单为空 tradeCheckDto : {}",JSON.toJSONString(tradeCheckDto));
             return tradeCheckVo;
         }
-        if(payBill.getPayAmount().compareTo(totalAmount) != 0){
+        if (payBill.getPayAmount().compareTo(totalAmount) != 0) {
             log.error("支付渠道 和库中账单支付金额不一致 支付渠道支付金额 : {}, 库中账单支付金额 : {}, tradeCheckDto : {}",
                     totalAmount,payBill.getPayAmount(),JSON.toJSONString(tradeCheckDto));
             return tradeCheckVo;
         }
-        if(!Objects.equals(payBill.getPayBillStatus(), payBillStatus)) {
+        if (!Objects.equals(payBill.getPayBillStatus(), payBillStatus)) {
             log.warn("支付渠道和库中账单交易状态不一致 支付渠道payBillStatus : {}, 库中payBillStatus : {}, tradeCheckDto : {}",
                     payBillStatus,payBill.getPayBillStatus(),JSON.toJSONString(tradeCheckDto));
-            // 更新账单状态
             PayBill updatePayBill = new PayBill();
             updatePayBill.setId(payBill.getId());
             updatePayBill.setPayBillStatus(payBillStatus);
-            LambdaUpdateWrapper<PayBill> payBillLambdaUpdateWrapper = Wrappers.lambdaUpdate(PayBill.class)
-                    .eq(PayBill::getOutOrderNo, outTradeNo);
-            payBillMapper.update(updatePayBill, payBillLambdaUpdateWrapper);
+            LambdaUpdateWrapper<PayBill> payBillLambdaUpdateWrapper =
+                    Wrappers.lambdaUpdate(PayBill.class).eq(PayBill::getOutOrderNo, outTradeNo);
+            payBillMapper.update(updatePayBill,payBillLambdaUpdateWrapper);
             return tradeCheckVo;
         }
         return tradeCheckVo;

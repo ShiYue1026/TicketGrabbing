@@ -32,6 +32,13 @@ spring:
     openfeign:
       okhttp:
         enabled: true
+  kafka:
+    bootstrap-servers: 192.168.88.128:9092
+    producer:
+      retries: 1
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic: create_order
 
 management:
   health:
