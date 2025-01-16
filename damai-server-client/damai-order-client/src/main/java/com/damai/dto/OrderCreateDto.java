@@ -1,0 +1,66 @@
+package com.damai.dto;
+
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import lombok.Data;
+
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.List;
+
+@Data
+@Schema(title="OrderCreateDto", description ="订单创建")
+public class OrderCreateDto {
+
+    @Schema(name ="orderNumber", type ="Long", description ="订单编号", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private Long orderNumber;
+
+    @Schema(name ="programId", type ="Long", description ="节目表id", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private Long programId;
+
+    @Schema(name ="programItemPicture", type ="String", description ="节目图片介绍", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotBlank
+    private String programItemPicture;
+
+    @Schema(name ="userId", type ="Long", description ="用户id", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private Long userId;
+
+    @Schema(name ="programTitle", type ="String", description ="节目标题", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotBlank
+    private String programTitle;
+
+    @Schema(name ="programPlace", type ="String", description ="节目地点", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotBlank
+    private String programPlace;
+
+    @Schema(name ="programShowTime", type ="Date", description ="节目演出时间", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private Date programShowTime;
+
+    @Schema(name ="programPermitChooseSeat", type ="Integer", description ="节目是否允许选座 1:允许选座 0:不允许选座", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private Integer programPermitChooseSeat;
+
+    @Schema(name ="distributionMode", type ="String", description ="配送方式")
+    private String distributionMode;
+
+    @Schema(name ="takeTicketMode", type ="String", description ="取票方式")
+    private String takeTicketMode;
+
+    @Schema(name ="orderPrice", type ="BigDecimal", description ="订单价格", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private BigDecimal orderPrice;
+
+    @Schema(name ="createOrderTime", type ="Date", description ="生成订单时间", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private Date createOrderTime;
+
+    @Schema(name ="orderTicketUserCreateDtoList", type ="List<OrderTicketUserCreateDto>", description ="购票人订单集合", requiredMode= Schema.RequiredMode.REQUIRED)
+    @NotNull
+    private List<OrderTicketUserCreateDto> orderTicketUserCreateDtoList;
+
+}

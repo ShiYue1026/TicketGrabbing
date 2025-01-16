@@ -1,0 +1,77 @@
+server:
+  port: 6084
+spring:
+  application:
+    name: ${prefix.distinction.name:damai}-program-service
+  profiles:
+    active: local
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:shardingsphere-program-${spring.profiles.active}.yaml
+  jackson:
+    generator:
+      write-numbers-as-strings: true
+    time-zone: GMT+8
+    date-format: yyyy-MM-dd HH:mm:ss
+  data:
+    redis:
+      database: 0
+      host: 127.0.0.1
+      port: 6379
+      timeout: 3000
+      jedis:
+        pool:
+          max-active: 300
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.88.130:8848
+        username: nacos
+        password: nacos
+
+    openfeign:
+      okhttp:
+        enabled: true
+  kafka:
+    bootstrap-servers: 192.168.88.128:9092
+    producer:
+      retries: 1
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic: create_order
+
+management:
+  health:
+    elasticsearch:
+      enabled: false
+
+elasticsearch:
+  ip: 192.168.88.130:9200
+  userName: elastic
+  passWord: elastic
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      #生成文档所需的扫包路径，一般为启动类目录
+      packages-to-scan: com.damai.controller
+#knife4j配置
+knife4j:
+  #是否启用增强设置
+  enable: true
+  #开启生产环境屏蔽
+  production: false
+  #是否启用登录认证
+  basic:
+    enable: false
+  setting:
+    language: zh_cn
+    enable-version: true
+    enable-swagger-models: true

@@ -1,0 +1,60 @@
+#服务端口
+server:
+  port: 6085
+
+  http2:
+    enabled: false
+# 应用名称
+spring:
+  profiles:
+    # 微服务调用
+    active: pro
+#  application:
+#    name: ${prefix.distinction.name:damai}-gateway-service
+    # 单体服务调用
+  #    active: single
+  main:
+    allow-bean-definition-overriding: true
+  data:
+    redis:
+      database: 0
+      host: 192.168.88.130
+      port: 6379
+      timeout: 3000
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.88.130:8848
+        username: nacos
+        password: nacos
+    #      datasource:
+    #        degrade:
+    #          nacos:
+    #            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+    #            dataId: ${spring.application.name}-degrade-rules
+    #            groupId: SENTINEL_GROUP
+    #            dataType: json
+    #            rule-type: degrade
+    #        flow:
+    #          nacos:
+    #            server-addr: ${spring.cloud.nacos.discovery.server-addr}
+    #            dataId: ${spring.application.name}-flow-rules
+    #            groupId: SENTINEL_GROUP
+    #            dataType: json
+    #            rule-type: flow
+    gateway:
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+feign:
+  okhttp:
+    enabled: true
+# knife4j 网关聚合
+knife4j:
+  gateway:
+    enabled: true
+    # 指定服务发现的模式聚合微服务文档，并且是默认 default 分组
+    strategy: discover
+    discover:
+      # OpenAPI 3.0 规范 
+      version: openapi3
+      enabled: true
