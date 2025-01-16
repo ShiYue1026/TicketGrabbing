@@ -1,7 +1,7 @@
 # 高并发抢票系统
 
 ## 技术选型
-**SpringBoot、SpringCloud、Nacos、Sentinel、MybatisPlus、Redis、Kafka、Elasticsearch、Mysql、ShardingSphere**
+**SpringBoot、SpringCloud、Nacos、Sentinel、Mysql、MybatisPlus、Shadingsphere、JWT、Redis、Redisson、Elasticsearch、Kafka**
 
 ## 项目描述
 
