@@ -1,4 +1,4 @@
-# 高并发抢票系统
+# FastTicket抢票系统
 
 ## 技术选型
 **SpringBoot、SpringCloud、Nacos、Sentinel、Mysql、MybatisPlus、Shadingsphere、JWT、Redis、Redisson、Elasticsearch、Kafka**
