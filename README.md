@@ -1,7 +1,7 @@
 # FastTicket抢票系统
 
 ## 技术选型
-**SpringBoot、SpringCloud、Nacos、Sentinel、Mysql、MybatisPlus、Shadingsphere、JWT、Redis、Redisson、Elasticsearch、Kafka**
+**SpringBoot、SpringCloud、Nacos、Sentinel、Mysql、MybatisPlus、Shadingsphere、Redis、Caffeine、Redisson、Elasticsearch、Kafka**
 
 ## 项目描述
 
