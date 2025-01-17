@@ -172,7 +172,6 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
     }
 
     private Map<String, String> doExecute(String originalBody, ServerWebExchange exchange) {
-        log.info("current thread verify: {}",Thread.currentThread().getName());
         ServerHttpRequest request = exchange.getRequest();
         String requestBody = originalBody;
         Map<String, String> bodyContent = new HashMap<>(32);
@@ -286,8 +285,6 @@ public class RequestValidationFilter implements GlobalFilter, Ordered {
                 if (CollectionUtil.isNotEmpty(headMap) && StringUtil.isNotEmpty(headMap.get(TRACE_ID))) {
                     MDC.put(TRACE_ID,headMap.get(TRACE_ID));
                 }
-                System.out.println("请求头内容：");
-                newHeaders.forEach((key, value) -> System.out.println(key + ": " + value));
                 return newHeaders;
             }
 

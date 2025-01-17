@@ -45,9 +45,17 @@ spring:
     gateway:
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
-feign:
-  okhttp:
-    enabled: true
+    openfeign:
+      okhttp:
+        enabled: true
+  kafka:
+    bootstrap-servers: 127.0.0.1:9092
+    producer:
+      retries: 1
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    topic: save_api_data
+
 # knife4j 网关聚合
 knife4j:
   gateway:
@@ -58,3 +66,7 @@ knife4j:
       # OpenAPI 3.0 规范 
       version: openapi3
       enabled: true
+
+api:
+  limit:
+    paths: /**/customize/test/test

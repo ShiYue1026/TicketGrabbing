@@ -1244,3 +1244,1124 @@ com.alibaba.nacos.api.exception.NacosException: Client not connected, current st
 [gateway-service] [] 2025-01-16 12:54:02  INFO CredentialWatcher:107 - [null] CredentialWatcher is stopped
 [gateway-service] [] 2025-01-16 12:54:02  INFO CredentialService:91 - [null] CredentialService is freed
 [gateway-service] [] 2025-01-16 12:54:02  INFO naming:211 - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
+[gateway-service] [] 2025-01-16 12:54:14  INFO Version:21 - HV000001: Hibernate Validator 8.0.1.Final
+[gateway-service] [] 2025-01-16 12:54:14  INFO DamaiGatewayServiceApplication:50 - Starting DamaiGatewayServiceApplication using Java 17.0.5 with PID 24464 (F:\TicketGrabbing\damai-server\damai-gateway-service\target\classes started by shiyu in F:\TicketGrabbing)
+[gateway-service] [] 2025-01-16 12:54:14  INFO DamaiGatewayServiceApplication:660 - The following 1 profile is active: "pro"
+[gateway-service] [] 2025-01-16 12:54:15  INFO RepositoryConfigurationDelegate:295 - Multiple Spring Data modules found, entering strict repository configuration mode
+[gateway-service] [] 2025-01-16 12:54:15  INFO RepositoryConfigurationDelegate:143 - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+[gateway-service] [] 2025-01-16 12:54:16  INFO RepositoryConfigurationDelegate:211 - Finished Spring Data repository scanning in 14 ms. Found 0 Redis repository interfaces.
+[gateway-service] [] 2025-01-16 12:54:16  INFO GenericScope:282 - BeanFactory id=585ca3f8-bb5a-3263-a4ed-494ffec4a9d5
+[gateway-service] [] 2025-01-16 12:54:16  INFO EnableEncryptablePropertiesBeanFactoryPostProcessor:44 - Post-processing PropertySource instances
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:105 - Skipping PropertySource configurationProperties [class org.springframework.boot.context.properties.source.ConfigurationPropertySourcesPropertySource
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource gateway-properties [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource systemProperties [org.springframework.core.env.PropertiesPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource systemEnvironment [org.springframework.boot.env.SystemEnvironmentPropertySourceEnvironmentPostProcessor$OriginAwareSystemEnvironmentPropertySource] to EncryptableSystemEnvironmentPropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource random [org.springframework.boot.env.RandomValuePropertySource] to EncryptablePropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource cachedrandom [org.springframework.cloud.util.random.CachedRandomPropertySource] to EncryptablePropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource Config resource 'class path resource [application-pro.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource Config resource 'class path resource [application.properties]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource Config resource 'class path resource [application.yml]' via location 'optional:classpath:/' [org.springframework.boot.env.OriginTrackedMapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  INFO EncryptablePropertySourceConverter:110 - Converting PropertySource springCloudClientHostInfo [org.springframework.core.env.MapPropertySource] to EncryptableMapPropertySourceWrapper
+[gateway-service] [] 2025-01-16 12:54:16  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:429 - Bean 'org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig' of type [org.springframework.cloud.client.loadbalancer.LoadBalancerAutoConfiguration$DeferringLoadBalancerInterceptorConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [lbRestClientPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[gateway-service] [] 2025-01-16 12:54:16  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:437 - Bean 'deferringLoadBalancerInterceptor' of type [org.springframework.cloud.client.loadbalancer.DeferringLoadBalancerInterceptor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [lbRestClientPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+[gateway-service] [] 2025-01-16 12:54:16  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:429 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). The currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor] is declared through a non-static factory method on that class; consider declaring it as static instead.
+[gateway-service] [] 2025-01-16 12:54:16  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:437 - Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+[gateway-service] [] 2025-01-16 12:54:16  WARN PostProcessorRegistrationDelegate$BeanPostProcessorChecker:437 - Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying). Is this bean getting eagerly injected into a currently created BeanPostProcessor [loadBalancerWebClientBuilderBeanPostProcessor]? Check the corresponding BeanPostProcessor declaration and its dependencies.
+[gateway-service] [] 2025-01-16 12:54:16  INFO DefaultLazyPropertyFilter:45 - Property Filter custom Bean not found with name 'encryptablePropertyFilter'. Initializing Default Property Filter
+[gateway-service] [] 2025-01-16 12:54:16  INFO DefaultLazyPropertyResolver:46 - Property Resolver custom Bean not found with name 'encryptablePropertyResolver'. Initializing Default Property Resolver
+[gateway-service] [] 2025-01-16 12:54:16  INFO DefaultLazyPropertyDetector:44 - Property Detector custom Bean not found with name 'encryptablePropertyDetector'. Initializing Default Property Detector
+[gateway-service] [] 2025-01-16 12:54:17  INFO DefaultUidGenerator:100 - Initialized bits(1, 28, 22, 13) for workerID:361
+[gateway-service] [] 2025-01-16 12:54:17  INFO CachedUidGenerator:133 - Initialized ring buffer size:65536, paddingFactor:50
+[gateway-service] [] 2025-01-16 12:54:17  INFO CachedUidGenerator:142 - Initialized BufferPaddingExecutor. Using schdule:false, interval:null
+[gateway-service] [] 2025-01-16 12:54:17  INFO RingBuffer:143 - Ready to padding buffer lastSecond:1737003257. RingBuffer [bufferSize=65536, tail=-1, cursor=-1, paddingThreshold=32768]
+[gateway-service] [] 2025-01-16 12:54:17  WARN RingBuffer:196 - Rejected putting buffer for uid:717048775799808000. RingBuffer [bufferSize=65536, tail=65535, cursor=-1, paddingThreshold=32768]
+[gateway-service] [] 2025-01-16 12:54:17  INFO RingBuffer:165 - End to padding buffer lastSecond:1737003266. RingBuffer [bufferSize=65536, tail=65535, cursor=-1, paddingThreshold=32768]
+[gateway-service] [] 2025-01-16 12:54:17  INFO CachedUidGenerator:73 - Initialized RingBuffer successfully.
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [After]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Before]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Between]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Cookie]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Header]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Host]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Method]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Path]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Query]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [ReadBody]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [RemoteAddr]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [Weight]
+[gateway-service] [] 2025-01-16 12:54:19  INFO RouteDefinitionRouteLocator:89 - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+[gateway-service] [] 2025-01-16 12:54:20  INFO EndpointLinksResolver:60 - Exposing 1 endpoint beneath base path '/actuator'
+[gateway-service] [] 2025-01-16 12:54:20  INFO SentinelWebFluxAutoConfiguration:90 - [Sentinel Starter] register Sentinel SentinelWebFluxFilter
+[gateway-service] [] 2025-01-16 12:54:21  WARN LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger:94 - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+[gateway-service] [] 2025-01-16 12:54:21  INFO NettyWebServer:141 - Netty started on port 6085 (http)
+[gateway-service] [] 2025-01-16 12:54:22  INFO naming:62 - initializer namespace from ans.namespace attribute : null
+[gateway-service] [] 2025-01-16 12:54:22  INFO naming:66 - initializer namespace from ALIBABA_ALIWARE_NAMESPACE attribute :null
+[gateway-service] [] 2025-01-16 12:54:22  INFO naming:73 - initializer namespace from namespace attribute :null
+[gateway-service] [] 2025-01-16 12:54:22  INFO CredentialWatcher:189 - null No credential found
+[gateway-service] [] 2025-01-16 12:54:22  INFO naming:74 - FailoverDataSource type is class com.alibaba.nacos.client.naming.backups.datasource.DiskFailoverDataSource
+[gateway-service] [] 2025-01-16 12:54:22  INFO ParamUtil:89 - [settings] [req-serv] nacos-server port:8848
+[gateway-service] [] 2025-01-16 12:54:22  INFO ParamUtil:92 - [settings] [http-client] connect timeout:1000
+[gateway-service] [] 2025-01-16 12:54:22  INFO ParamUtil:97 - PER_TASK_CONFIG_SIZE: 3000.0
+[gateway-service] [] 2025-01-16 12:54:22  INFO ClientAuthPluginManager:56 - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.impl.NacosClientAuthServiceImpl success.
+[gateway-service] [] 2025-01-16 12:54:22  INFO ClientAuthPluginManager:56 - [ClientAuthPluginManager] Load ClientAuthService com.alibaba.nacos.client.auth.ram.RamClientAuthServiceImpl success.
+[gateway-service] [] 2025-01-16 12:54:23  INFO client:118 - [RpcClientFactory] create a new rpc client of 45ce8f41-fe06-4362-92af-2e286e2f1a82
+[gateway-service] [] 2025-01-16 12:54:23  INFO naming:109 - Create naming rpc client for uuid->45ce8f41-fe06-4362-92af-2e286e2f1a82
+[gateway-service] [] 2025-01-16 12:54:23  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+[gateway-service] [] 2025-01-16 12:54:23  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+[gateway-service] [] 2025-01-16 12:54:23  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+[gateway-service] [] 2025-01-16 12:54:23  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Try to connect to server on start up, server: {serverIp = '192.168.88.130', server main port = 8848}
+[gateway-service] [] 2025-01-16 12:54:23  INFO GrpcClient:210 - grpc client connection server:192.168.88.130 ip,serverPort:9848,grpcTslConfig:{"sslProvider":"","enableTls":false,"mutualAuthEnable":false,"trustAll":false}
+[gateway-service] [] 2025-01-16 12:54:24  INFO AbstractAbilityControlManager:61 - Ready to get current node abilities...
+[gateway-service] [] 2025-01-16 12:54:24  INFO AbstractAbilityControlManager:89 - Ready to initialize current node abilities, support modes: [SDK_CLIENT]
+[gateway-service] [] 2025-01-16 12:54:24  INFO AbstractAbilityControlManager:94 - Initialize current abilities finish...
+[gateway-service] [] 2025-01-16 12:54:24  INFO NacosAbilityManagerHolder:85 - [AbilityControlManager] Successfully initialize AbilityControlManager
+[gateway-service] [] 2025-01-16 12:54:24  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Success to connect to server [192.168.88.130:8848] on start up, connectionId = 1736970551762_192.168.88.1_58148
+[gateway-service] [] 2025-01-16 12:54:24  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Notify connected event to listeners.
+[gateway-service] [] 2025-01-16 12:54:24  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:90 - Grpc connection connect
+[gateway-service] [] 2025-01-16 12:54:24  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1649/0x0000000801667aa8
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:133 - [REGISTER-SERVICE] public registering service damai-gateway-service with instance Instance{instanceId='null', ip='192.168.18.41', port=6085, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={IPv6=[2406:3003:2005:5d0b:354e:4e35:c23:15b8], preserved.register.source=SPRING_CLOUD}}
+[gateway-service] [] 2025-01-16 12:54:24  INFO NacosServiceRegistry:76 - nacos registry, DEFAULT_GROUP damai-gateway-service 192.168.18.41:6085 register finished
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-program-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-gateway-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-gateway-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-base-data-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-base-data-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-program-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-program-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-gateway-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-pay-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-gateway-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-base-data-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-pay-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-base-data-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-program-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-user-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-pay-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-user-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-pay-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-order-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-user-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-user-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:164 - [SUBSCRIBE-SERVICE] service:damai-order-service, group:DEFAULT_GROUP, clusters: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-order-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:377 - [GRPC-SUBSCRIBE] service:damai-order-service, group:DEFAULT_GROUP, cluster: 
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:169 - init new ips(0) service: DEFAULT_GROUP@@damai-user-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:169 - init new ips(0) service: DEFAULT_GROUP@@damai-pay-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:169 - init new ips(0) service: DEFAULT_GROUP@@damai-base-data-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:169 - init new ips(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:169 - init new ips(0) service: DEFAULT_GROUP@@damai-gateway-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:169 - init new ips(0) service: DEFAULT_GROUP@@damai-order-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  WARN naming:174 - out of date data received, old-t: 1736970552102, new-t: 1736970552100
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-user-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-gateway-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-pay-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-order-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-base-data-service -> []
+[gateway-service] [] 2025-01-16 12:54:24  INFO NacosDiscoveryHeartBeatPublisher:66 - Start nacos heartBeat task scheduler.
+[gateway-service] [] 2025-01-16 12:54:24  INFO DamaiGatewayServiceApplication:56 - Started DamaiGatewayServiceApplication in 10.824 seconds (process running for 11.826)
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 207
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 207
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 208
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 208
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 206
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 206
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 209
+[gateway-service] [] 2025-01-16 12:54:25  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-gateway-service -> [{"ip":"192.168.18.41","port":6085,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-gateway-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:25  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-gateway-service -> [{"ip":"192.168.18.41","port":6085,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-gateway-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 209
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 210
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 210
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 211
+[gateway-service] [] 2025-01-16 12:54:25  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 211
+[gateway-service] [] 2025-01-16 12:54:28  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 212
+[gateway-service] [] 2025-01-16 12:54:28  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-base-data-service -> [{"ip":"192.168.18.41","port":6083,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-base-data-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:28  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-base-data-service -> [{"ip":"192.168.18.41","port":6083,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-base-data-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:28  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 212
+[gateway-service] [] 2025-01-16 12:54:37  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 213
+[gateway-service] [] 2025-01-16 12:54:37  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-pay-service -> [{"ip":"192.168.18.41","port":6087,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-pay-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:37  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-pay-service -> [{"ip":"192.168.18.41","port":6087,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-pay-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:37  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 213
+[gateway-service] [] 2025-01-16 12:54:39  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 215
+[gateway-service] [] 2025-01-16 12:54:39  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:39  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:39  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 215
+[gateway-service] [] 2025-01-16 12:54:43  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 216
+[gateway-service] [] 2025-01-16 12:54:43  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:43  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:43  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 216
+[gateway-service] [] 2025-01-16 12:54:45  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 217
+[gateway-service] [] 2025-01-16 12:54:45  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-user-service -> [{"ip":"192.168.18.41","port":6082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-user-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:45  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-user-service -> [{"ip":"192.168.18.41","port":6082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-user-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:54:45  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 217
+[gateway-service] [717048500921901058] 2025-01-16 12:54:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-2
+[gateway-service] [717048500921901060] 2025-01-16 12:54:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-6
+[gateway-service] [717048500921901058] 2025-01-16 12:54:53  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901060] 2025-01-16 12:54:53  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901060] 2025-01-16 12:54:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [717048500921901058] 2025-01-16 12:54:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-2
+[gateway-service] [717048500921901061] 2025-01-16 12:54:54  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-14
+[gateway-service] [717048500921901061] 2025-01-16 12:54:54  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901061] 2025-01-16 12:54:54  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-14
+[gateway-service] [717048500921901062] 2025-01-16 12:54:58  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-15
+[gateway-service] [717048500921901066] 2025-01-16 12:54:58  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901067] 2025-01-16 12:54:58  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901062] 2025-01-16 12:54:58  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901066] 2025-01-16 12:54:58  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901067] 2025-01-16 12:54:58  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901066] 2025-01-16 12:54:58  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901067] 2025-01-16 12:54:58  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901062] 2025-01-16 12:54:59  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-15
+[gateway-service] [717048500921901068] 2025-01-16 12:55:01  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-1
+[gateway-service] [717048500921901069] 2025-01-16 12:55:01  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-2
+[gateway-service] [717048500921901069] 2025-01-16 12:55:01  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901068] 2025-01-16 12:55:01  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901068] 2025-01-16 12:55:01  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-1
+[gateway-service] [717048500921901069] 2025-01-16 12:55:01  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-2
+[gateway-service] [717048500921901070] 2025-01-16 12:55:03  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901070] 2025-01-16 12:55:03  INFO RequestValidationFilter:221 - /damai/program/program/order/create/v4是否跳过登录验证: false
+[gateway-service] [717048500921901070] 2025-01-16 12:55:03  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901071] 2025-01-16 12:55:06  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-4
+[gateway-service] [717048500921901071] 2025-01-16 12:55:06  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901071] 2025-01-16 12:55:06  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [717048500921901072] 2025-01-16 12:55:06  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-6
+[gateway-service] [717048500921901072] 2025-01-16 12:55:06  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901072] 2025-01-16 12:55:06  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [717048500921901073] 2025-01-16 12:55:06  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901073] 2025-01-16 12:55:06  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901073] 2025-01-16 12:55:06  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [717048500921901074] 2025-01-16 12:55:06  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901074] 2025-01-16 12:55:06  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901074] 2025-01-16 12:55:06  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901075] 2025-01-16 12:55:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901075] 2025-01-16 12:55:07  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901075] 2025-01-16 12:55:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901076] 2025-01-16 12:55:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901076] 2025-01-16 12:55:07  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901076] 2025-01-16 12:55:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901077] 2025-01-16 12:55:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901077] 2025-01-16 12:55:07  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901077] 2025-01-16 12:55:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901078] 2025-01-16 12:55:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901078] 2025-01-16 12:55:07  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901078] 2025-01-16 12:55:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901079] 2025-01-16 12:55:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-13
+[gateway-service] [717048500921901079] 2025-01-16 12:55:07  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901079] 2025-01-16 12:55:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-13
+[gateway-service] [717048500921901080] 2025-01-16 12:55:08  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-14
+[gateway-service] [717048500921901080] 2025-01-16 12:55:08  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901080] 2025-01-16 12:55:08  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-14
+[gateway-service] [717048500921901081] 2025-01-16 12:55:08  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-15
+[gateway-service] [717048500921901081] 2025-01-16 12:55:08  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901081] 2025-01-16 12:55:08  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-15
+[gateway-service] [717048500921901082] 2025-01-16 12:55:08  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901082] 2025-01-16 12:55:08  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901082] 2025-01-16 12:55:08  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901083] 2025-01-16 12:55:08  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901083] 2025-01-16 12:55:08  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901083] 2025-01-16 12:55:08  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901084] 2025-01-16 12:55:08  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901084] 2025-01-16 12:55:08  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901084] 2025-01-16 12:55:08  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [717048500921901085] 2025-01-16 12:55:09  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901085] 2025-01-16 12:55:09  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901085] 2025-01-16 12:55:09  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901086] 2025-01-16 12:55:09  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-20
+[gateway-service] [717048500921901086] 2025-01-16 12:55:09  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901086] 2025-01-16 12:55:09  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-20
+[gateway-service] [717048500921901087] 2025-01-16 12:55:09  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-1
+[gateway-service] [717048500921901087] 2025-01-16 12:55:09  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901087] 2025-01-16 12:55:09  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-1
+[gateway-service] [717048500921901088] 2025-01-16 12:55:09  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-2
+[gateway-service] [717048500921901088] 2025-01-16 12:55:09  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901088] 2025-01-16 12:55:09  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-2
+[gateway-service] [717048500921901089] 2025-01-16 12:55:09  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901089] 2025-01-16 12:55:09  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901089] 2025-01-16 12:55:09  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901090] 2025-01-16 12:55:10  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-4
+[gateway-service] [717048500921901090] 2025-01-16 12:55:10  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901090] 2025-01-16 12:55:10  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [717048500921901091] 2025-01-16 12:55:10  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-5
+[gateway-service] [717048500921901091] 2025-01-16 12:55:10  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901091] 2025-01-16 12:55:10  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-5
+[gateway-service] [717048500921901092] 2025-01-16 12:55:10  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-6
+[gateway-service] [717048500921901092] 2025-01-16 12:55:10  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901092] 2025-01-16 12:55:10  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [717048500921901093] 2025-01-16 12:55:10  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901093] 2025-01-16 12:55:10  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901093] 2025-01-16 12:55:10  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [] 2025-01-16 12:58:13  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 220
+[gateway-service] [] 2025-01-16 12:58:13  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:58:13  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-order-service -> []
+[gateway-service] [] 2025-01-16 12:58:13  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 220
+[gateway-service] [717048500921901098] 2025-01-16 12:58:37  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901097] 2025-01-16 12:58:37  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901097] 2025-01-16 12:58:37  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901097] 2025-01-16 12:58:37  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901098] 2025-01-16 12:58:37  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901098] 2025-01-16 12:58:37  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901099] 2025-01-16 12:58:37  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901099] 2025-01-16 12:58:37  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901099] 2025-01-16 12:58:37  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [] 2025-01-16 12:58:37  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 222
+[gateway-service] [] 2025-01-16 12:58:37  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:58:37  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 12:58:37  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 222
+[gateway-service] [717048500921901100] 2025-01-16 12:58:39  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901101] 2025-01-16 12:58:39  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-20
+[gateway-service] [717048500921901104] 2025-01-16 12:58:39  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901100] 2025-01-16 12:58:39  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901101] 2025-01-16 12:58:39  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901101] 2025-01-16 12:58:39  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-20
+[gateway-service] [717048500921901104] 2025-01-16 12:58:39  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901104] 2025-01-16 12:58:39  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901100] 2025-01-16 12:58:39  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901106] 2025-01-16 12:58:41  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-6
+[gateway-service] [717048500921901107] 2025-01-16 12:58:41  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-5
+[gateway-service] [717048500921901107] 2025-01-16 12:58:41  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901107] 2025-01-16 12:58:41  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-5
+[gateway-service] [717048500921901106] 2025-01-16 12:58:41  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901106] 2025-01-16 12:58:41  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [717048500921901108] 2025-01-16 12:58:49  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901108] 2025-01-16 12:58:49  INFO RequestValidationFilter:221 - /damai/program/program/order/create/v4是否跳过登录验证: false
+[gateway-service] [717048500921901108] 2025-01-16 12:58:49  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [717048500921901109] 2025-01-16 12:58:49  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901109] 2025-01-16 12:58:49  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901109] 2025-01-16 12:58:49  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901110] 2025-01-16 12:58:49  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901110] 2025-01-16 12:58:49  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901110] 2025-01-16 12:58:49  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901111] 2025-01-16 12:58:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901111] 2025-01-16 12:58:50  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901111] 2025-01-16 12:58:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901112] 2025-01-16 12:58:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901112] 2025-01-16 12:58:50  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901112] 2025-01-16 12:58:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901113] 2025-01-16 12:58:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-13
+[gateway-service] [717048500921901113] 2025-01-16 12:58:50  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901113] 2025-01-16 12:58:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-13
+[gateway-service] [717048500921901114] 2025-01-16 12:58:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-14
+[gateway-service] [717048500921901114] 2025-01-16 12:58:50  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901114] 2025-01-16 12:58:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-14
+[gateway-service] [717048500921901115] 2025-01-16 12:58:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-15
+[gateway-service] [717048500921901115] 2025-01-16 12:58:50  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901115] 2025-01-16 12:58:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-15
+[gateway-service] [717048500921901116] 2025-01-16 12:58:51  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901116] 2025-01-16 12:58:51  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901116] 2025-01-16 12:58:51  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901117] 2025-01-16 12:58:51  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901117] 2025-01-16 12:58:51  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901117] 2025-01-16 12:58:51  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901118] 2025-01-16 12:58:51  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901118] 2025-01-16 12:58:51  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901118] 2025-01-16 12:58:51  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [717048500921901119] 2025-01-16 12:58:51  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901119] 2025-01-16 12:58:51  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901119] 2025-01-16 12:58:51  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901120] 2025-01-16 12:58:51  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-20
+[gateway-service] [717048500921901120] 2025-01-16 12:58:51  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901120] 2025-01-16 12:58:51  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-20
+[gateway-service] [717048500921901121] 2025-01-16 12:58:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-1
+[gateway-service] [717048500921901121] 2025-01-16 12:58:52  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901121] 2025-01-16 12:58:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-1
+[gateway-service] [717048500921901122] 2025-01-16 12:58:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-2
+[gateway-service] [717048500921901122] 2025-01-16 12:58:52  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901122] 2025-01-16 12:58:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-2
+[gateway-service] [717048500921901123] 2025-01-16 12:58:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901123] 2025-01-16 12:58:52  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901123] 2025-01-16 12:58:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901124] 2025-01-16 12:58:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-4
+[gateway-service] [717048500921901124] 2025-01-16 12:58:52  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901124] 2025-01-16 12:58:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [717048500921901125] 2025-01-16 12:58:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-5
+[gateway-service] [717048500921901125] 2025-01-16 12:58:52  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901125] 2025-01-16 12:58:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-5
+[gateway-service] [717048500921901126] 2025-01-16 12:58:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-6
+[gateway-service] [717048500921901126] 2025-01-16 12:58:53  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901126] 2025-01-16 12:58:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [717048500921901127] 2025-01-16 12:58:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901127] 2025-01-16 12:58:53  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901127] 2025-01-16 12:58:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [717048500921901128] 2025-01-16 12:58:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901128] 2025-01-16 12:58:53  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901128] 2025-01-16 12:58:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901129] 2025-01-16 12:58:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901129] 2025-01-16 12:58:53  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901129] 2025-01-16 12:58:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901130] 2025-01-16 12:58:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901130] 2025-01-16 12:58:53  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901130] 2025-01-16 12:58:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901131] 2025-01-16 12:58:54  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901131] 2025-01-16 12:58:54  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901131] 2025-01-16 12:58:54  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901132] 2025-01-16 12:58:54  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901132] 2025-01-16 12:58:54  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901132] 2025-01-16 12:58:54  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [] 2025-01-16 13:38:17  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 224
+[gateway-service] [] 2025-01-16 13:38:17  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:38:17  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-order-service -> []
+[gateway-service] [] 2025-01-16 13:38:17  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 224
+[gateway-service] [] 2025-01-16 13:38:19  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 225
+[gateway-service] [] 2025-01-16 13:38:19  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:38:19  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2025-01-16 13:38:19  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 225
+[gateway-service] [] 2025-01-16 13:38:40  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 226
+[gateway-service] [] 2025-01-16 13:38:40  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:38:40  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:38:40  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 226
+[gateway-service] [] 2025-01-16 13:38:44  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 227
+[gateway-service] [] 2025-01-16 13:38:44  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:38:44  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:38:44  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 227
+[gateway-service] [717048500921901134] 2025-01-16 13:39:00  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-13
+[gateway-service] [717048500921901133] 2025-01-16 13:39:00  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-14
+[gateway-service] [717048500921901134] 2025-01-16 13:39:00  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901133] 2025-01-16 13:39:00  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901134] 2025-01-16 13:39:00  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-13
+[gateway-service] [717048500921901133] 2025-01-16 13:39:01 ERROR TokenUtil:50 - parseToken error
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-01-16T13:28:41Z. Current time: 2025-01-16T13:39:00Z, a difference of 619989 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.damai.jwt.TokenUtil.parseToken(TokenUtil.java:46) ~[classes/:?]
+	at com.damai.service.TokenService.parseToken(TokenService.java:24) ~[classes/:?]
+	at com.damai.service.TokenService.getUser(TokenService.java:33) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:232) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.execute(RequestValidationFilter.java:167) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.lambda$readBody$1(RequestValidationFilter.java:148) ~[classes/:?]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:689) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:286) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+[gateway-service] [717048500921901133] 2025-01-16 13:39:01 ERROR AbstractErrorWebExceptionHandler:102 - [0bb88b54-78]  500 Server Error for HTTP POST "/damai/user/ticket/user/list"
+java.lang.NullPointerException: Cannot invoke "com.damai.vo.UserVo.getId()" because "userVo" is null
+	at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:233) ~[classes/:?]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ com.alibaba.csp.sentinel.adapter.spring.webflux.SentinelWebFluxFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP POST "/damai/user/ticket/user/list" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:233) ~[classes/:?]
+		at com.damai.filter.RequestValidationFilter.execute(RequestValidationFilter.java:167) ~[classes/:?]
+		at com.damai.filter.RequestValidationFilter.lambda$readBody$1(RequestValidationFilter.java:148) ~[classes/:?]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:689) [reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:286) [reactor-netty-http-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+[gateway-service] [717048500921901135] 2025-01-16 13:39:01  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901136] 2025-01-16 13:39:01  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901135] 2025-01-16 13:39:02  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901136] 2025-01-16 13:39:02  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901135] 2025-01-16 13:39:02  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901136] 2025-01-16 13:39:02 ERROR TokenUtil:50 - parseToken error
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-01-16T13:28:41Z. Current time: 2025-01-16T13:39:02Z, a difference of 621009 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.damai.jwt.TokenUtil.parseToken(TokenUtil.java:46) ~[classes/:?]
+	at com.damai.service.TokenService.parseToken(TokenService.java:24) ~[classes/:?]
+	at com.damai.service.TokenService.getUser(TokenService.java:33) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:232) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.execute(RequestValidationFilter.java:167) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.lambda$readBody$1(RequestValidationFilter.java:148) ~[classes/:?]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:689) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:286) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+[gateway-service] [717048500921901136] 2025-01-16 13:39:02 ERROR AbstractErrorWebExceptionHandler:102 - [424d8e13-81]  500 Server Error for HTTP POST "/damai/user/ticket/user/list"
+java.lang.NullPointerException: Cannot invoke "com.damai.vo.UserVo.getId()" because "userVo" is null
+	at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:233) ~[classes/:?]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ com.alibaba.csp.sentinel.adapter.spring.webflux.SentinelWebFluxFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP POST "/damai/user/ticket/user/list" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:233) ~[classes/:?]
+		at com.damai.filter.RequestValidationFilter.execute(RequestValidationFilter.java:167) ~[classes/:?]
+		at com.damai.filter.RequestValidationFilter.lambda$readBody$1(RequestValidationFilter.java:148) ~[classes/:?]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:689) [reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:286) [reactor-netty-http-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+[gateway-service] [717048500921901140] 2025-01-16 13:39:02  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901141] 2025-01-16 13:39:02  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-2
+[gateway-service] [717048500921901140] 2025-01-16 13:39:02  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901141] 2025-01-16 13:39:02  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901140] 2025-01-16 13:39:02  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [717048500921901141] 2025-01-16 13:39:02  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-2
+[gateway-service] [717048500921901142] 2025-01-16 13:39:03  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901142] 2025-01-16 13:39:03  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901142] 2025-01-16 13:39:03  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [717048500921901144] 2025-01-16 13:39:05  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901143] 2025-01-16 13:39:05  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901145] 2025-01-16 13:39:05  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901143] 2025-01-16 13:39:05  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901144] 2025-01-16 13:39:05  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901143] 2025-01-16 13:39:05  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901145] 2025-01-16 13:39:05  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901145] 2025-01-16 13:39:05  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901144] 2025-01-16 13:39:05 ERROR TokenUtil:50 - parseToken error
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-01-16T13:28:41Z. Current time: 2025-01-16T13:39:05Z, a difference of 624622 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.damai.jwt.TokenUtil.parseToken(TokenUtil.java:46) ~[classes/:?]
+	at com.damai.service.TokenService.parseToken(TokenService.java:24) ~[classes/:?]
+	at com.damai.service.TokenService.getUser(TokenService.java:33) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:238) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.execute(RequestValidationFilter.java:167) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.lambda$readBody$1(RequestValidationFilter.java:148) ~[classes/:?]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:689) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:286) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+[gateway-service] [717048500921901144] 2025-01-16 13:39:05  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901149] 2025-01-16 13:39:10  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-14
+[gateway-service] [717048500921901149] 2025-01-16 13:39:10  INFO RequestValidationFilter:221 - /damai/user/user/logout是否跳过登录验证: true
+[gateway-service] [717048500921901149] 2025-01-16 13:39:10  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-14
+[gateway-service] [717048500921901152] 2025-01-16 13:39:11  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901152] 2025-01-16 13:39:11  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901152] 2025-01-16 13:39:11  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [717048500921901154] 2025-01-16 13:39:11  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901154] 2025-01-16 13:39:11  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901154] 2025-01-16 13:39:11  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901158] 2025-01-16 13:39:20  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901158] 2025-01-16 13:39:20  INFO RequestValidationFilter:221 - /damai/user/user/login是否跳过登录验证: true
+[gateway-service] [717048500921901158] 2025-01-16 13:39:20  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901160] 2025-01-16 13:39:20  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-4
+[gateway-service] [717048500921901163] 2025-01-16 13:39:20  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901160] 2025-01-16 13:39:20  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901160] 2025-01-16 13:39:20  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [717048500921901163] 2025-01-16 13:39:20  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901163] 2025-01-16 13:39:20  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901164] 2025-01-16 13:39:20  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901164] 2025-01-16 13:39:20  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901164] 2025-01-16 13:39:20  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901165] 2025-01-16 13:39:24  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901166] 2025-01-16 13:39:24  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901168] 2025-01-16 13:39:24  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901165] 2025-01-16 13:39:24  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901166] 2025-01-16 13:39:24  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901166] 2025-01-16 13:39:24  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901168] 2025-01-16 13:39:24  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901168] 2025-01-16 13:39:24  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901165] 2025-01-16 13:39:24  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901171] 2025-01-16 13:39:26  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901172] 2025-01-16 13:39:26  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901172] 2025-01-16 13:39:26  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901171] 2025-01-16 13:39:26  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901172] 2025-01-16 13:39:26  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901171] 2025-01-16 13:39:26  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901173] 2025-01-16 13:39:29  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901173] 2025-01-16 13:39:29  INFO RequestValidationFilter:221 - /damai/program/program/order/create/v4是否跳过登录验证: false
+[gateway-service] [717048500921901173] 2025-01-16 13:39:29  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [] 2025-01-16 13:42:06  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 231
+[gateway-service] [] 2025-01-16 13:42:06  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:42:06  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2025-01-16 13:42:06  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 231
+[gateway-service] [] 2025-01-16 13:42:31  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 232
+[gateway-service] [] 2025-01-16 13:42:31  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:42:31  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:42:31  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 232
+[gateway-service] [717048500921901174] 2025-01-16 13:42:41  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901175] 2025-01-16 13:42:41  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901174] 2025-01-16 13:42:41  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901175] 2025-01-16 13:42:41  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901174] 2025-01-16 13:42:41  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901175] 2025-01-16 13:42:41  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901179] 2025-01-16 13:42:42  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901179] 2025-01-16 13:42:42  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901179] 2025-01-16 13:42:42  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901180] 2025-01-16 13:42:46  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901181] 2025-01-16 13:42:46  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901182] 2025-01-16 13:42:46  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901181] 2025-01-16 13:42:46  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901181] 2025-01-16 13:42:46  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901180] 2025-01-16 13:42:46  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901182] 2025-01-16 13:42:46  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901182] 2025-01-16 13:42:46  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901180] 2025-01-16 13:42:46  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901187] 2025-01-16 13:42:57  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901186] 2025-01-16 13:42:57  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901186] 2025-01-16 13:42:57  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901187] 2025-01-16 13:42:57  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901187] 2025-01-16 13:42:57  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901186] 2025-01-16 13:42:57  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901188] 2025-01-16 13:43:00  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901188] 2025-01-16 13:43:00  INFO RequestValidationFilter:221 - /damai/program/program/order/create/v4是否跳过登录验证: false
+[gateway-service] [717048500921901188] 2025-01-16 13:43:00  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [] 2025-01-16 13:55:45  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 235
+[gateway-service] [] 2025-01-16 13:55:45  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:55:45  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2025-01-16 13:55:45  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 235
+[gateway-service] [] 2025-01-16 13:55:48  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 236
+[gateway-service] [] 2025-01-16 13:55:48  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:55:48  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-order-service -> []
+[gateway-service] [] 2025-01-16 13:55:48  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 236
+[gateway-service] [] 2025-01-16 13:56:09  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 237
+[gateway-service] [] 2025-01-16 13:56:09  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:56:09  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:56:09  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 237
+[gateway-service] [] 2025-01-16 13:56:12  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 238
+[gateway-service] [] 2025-01-16 13:56:12  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:56:12  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:56:12  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 238
+[gateway-service] [717048500921901189] 2025-01-16 13:56:43  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901193] 2025-01-16 13:56:43  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901189] 2025-01-16 13:56:43  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901193] 2025-01-16 13:56:43  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901189] 2025-01-16 13:56:43  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901193] 2025-01-16 13:56:43  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901194] 2025-01-16 13:56:44  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901194] 2025-01-16 13:56:44  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901194] 2025-01-16 13:56:44  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901195] 2025-01-16 13:56:47  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901196] 2025-01-16 13:56:47  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901197] 2025-01-16 13:56:47  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901196] 2025-01-16 13:56:47  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901195] 2025-01-16 13:56:47  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901195] 2025-01-16 13:56:47  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901197] 2025-01-16 13:56:47  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901197] 2025-01-16 13:56:47  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901196] 2025-01-16 13:56:47  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901202] 2025-01-16 13:56:48  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901201] 2025-01-16 13:56:48  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901201] 2025-01-16 13:56:48  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901202] 2025-01-16 13:56:48  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901202] 2025-01-16 13:56:48  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901201] 2025-01-16 13:56:48  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901203] 2025-01-16 13:56:51  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901203] 2025-01-16 13:56:51  INFO RequestValidationFilter:221 - /damai/program/program/order/create/v4是否跳过登录验证: false
+[gateway-service] [717048500921901203] 2025-01-16 13:56:51  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [] 2025-01-16 13:59:54  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 241
+[gateway-service] [] 2025-01-16 13:59:54  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:59:54  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2025-01-16 13:59:54  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 241
+[gateway-service] [] 2025-01-16 13:59:58  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 242
+[gateway-service] [] 2025-01-16 13:59:58  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 13:59:58  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-order-service -> []
+[gateway-service] [] 2025-01-16 13:59:58  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 242
+[gateway-service] [] 2025-01-16 14:00:17  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 243
+[gateway-service] [] 2025-01-16 14:00:17  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 14:00:17  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 14:00:17  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 243
+[gateway-service] [] 2025-01-16 14:00:18  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 245
+[gateway-service] [] 2025-01-16 14:00:18  INFO naming:219 - new ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 14:00:18  INFO naming:144 - current ips:(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 14:00:18  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 245
+[gateway-service] [717048500921901204] 2025-01-16 14:00:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901208] 2025-01-16 14:00:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901204] 2025-01-16 14:00:50  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901208] 2025-01-16 14:00:50  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901204] 2025-01-16 14:00:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901208] 2025-01-16 14:00:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901209] 2025-01-16 14:00:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901209] 2025-01-16 14:00:50  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901209] 2025-01-16 14:00:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901212] 2025-01-16 14:00:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901211] 2025-01-16 14:00:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901213] 2025-01-16 14:00:53  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901213] 2025-01-16 14:00:53  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901212] 2025-01-16 14:00:53  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901211] 2025-01-16 14:00:53  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901212] 2025-01-16 14:00:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901211] 2025-01-16 14:00:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901213] 2025-01-16 14:00:53  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901216] 2025-01-16 14:00:56  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901220] 2025-01-16 14:00:56  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901220] 2025-01-16 14:00:56  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901216] 2025-01-16 14:00:56  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901220] 2025-01-16 14:00:56  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901216] 2025-01-16 14:00:56  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901221] 2025-01-16 14:00:56  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-1
+[gateway-service] [717048500921901221] 2025-01-16 14:00:56  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901221] 2025-01-16 14:00:56  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-1
+[gateway-service] [717048500921901222] 2025-01-16 14:00:58  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-2
+[gateway-service] [717048500921901223] 2025-01-16 14:00:58  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-3
+[gateway-service] [717048500921901224] 2025-01-16 14:00:58  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-4
+[gateway-service] [717048500921901222] 2025-01-16 14:00:58  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901223] 2025-01-16 14:00:58  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901224] 2025-01-16 14:00:58  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901223] 2025-01-16 14:00:58  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-3
+[gateway-service] [717048500921901224] 2025-01-16 14:00:58  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [717048500921901222] 2025-01-16 14:00:58  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-2
+[gateway-service] [717048500921901228] 2025-01-16 14:01:00  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901229] 2025-01-16 14:01:00  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901228] 2025-01-16 14:01:00  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901229] 2025-01-16 14:01:00  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901228] 2025-01-16 14:01:00  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901229] 2025-01-16 14:01:00  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901230] 2025-01-16 14:01:02  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901230] 2025-01-16 14:01:02  INFO RequestValidationFilter:221 - /damai/program/program/order/create/v4是否跳过登录验证: false
+[gateway-service] [717048500921901230] 2025-01-16 14:01:02  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901231] 2025-01-16 14:01:04  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901231] 2025-01-16 14:01:04  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901231] 2025-01-16 14:01:04  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901232] 2025-01-16 14:01:05  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-13
+[gateway-service] [717048500921901232] 2025-01-16 14:01:05  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901232] 2025-01-16 14:01:05  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-13
+[gateway-service] [717048500921901233] 2025-01-16 14:01:05  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-14
+[gateway-service] [717048500921901233] 2025-01-16 14:01:05  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901233] 2025-01-16 14:01:05  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-14
+[gateway-service] [717048500921901234] 2025-01-16 14:01:05  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-15
+[gateway-service] [717048500921901234] 2025-01-16 14:01:05  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901234] 2025-01-16 14:01:05  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-15
+[gateway-service] [717048500921901235] 2025-01-16 14:01:06  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901235] 2025-01-16 14:01:06  INFO RequestValidationFilter:221 - /damai/order/order/get是否跳过登录验证: false
+[gateway-service] [717048500921901235] 2025-01-16 14:01:06  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901236] 2025-01-16 14:01:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901236] 2025-01-16 14:01:07  INFO RequestValidationFilter:221 - /damai/order/order/pay是否跳过登录验证: false
+[gateway-service] [717048500921901236] 2025-01-16 14:01:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901237] 2025-01-16 14:01:11  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901237] 2025-01-16 14:01:11  INFO RequestValidationFilter:221 - /damai/order/order/pay是否跳过登录验证: false
+[gateway-service] [717048500921901237] 2025-01-16 14:01:11  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [717048500921901238] 2025-01-16 14:02:17  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901242] 2025-01-16 14:02:17  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-4
+[gateway-service] [717048500921901242] 2025-01-16 14:02:17  INFO RequestValidationFilter:221 - /damai/order/order/pay/check是否跳过登录验证: true
+[gateway-service] [717048500921901238] 2025-01-16 14:02:17  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901242] 2025-01-16 14:02:17  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [717048500921901238] 2025-01-16 14:02:17  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901243] 2025-01-16 14:02:32  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901247] 2025-01-16 14:02:32  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901243] 2025-01-16 14:02:32  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901243] 2025-01-16 14:02:32  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [717048500921901247] 2025-01-16 14:02:32  INFO RequestValidationFilter:221 - /damai/order/order/select/list是否跳过登录验证: false
+[gateway-service] [717048500921901247] 2025-01-16 14:02:32  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901249] 2025-01-16 14:02:45  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-16
+[gateway-service] [717048500921901252] 2025-01-16 14:02:45  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-12
+[gateway-service] [717048500921901249] 2025-01-16 14:02:45  INFO RequestValidationFilter:221 - /damai/order/order/get是否跳过登录验证: false
+[gateway-service] [717048500921901252] 2025-01-16 14:02:45  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901252] 2025-01-16 14:02:45  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-12
+[gateway-service] [717048500921901249] 2025-01-16 14:02:45  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-16
+[gateway-service] [717048500921901256] 2025-01-16 14:04:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-1
+[gateway-service] [717048500921901257] 2025-01-16 14:04:50  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901256] 2025-01-16 14:04:50  INFO RequestValidationFilter:221 - /damai/order/order/select/list是否跳过登录验证: false
+[gateway-service] [717048500921901257] 2025-01-16 14:04:50  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901257] 2025-01-16 14:04:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901256] 2025-01-16 14:04:50  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-1
+[gateway-service] [717048500921901258] 2025-01-16 14:04:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901258] 2025-01-16 14:04:52  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901258] 2025-01-16 14:04:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [717048500921901263] 2025-01-16 14:04:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-15
+[gateway-service] [717048500921901266] 2025-01-16 14:04:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901263] 2025-01-16 14:04:52  INFO RequestValidationFilter:221 - /damai/program/program/category/selectByType是否跳过登录验证: true
+[gateway-service] [717048500921901263] 2025-01-16 14:04:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-15
+[gateway-service] [717048500921901266] 2025-01-16 14:04:52  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901266] 2025-01-16 14:04:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901267] 2025-01-16 14:04:52  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-17
+[gateway-service] [717048500921901267] 2025-01-16 14:04:52  INFO RequestValidationFilter:221 - /damai/program/program/home/list是否跳过登录验证: true
+[gateway-service] [717048500921901267] 2025-01-16 14:04:52  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-17
+[gateway-service] [717048500921901268] 2025-01-16 14:04:57  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-18
+[gateway-service] [717048500921901269] 2025-01-16 14:04:57  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-19
+[gateway-service] [717048500921901272] 2025-01-16 14:04:57  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-20
+[gateway-service] [717048500921901268] 2025-01-16 14:04:57  INFO RequestValidationFilter:221 - /damai/program/program/detail是否跳过登录验证: true
+[gateway-service] [717048500921901269] 2025-01-16 14:04:57  INFO RequestValidationFilter:221 - /damai/program/program/recommend/list是否跳过登录验证: true
+[gateway-service] [717048500921901269] 2025-01-16 14:04:57  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-19
+[gateway-service] [717048500921901272] 2025-01-16 14:04:57  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901272] 2025-01-16 14:04:57  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-20
+[gateway-service] [717048500921901268] 2025-01-16 14:04:57  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-18
+[gateway-service] [717048500921901274] 2025-01-16 14:04:59  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-4
+[gateway-service] [717048500921901275] 2025-01-16 14:04:59  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-5
+[gateway-service] [717048500921901274] 2025-01-16 14:04:59  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901275] 2025-01-16 14:04:59  INFO RequestValidationFilter:221 - /damai/user/ticket/user/list是否跳过登录验证: false
+[gateway-service] [717048500921901274] 2025-01-16 14:04:59  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-4
+[gateway-service] [717048500921901275] 2025-01-16 14:04:59  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-5
+[gateway-service] [717048500921901276] 2025-01-16 14:05:02  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-6
+[gateway-service] [717048500921901276] 2025-01-16 14:05:02  INFO RequestValidationFilter:221 - /damai/program/program/order/create/v4是否跳过登录验证: false
+[gateway-service] [717048500921901276] 2025-01-16 14:05:02  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [717048500921901277] 2025-01-16 14:05:02  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-7
+[gateway-service] [717048500921901277] 2025-01-16 14:05:02  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901277] 2025-01-16 14:05:02  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-7
+[gateway-service] [717048500921901278] 2025-01-16 14:05:03  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-8
+[gateway-service] [717048500921901278] 2025-01-16 14:05:03  INFO RequestValidationFilter:221 - /damai/order/order/get/cache是否跳过登录验证: true
+[gateway-service] [717048500921901278] 2025-01-16 14:05:03  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-8
+[gateway-service] [717048500921901279] 2025-01-16 14:05:03  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-9
+[gateway-service] [717048500921901279] 2025-01-16 14:05:03  INFO RequestValidationFilter:221 - /damai/order/order/get是否跳过登录验证: false
+[gateway-service] [717048500921901279] 2025-01-16 14:05:03  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-9
+[gateway-service] [717048500921901280] 2025-01-16 14:05:03  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901280] 2025-01-16 14:05:03  INFO RequestValidationFilter:221 - /damai/order/order/pay是否跳过登录验证: false
+[gateway-service] [717048500921901280] 2025-01-16 14:05:03  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901283] 2025-01-16 14:06:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901285] 2025-01-16 14:06:07  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-15
+[gateway-service] [717048500921901283] 2025-01-16 14:06:07  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901283] 2025-01-16 14:06:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901285] 2025-01-16 14:06:07  INFO RequestValidationFilter:221 - /damai/order/order/pay/check是否跳过登录验证: true
+[gateway-service] [717048500921901285] 2025-01-16 14:06:07  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-15
+[gateway-service] [717048500921901286] 2025-01-16 14:06:14  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-1
+[gateway-service] [717048500921901286] 2025-01-16 14:06:14  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901286] 2025-01-16 14:06:14  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-1
+[gateway-service] [717048500921901288] 2025-01-16 14:06:14  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-5
+[gateway-service] [717048500921901288] 2025-01-16 14:06:14  INFO RequestValidationFilter:221 - /damai/order/order/select/list是否跳过登录验证: false
+[gateway-service] [717048500921901288] 2025-01-16 14:06:14  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-5
+[gateway-service] [717048500921901291] 2025-01-16 14:06:17  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-6
+[gateway-service] [717048500921901295] 2025-01-16 14:06:17  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-10
+[gateway-service] [717048500921901291] 2025-01-16 14:06:17  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901291] 2025-01-16 14:06:17  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-6
+[gateway-service] [717048500921901295] 2025-01-16 14:06:17  INFO RequestValidationFilter:221 - /damai/order/order/get是否跳过登录验证: false
+[gateway-service] [717048500921901295] 2025-01-16 14:06:17  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-10
+[gateway-service] [717048500921901299] 2025-01-16 15:17:24  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-15
+[gateway-service] [717048500921901300] 2025-01-16 15:17:24  INFO RequestValidationFilter:141 - current thread readBody : reactor-http-nio-11
+[gateway-service] [717048500921901299] 2025-01-16 15:17:24  INFO RequestValidationFilter:221 - /damai/order/order/get是否跳过登录验证: false
+[gateway-service] [717048500921901300] 2025-01-16 15:17:24  INFO RequestValidationFilter:221 - /damai/user/user/get/id是否跳过登录验证: true
+[gateway-service] [717048500921901300] 2025-01-16 15:17:24  INFO RequestValidationFilter:269 - current thread getHeaders: reactor-http-nio-11
+[gateway-service] [717048500921901299] 2025-01-16 15:17:24 ERROR TokenUtil:50 - parseToken error
+io.jsonwebtoken.ExpiredJwtException: JWT expired at 2025-01-16T14:19:20Z. Current time: 2025-01-16T15:17:24Z, a difference of 3484511 milliseconds.  Allowed clock skew: 0 milliseconds.
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:385) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:481) ~[jjwt-0.9.1.jar:0.9.1]
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541) ~[jjwt-0.9.1.jar:0.9.1]
+	at com.damai.jwt.TokenUtil.parseToken(TokenUtil.java:46) ~[classes/:?]
+	at com.damai.service.TokenService.parseToken(TokenService.java:24) ~[classes/:?]
+	at com.damai.service.TokenService.getUser(TokenService.java:33) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:232) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.execute(RequestValidationFilter.java:167) ~[classes/:?]
+	at com.damai.filter.RequestValidationFilter.lambda$readBody$1(RequestValidationFilter.java:148) ~[classes/:?]
+	at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+	at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:689) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) [reactor-netty-core-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:286) [reactor-netty-http-1.1.19.jar:1.1.19]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+	at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+[gateway-service] [717048500921901299] 2025-01-16 15:17:24 ERROR AbstractErrorWebExceptionHandler:102 - [65974a9c-244]  500 Server Error for HTTP POST "/damai/order/order/get"
+java.lang.NullPointerException: Cannot invoke "com.damai.vo.UserVo.getId()" because "userVo" is null
+	at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:233) ~[classes/:?]
+	Suppressed: reactor.core.publisher.FluxOnAssembly$OnAssemblyException: 
+Error has been observed at the following site(s):
+	*__checkpoint ⇢ org.springframework.cloud.gateway.filter.WeightCalculatorWebFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ com.alibaba.csp.sentinel.adapter.spring.webflux.SentinelWebFluxFilter [DefaultWebFilterChain]
+	*__checkpoint ⇢ HTTP POST "/damai/order/order/get" [ExceptionHandlingWebHandler]
+Original Stack Trace:
+		at com.damai.filter.RequestValidationFilter.doExecute(RequestValidationFilter.java:233) ~[classes/:?]
+		at com.damai.filter.RequestValidationFilter.execute(RequestValidationFilter.java:167) ~[classes/:?]
+		at com.damai.filter.RequestValidationFilter.lambda$readBody$1(RequestValidationFilter.java:148) ~[classes/:?]
+		at reactor.core.publisher.MonoFlatMap$FlatMapMain.onNext(MonoFlatMap.java:132) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxOnErrorResume$ResumeSubscriber.onNext(FluxOnErrorResume.java:79) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableSubscriber.onNext(FluxMapFuseable.java:129) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxContextWrite$ContextWriteSubscriber.onNext(FluxContextWrite.java:107) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMapFuseable$MapFuseableConditionalSubscriber.onNext(FluxMapFuseable.java:299) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxFilterFuseable$FilterFuseableConditionalSubscriber.onNext(FluxFilterFuseable.java:337) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.Operators$BaseFluxToMonoOperator.completePossiblyEmpty(Operators.java:2097) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.MonoCollect$CollectSubscriber.onComplete(MonoCollect.java:145) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxPeek$PeekSubscriber.onComplete(FluxPeek.java:260) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.core.publisher.FluxMap$MapSubscriber.onComplete(FluxMap.java:144) [reactor-core-3.6.6.jar:3.6.6]
+		at reactor.netty.channel.FluxReceive.onInboundComplete(FluxReceive.java:415) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperations.onInboundComplete(ChannelOperations.java:446) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at reactor.netty.http.server.HttpServerOperations.onInboundNext(HttpServerOperations.java:689) [reactor-netty-http-1.1.19.jar:1.1.19]
+		at reactor.netty.channel.ChannelOperationsHandler.channelRead(ChannelOperationsHandler.java:114) [reactor-netty-core-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:444) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at reactor.netty.http.server.HttpTrafficHandler.channelRead(HttpTrafficHandler.java:286) [reactor-netty-http-1.1.19.jar:1.1.19]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:346) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:318) [netty-codec-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:442) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:412) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1407) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:440) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:420) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:918) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:166) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562) [netty-transport-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:994) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30) [netty-common-4.1.110.Final.jar:4.1.110.Final]
+		at java.base/java.lang.Thread.run(Thread.java:833) [?:?]
+[gateway-service] [] 2025-01-16 15:52:18  WARN HttpClientBeanHolder:102 - [HttpClientBeanHolder] Start destroying common HttpClient
+[gateway-service] [] 2025-01-16 15:52:18  WARN NotifyCenter:134 - [NotifyCenter] Start destroying Publisher
+[gateway-service] [] 2025-01-16 15:52:18  WARN NotifyCenter:151 - [NotifyCenter] Destruction of the end
+[gateway-service] [] 2025-01-16 15:52:18  WARN HttpClientBeanHolder:111 - [HttpClientBeanHolder] Destruction of the end
+[gateway-service] [] 2025-01-16 15:52:20  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 249
+[gateway-service] [] 2025-01-16 15:52:20  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-order-service -> [{"ip":"192.168.18.41","port":8081,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-order-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 15:52:20  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-order-service -> []
+[gateway-service] [] 2025-01-16 15:52:20  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 249
+[gateway-service] [] 2025-01-16 15:52:20  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 251
+[gateway-service] [] 2025-01-16 15:52:20  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-pay-service -> [{"ip":"192.168.18.41","port":6087,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-pay-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 15:52:20  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-pay-service -> []
+[gateway-service] [] 2025-01-16 15:52:20  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 251
+[gateway-service] [] 2025-01-16 15:52:20  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 252
+[gateway-service] [] 2025-01-16 15:52:20  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-user-service -> [{"ip":"192.168.18.41","port":6082,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-user-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 15:52:20  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-user-service -> []
+[gateway-service] [] 2025-01-16 15:52:20  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 252
+[gateway-service] [] 2025-01-16 15:52:21  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 253
+[gateway-service] [] 2025-01-16 15:52:21  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-program-service -> [{"ip":"192.168.18.41","port":6084,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-program-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 15:52:21  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-program-service -> []
+[gateway-service] [] 2025-01-16 15:52:21  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 253
+[gateway-service] [] 2025-01-16 15:52:21  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Receive server push request, request = NotifySubscriberRequest, requestId = 254
+[gateway-service] [] 2025-01-16 15:52:21  INFO naming:225 - removed ips(1) service: DEFAULT_GROUP@@damai-base-data-service -> [{"ip":"192.168.18.41","port":6083,"weight":1.0,"healthy":true,"enabled":true,"ephemeral":true,"clusterName":"DEFAULT","serviceName":"DEFAULT_GROUP@@damai-base-data-service","metadata":{"preserved.register.source":"SPRING_CLOUD","IPv6":"[2406:3003:2005:5d0b:354e:4e35:c23:15b8]"},"ipDeleteTimeout":30000,"instanceHeartBeatTimeOut":15000,"instanceHeartBeatInterval":5000}]
+[gateway-service] [] 2025-01-16 15:52:21  INFO naming:144 - current ips:(0) service: DEFAULT_GROUP@@damai-base-data-service -> []
+[gateway-service] [] 2025-01-16 15:52:21  INFO client:63 - [45ce8f41-fe06-4362-92af-2e286e2f1a82] Ack server push request, request = NotifySubscriberRequest, requestId = 254
+[gateway-service] [] 2025-01-16 15:52:22  INFO NacosServiceRegistry:95 - De-registering from Nacos Server now...
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:272 - [DEREGISTER-SERVICE] public deregistering service damai-gateway-service with instance: Instance{instanceId='null', ip='192.168.18.41', port=6085, weight=1.0, healthy=true, enabled=true, ephemeral=true, clusterName='DEFAULT', serviceName='null', metadata={}}
+[gateway-service] [] 2025-01-16 15:52:22  INFO NacosServiceRegistry:115 - De-registration finished.
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:254 - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown begin
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:180 - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown begin
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:182 - com.alibaba.nacos.client.naming.backups.FailoverReactor do shutdown stop
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:256 - com.alibaba.nacos.client.naming.cache.ServiceInfoHolder do shutdown stop
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:204 - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown begin
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:147 - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown begin
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:149 - com.alibaba.nacos.client.naming.core.ServiceInfoUpdateService do shutdown stop
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:218 - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown begin
+[gateway-service] [] 2025-01-16 15:52:22  WARN naming:71 - [NamingHttpClientManager] Start destroying NacosRestTemplate
+[gateway-service] [] 2025-01-16 15:52:22  WARN naming:78 - [NamingHttpClientManager] Destruction of the end
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:223 - com.alibaba.nacos.client.naming.core.ServerListManager do shutdown stop
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:468 - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown begin
+[gateway-service] [] 2025-01-16 15:52:22  WARN naming:71 - [NamingHttpClientManager] Start destroying NacosRestTemplate
+[gateway-service] [] 2025-01-16 15:52:22  WARN naming:78 - [NamingHttpClientManager] Destruction of the end
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:470 - com.alibaba.nacos.client.naming.remote.http.NamingHttpClientProxy do shutdown stop
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:487 - Shutdown naming grpc client proxy for  uuid->45ce8f41-fe06-4362-92af-2e286e2f1a82
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:331 - Shutdown grpc redo service executor java.util.concurrent.ScheduledThreadPoolExecutor@39860e0[Running, pool size = 1, active threads = 0, queued tasks = 1, completed tasks = 3550]
+[gateway-service] [] 2025-01-16 15:52:22  INFO client:425 - Shutdown rpc client, set status to shutdown
+[gateway-service] [] 2025-01-16 15:52:22  INFO client:427 - Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@631e8717[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+[gateway-service] [] 2025-01-16 15:52:22  INFO client:584 - Close current connection 1736970551762_192.168.88.1_58148
+[gateway-service] [] 2025-01-16 15:52:22  INFO GrpcClient:63 - [1736970551762_192.168.88.1_58148]Ignore complete event,isRunning:false,isAbandon=false
+[gateway-service] [] 2025-01-16 15:52:22  INFO GrpcClient:187 - Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@21d1cf67[Running, pool size = 16, active threads = 0, queued tasks = 0, completed tasks = 4136]
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:497 - shutdown and remove naming rpc client  for uuid ->45ce8f41-fe06-4362-92af-2e286e2f1a82
+[gateway-service] [] 2025-01-16 15:52:22  INFO CredentialWatcher:107 - [null] CredentialWatcher is stopped
+[gateway-service] [] 2025-01-16 15:52:22  INFO CredentialService:91 - [null] CredentialService is freed
+[gateway-service] [] 2025-01-16 15:52:22  INFO naming:211 - com.alibaba.nacos.client.naming.remote.NamingClientProxyDelegate do shutdown stop
