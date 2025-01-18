@@ -1,4 +1,4 @@
-# 支持高并发的抢票系统（仿大麦网）
+# 基于微服务架构支持高并发的仿大麦网抢票系统
 
 <img width="658" alt="image" src="https://github.com/user-attachments/assets/3b833332-f880-4c9b-849d-c911d94023fd" />
 
