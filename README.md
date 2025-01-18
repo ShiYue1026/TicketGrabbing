@@ -4,7 +4,7 @@
 
 <img width="941" alt="image" src="https://github.com/user-attachments/assets/061a4068-6e14-4fc4-bf6a-d8d925b211be" />
 
-<img width="992" alt="60acf347e1fac647f21847696375c52" src="https://github.com/user-attachments/assets/635742e9-4cee-4935-bd00-00ac80600274" />
+<img width="800" alt="60acf347e1fac647f21847696375c52" src="https://github.com/user-attachments/assets/635742e9-4cee-4935-bd00-00ac80600274" />
 
 
 ## 技术选型
